@@ -1,0 +1,42 @@
+CGATS.17
+
+ORIGINATOR	"Derived from OpenDICE Profile_35mm_Negative.txt (Library of Congress)"
+DESCRIPTOR	"35mm microform resolution target, negative -- nominal aim values"
+MANUFACTURER	"Image Science Associates (Microfilm Preservation Target, discontinued by 2021)"
+ILLUMINATION_NAME	"D50"
+OBSERVER_ANGLE	"2"
+KEYWORD	"DELTACHROME_REFERENCE_BASIS"
+DELTACHROME_REFERENCE_BASIS	"manufacturer_nominal"
+KEYWORD	"DELTACHROME_NOMINAL_SOURCE"
+DELTACHROME_NOMINAL_SOURCE	"Density ladder from OpenDICE's Profile_35mm_Negative.txt, published with its sample capture 'Negative_35mm_ICC (1).tif'. Ten steps, repeated as Patch1-10 and Patch11-20. Confirmed against the capture, which is the same chart as the positive -- same four corner crosses one inch apart, same tilted rectangle, same two L-shaped ladders at the same relative positions, sampled with the positive's geometry unchanged."
+KEYWORD	"DELTACHROME_NOMINAL_CAVEAT"
+DELTACHROME_NOMINAL_CAVEAT	"Manufacturer nominal aim values for the model, not a measurement of any individual chart. Two further steps sit between this file and a measurement, and both are choices rather than arithmetic: the published data is DENSITY ONLY, anchored here so the lightest step reads L* 96 -- FADGI's own transparency highlight aim -- because a density ladder carries no lightness of its own; and a* = b* = 0 restates the manufacturer's claim that the scales are spectrally neutral as an aim. Density describes the film; L* describes the appearance of a reproduction, and for a transmissive original the mapping between them IS the tone response being measured. Treat tone response against this file as advisory of a rendering intent, not as conformance. These ten densities are the first ten of the twelve OpenDICE publishes for the ISA 120 target, to the digit. That is worth knowing and is not evidence the two charts are related: it is a reason to check both files before trusting either. The two files are NOT interchangeable. A positive and a negative of one chart are different specimens with different aim data, and running either against the other's file inverts the ramp."
+
+NUMBER_OF_FIELDS	5
+BEGIN_DATA_FORMAT
+SAMPLE_NAME	LAB_L	LAB_A	LAB_B	D
+END_DATA_FORMAT
+
+NUMBER_OF_SETS	20
+BEGIN_DATA
+UL1	96.000	0.000	0.000	0.06
+UL2	80.802	0.000	0.000	0.25
+UL3	70.275	0.000	0.000	0.40
+UL4	63.901	0.000	0.000	0.50
+UL5	55.212	0.000	0.000	0.65
+UL6	46.023	0.000	0.000	0.83
+UL7	41.440	0.000	0.000	0.93
+UL8	36.386	0.000	0.000	1.05
+UL9	30.332	0.000	0.000	1.21
+UL10	24.354	0.000	0.000	1.39
+LR1	96.000	0.000	0.000	0.06
+LR2	80.802	0.000	0.000	0.25
+LR3	70.275	0.000	0.000	0.40
+LR4	63.901	0.000	0.000	0.50
+LR5	55.212	0.000	0.000	0.65
+LR6	46.023	0.000	0.000	0.83
+LR7	41.440	0.000	0.000	0.93
+LR8	36.386	0.000	0.000	1.05
+LR9	30.332	0.000	0.000	1.21
+LR10	24.354	0.000	0.000	1.39
+END_DATA

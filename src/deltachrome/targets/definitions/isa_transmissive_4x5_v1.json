@@ -1,0 +1,682 @@
+{
+  "$schema_version": 1,
+  "target_id": "isa_transmissive_4x5_v1",
+  "display_name": "ISA Transmissive Film Target, 4x5",
+  "manufacturer": "Image Science Associates",
+  "target_type": "transmissive_neutral_target",
+  "physical_size_mm": null,
+  "capabilities": [
+    "tonal_response",
+    "white_balance",
+    "sfr",
+    "color_registration",
+    "geometric_distortion",
+    "reproduction_scale"
+  ],
+  "not_capable_of": [
+    "color_accuracy",
+    "lightness_uniformity"
+  ],
+  "fiducials": {
+    "method": "printed_frame_corners",
+    "corner_markers": [
+      {
+        "id": "TL",
+        "relative_position": [
+          -0.24795,
+          -0.24751
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "TR",
+        "relative_position": [
+          1.24766,
+          -0.24854
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "BR",
+        "relative_position": [
+          1.2482,
+          1.24683
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "BL",
+        "relative_position": [
+          -0.24754,
+          1.24769
+        ],
+        "nearest_patch": null
+      }
+    ],
+    "notes": "Place by the four corners of the thin dark KEYLINE printed just inside the chart's border -- the intersections of its four fitted sides. `tools/locate_printed_fiducials.py frame` finds them, as for the LaserSoft ISO 12641-2: scan for the boundary along a few hundred lines a side, fit a line through what was found with strays thrown out, intersect adjacent lines. On the sample capture that is 1123 to 1167 of about 1150 scan lines on each side, residuals 0.70 to 1.23 px.\n\nTHE RELATIVE FRAME IS THE QUARTER-DISC PAIRS' APEX MIDPOINTS, (0,0) to (1,1), and every patch, module, rule and marker coordinate here is in it; the keyline is declared as four points in that frame, about +/-0.25 outside it on every side. A keyline corner is the intersection of two long straight lines and better conditioned than the apexes: one pixel of fiducial error displaces the chart by 1.45 px against the apexes' 1.91. The discs are the SFR features and what refinement snaps to -- ten of them, enough to over-determine a homography.",
+    "superseded": "The relative frame's corners: the midpoint between the apexes of each CORNER quarter-disc pair, clockwise from top-left in the target's own orientation. On the capture measured here the center pair landed at relative (0.5000, 0.5000). ISA's 'machine vision aids', the pinwheel and dot marks, sit near the center and do not form a corner quad."
+  },
+  "regions": [
+    {
+      "region_id": "wedge_left",
+      "kind": "patch_grid",
+      "notes": "Twelve-step neutral wedge, left of the chart, laid out as two columns of six with the ramp running down the right-hand column first. Steps abut, so patch size equals patch spacing and the ROI inset does the work of keeping the sample clear of the boundaries. Patch ids are set explicitly in 'patches' rather than by the id format, because the ramp order runs across the columns and no format string expresses that.",
+      "patch_grid": {
+        "rows": 6,
+        "columns": 2,
+        "row_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "col_labels": [
+          "a",
+          "b"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.06203,
+          "height": 0.08025
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.06203,
+          "vertical": 0.08025
+        },
+        "grid_origin_relative": [
+          0.07045,
+          0.2587
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner quarter-disc pairs' apex midpoints."
+      }
+    },
+    {
+      "region_id": "wedge_right",
+      "kind": "patch_grid",
+      "notes": "Twelve-step neutral wedge, right of the chart, laid out as two columns of six with the ramp running down the right-hand column first. Steps abut, so patch size equals patch spacing and the ROI inset does the work of keeping the sample clear of the boundaries. Patch ids are set explicitly in 'patches' rather than by the id format, because the ramp order runs across the columns and no format string expresses that.",
+      "patch_grid": {
+        "rows": 6,
+        "columns": 2,
+        "row_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "col_labels": [
+          "a",
+          "b"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.06203,
+          "height": 0.08025
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.06203,
+          "vertical": 0.08025
+        },
+        "grid_origin_relative": [
+          0.80676,
+          0.25909
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner quarter-disc pairs' apex midpoints."
+      }
+    },
+    {
+      "region_id": "module_tl",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "TL",
+        "discs": [
+          {
+            "center": [
+              0.1067,
+              -0.1183
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          },
+          {
+            "center": [
+              -0.1067,
+              0.1183
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. The wedge grids were derived from their own internal step boundaries, whose spacings came out 370-384 px about a mean of 375, and the two blocks agree on pitch to 0.00004 in u and 0.00016 in v -- they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture, so print registration and capture scale do not have to be assumed."
+      },
+      "notes": "Two dark quarter discs placed apex to apex. Each contributes the two straight edges that meet at its apex, so the pair yields four slanted edges -- two per image axis, of opposite polarity, which is what separates a displacement between color records from a difference in the feature's apparent size. The arc is not an edge and is not used."
+    },
+    {
+      "region_id": "module_tr",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "TR",
+        "discs": [
+          {
+            "center": [
+              1.1067,
+              -0.1183
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          },
+          {
+            "center": [
+              0.8933,
+              0.1183
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. The wedge grids were derived from their own internal step boundaries, whose spacings came out 370-384 px about a mean of 375, and the two blocks agree on pitch to 0.00004 in u and 0.00016 in v -- they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture, so print registration and capture scale do not have to be assumed."
+      },
+      "notes": "Two dark quarter discs placed apex to apex. Each contributes the two straight edges that meet at its apex, so the pair yields four slanted edges -- two per image axis, of opposite polarity, which is what separates a displacement between color records from a difference in the feature's apparent size. The arc is not an edge and is not used."
+    },
+    {
+      "region_id": "module_center",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "CENTER",
+        "discs": [
+          {
+            "center": [
+              0.6067,
+              0.3817
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          },
+          {
+            "center": [
+              0.3933,
+              0.6183
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. The wedge grids were derived from their own internal step boundaries, whose spacings came out 370-384 px about a mean of 375, and the two blocks agree on pitch to 0.00004 in u and 0.00016 in v -- they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture, so print registration and capture scale do not have to be assumed."
+      },
+      "notes": "Two dark quarter discs placed apex to apex. Each contributes the two straight edges that meet at its apex, so the pair yields four slanted edges -- two per image axis, of opposite polarity, which is what separates a displacement between color records from a difference in the feature's apparent size. The arc is not an edge and is not used."
+    },
+    {
+      "region_id": "module_bl",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "BL",
+        "discs": [
+          {
+            "center": [
+              0.1067,
+              0.8817
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          },
+          {
+            "center": [
+              -0.1067,
+              1.1183
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. The wedge grids were derived from their own internal step boundaries, whose spacings came out 370-384 px about a mean of 375, and the two blocks agree on pitch to 0.00004 in u and 0.00016 in v -- they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture, so print registration and capture scale do not have to be assumed."
+      },
+      "notes": "Two dark quarter discs placed apex to apex. Each contributes the two straight edges that meet at its apex, so the pair yields four slanted edges -- two per image axis, of opposite polarity, which is what separates a displacement between color records from a difference in the feature's apparent size. The arc is not an edge and is not used."
+    },
+    {
+      "region_id": "module_br",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "BR",
+        "discs": [
+          {
+            "center": [
+              1.1067,
+              0.8817
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          },
+          {
+            "center": [
+              0.8933,
+              1.1183
+            ],
+            "half_size": [
+              0.0843,
+              0.1084
+            ],
+            "tilt_deg": 4.95
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. The wedge grids were derived from their own internal step boundaries, whose spacings came out 370-384 px about a mean of 375, and the two blocks agree on pitch to 0.00004 in u and 0.00016 in v -- they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture, so print registration and capture scale do not have to be assumed."
+      },
+      "notes": "Two dark quarter discs placed apex to apex. Each contributes the two straight edges that meet at its apex, so the pair yields four slanted edges -- two per image axis, of opposite polarity, which is what separates a displacement between color records from a difference in the feature's apparent size. The arc is not an edge and is not used."
+    },
+    {
+      "region_id": "ruler_metric_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "u",
+        "bounds_relative": [
+          0.2551,
+          -0.0891,
+          0.587,
+          -0.0544
+        ],
+        "printed_label": "1 division = 1.0 mm",
+        "measured_note": "Measured band, from a capture rectified to the fiducial quad. It only has to straddle the ticks: the pitch is fitted through every tick in the band, and anything that is not on the comb -- a label, a speck, a feature the band's edge cuts in half -- is rejected rather than averaged in."
+      },
+      "notes": "Metric rule above the chart's top edge, 1 mm divisions, longer ticks every 5 and 10."
+    },
+    {
+      "region_id": "ruler_imperial_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "u",
+        "bounds_relative": [
+          0.255,
+          -0.04,
+          0.5869,
+          0.0075
+        ],
+        "printed_label": "1 division = .0625 inch",
+        "measured_note": "Measured band, from a capture rectified to the fiducial quad. It only has to straddle the ticks: the pitch is fitted through every tick in the band, and anything that is not on the comb -- a label, a speck, a feature the band's edge cuts in half -- is rejected rather than averaged in."
+      },
+      "notes": "Imperial rule below the metric one, 1/16 inch divisions. Independently engraved from the metric scale, so the two agreeing is a real check on the reading rather than a formality."
+    },
+    {
+      "region_id": "ruler_metric_right",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "v",
+        "bounds_relative": [
+          1.056,
+          0.29,
+          1.084,
+          0.71
+        ],
+        "printed_label": "1 division = 1.0 mm",
+        "measured_note": "Band chosen by sweeping it over the printed feature and keeping the fit with the lowest comb residual, from a capture rectified to the fiducial quad. All four rules agree on the sampling rate to 0.08%."
+      },
+      "notes": "The same metric rule again, printed down the right-hand side -- twenty-four divisions, the longest comb on this chart. Two rules per axis is what lets geometric distortion see the field vary rather than only the scale."
+    },
+    {
+      "region_id": "ruler_imperial_right",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "v",
+        "bounds_relative": [
+          1.098,
+          0.27,
+          1.126,
+          0.73
+        ],
+        "printed_label": "1 division = .0625 inch",
+        "measured_note": "Band chosen by sweeping it over the printed feature and keeping the fit with the lowest comb residual, from a capture rectified to the fiducial quad. All four rules agree on the sampling rate to 0.08%."
+      },
+      "notes": "The imperial rule beside it, seventeen divisions. Its ticks hang toward the chart from a baseline just outside the metric rule's, so the two bands sit on opposite sides of their own lines and must not be widened into each other."
+    }
+  ],
+  "patches": [
+    {
+      "patch_id": "L1",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 1
+    },
+    {
+      "patch_id": "L2",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "L3",
+      "grid_position": {
+        "row": 2,
+        "col": 1
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "L4",
+      "grid_position": {
+        "row": 3,
+        "col": 1
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "L5",
+      "grid_position": {
+        "row": 4,
+        "col": 1
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    },
+    {
+      "patch_id": "L6",
+      "grid_position": {
+        "row": 5,
+        "col": 1
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 11
+    },
+    {
+      "patch_id": "L7",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 13
+    },
+    {
+      "patch_id": "L8",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 15
+    },
+    {
+      "patch_id": "L9",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 17
+    },
+    {
+      "patch_id": "L10",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 19
+    },
+    {
+      "patch_id": "L11",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 21
+    },
+    {
+      "patch_id": "L12",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 23
+    },
+    {
+      "patch_id": "R1",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    },
+    {
+      "patch_id": "R2",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "R3",
+      "grid_position": {
+        "row": 2,
+        "col": 1
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "R4",
+      "grid_position": {
+        "row": 3,
+        "col": 1
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "R5",
+      "grid_position": {
+        "row": 4,
+        "col": 1
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 10
+    },
+    {
+      "patch_id": "R6",
+      "grid_position": {
+        "row": 5,
+        "col": 1
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 12
+    },
+    {
+      "patch_id": "R7",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 14
+    },
+    {
+      "patch_id": "R8",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 16
+    },
+    {
+      "patch_id": "R9",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 18
+    },
+    {
+      "patch_id": "R10",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 20
+    },
+    {
+      "patch_id": "R11",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 22
+    },
+    {
+      "patch_id": "R12",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 24
+    }
+  ],
+  "reference_data": {
+    "opendice_names": [
+      ["1", "L1"],
+      ["2", "L2"],
+      ["3", "L3"],
+      ["4", "L4"],
+      ["5", "L5"],
+      ["6", "L6"],
+      ["7", "L7"],
+      ["8", "L8"],
+      ["9", "L9"],
+      ["10", "L10"],
+      ["11", "L11"],
+      ["12", "L12"],
+      ["13", "R1"],
+      ["14", "R2"],
+      ["15", "R3"],
+      ["16", "R4"],
+      ["17", "R5"],
+      ["18", "R6"],
+      ["19", "R7"],
+      ["20", "R8"],
+      ["21", "R9"],
+      ["22", "R10"],
+      ["23", "R11"],
+      ["24", "R12"]
+    ],
+    "opendice_names_notes": "OpenDICE's profile numbers the two ladders straight through: Patch1-12 is the left ladder, Patch13-24 the right, each lightest first.",
+    "source_type": "per_unit_file",
+    "import_format": "cgats",
+    "required": true,
+    "nominal_values": {
+      "file": "isa_transmissive_4x5_v1_nominal.txt",
+      "basis": "manufacturer_nominal",
+      "source": "Density ladder from OpenDICE's Profile_Negative4x5.txt, published by the Library of Congress. Its accompanying sample image is this same chart as a negative, which is how the pairing was confirmed.",
+      "covers": "Twelve densities, D 0.05 to 2.25, applied to both wedges. Converted to aim L*a*b* by tools/generate_isa_transmissive_nominal.py.",
+      "notes": "The published data is DENSITY ONLY. Turning it into aim L* needs an anchor, since a density ladder carries no lightness of its own, and the anchor used is FADGI's own transparency highlight aim of 96 L*. a* = b* = 0 restates ISA's claim that the scales are spectrally neutral. Both are choices about rendering intent rather than measurements, which is a second reason -- on top of these being model rather than unit values -- that a run against them is advisory. This target has no per-unit file and ISA sell no measured version of it."
+    },
+    "notes": "A per-unit file is preferred and is used whenever one is supplied. None exists for this target, so the nominal values above are used and the run is flagged."
+  },
+  "metric_defaults": {
+    "tonal_response": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Twenty-four patches, but a TWELVE-step ladder measured at two field positions: the left and right wedges carry the same twelve aims. Ramp positions interleave them (L1, R1, L2, R2, ...) because the order is derived from reference lightness and the pairs are equal. Running the metric over both wedges is deliberate -- a tone error at one side of the field is a tone error -- but the OECF curve should be read as twelve steps sampled twice, not as twenty-four."
+    },
+    "white_balance": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Delta E(a*b*) against a neutral aim. On a target whose scales are spectrally neutral by design this measures whether the system renders a neutral as a neutral, which is what the metric is for."
+    }
+  },
+  "notes": "GEOMETRY MEASURED FROM ONE CAPTURE, UNVALIDATED AGAINST A REFERENCE FILE. No per-unit measurement exists for this target and none is sold, so the patch-id convention here (L1-L12 lightest-first down the right column of the left wedge, then R1-R12 the same for the right wedge) is Deltachrome's, not ISA's. OpenDICE numbers the same patches 1-24 with the ladder repeated and does not say which block is which; since both blocks carry identical aims, the two conventions give identical results. The chart carries no color patches at all, which is why color_accuracy is declared as not capable rather than merely absent -- FADGI's transparency category specifies no color accuracy metric either, on the grounds that film content is not scene referred. The fiducial extent in mm is unmeasured, so sampling frequency cannot be derived; the printed rulers make it measurable per specimen.",
+  "dimensional_reference": {
+    "available": true,
+    "summary": "Four printed rules -- a metric and an imperial scale above the chart and the same pair down the right-hand side. Two per axis, which is what geometric distortion needs, and two units per position, which is what keeps a difference between engravings from being read as anisotropy. They agree on the sampling rate to 0.08%: 78.78, 78.79, 78.84 and 78.82 px/mm.",
+    "notes": "The right-hand pair gives each axis two rules, which is what geometric distortion needs."
+  }
+}

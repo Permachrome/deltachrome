@@ -1,0 +1,573 @@
+{
+  "$schema_version": 1,
+  "target_id": "microform_35mm_positive_v1",
+  "display_name": "ISA Microfilm Preservation Target (positive)",
+  "manufacturer": "Image Science Associates",
+  "target_type": "transmissive_neutral_target",
+  "physical_size_mm": null,
+  "fiducial_extent_mm": {
+    "width": 25.4,
+    "height": 25.4
+  },
+  "capabilities": [
+    "tonal_response",
+    "sfr",
+    "color_registration",
+    "reproduction_scale",
+    "geometric_distortion"
+  ],
+  "not_capable_of": [
+    "color_accuracy",
+    "white_balance",
+    "lightness_uniformity",
+    "flat_field"
+  ],
+  "fiducials": {
+    "method": "corner_crosses",
+    "corner_markers": [
+      {
+        "id": "TL",
+        "relative_position": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "TR",
+        "relative_position": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "BR",
+        "relative_position": [
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "id": "BL",
+        "relative_position": [
+          0.0,
+          1.0
+        ]
+      }
+    ],
+    "notes": "The intersection of each of the four printed crosses, clockwise from top-left in the target's own orientation. They are the only marks on the chart whose position is defined by two lines crossing rather than by an outline, which is what makes them placeable to a pixel. The concentric rings inboard of them are not used -- see the registration_bullseyes region."
+  },
+  "regions": [
+    {
+      "region_id": "ladder_upper_left",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 5,
+        "columns": 6,
+        "row_labels": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "col_labels": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.09807,
+          "height": 0.09817
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.09807,
+          "vertical": 0.09817
+        },
+        "grid_origin_relative": [
+          0.11229,
+          0.10438
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad the four corner crosses bound."
+      },
+      "notes": "Upper-left density ladder: six steps left to right along the top arm, four more down the left arm below the first. TEN STEPS IN AN L, DECLARED AS A 5 x 6 LATTICE WITH TEN OF ITS THIRTY CELLS OCCUPIED. The ladder is not a rectangle: it runs six steps along one arm and five down the other, sharing the corner cell. A lattice with holes describes that exactly and needs no new geometry -- the patches list says which cells exist, as it does for the 168 occupied cells of the ISA FADGI - ISO 19264's 14 x 21. Steps abut, so patch size equals patch spacing and the ROI inset keeps the sample clear of the boundaries."
+    },
+    {
+      "region_id": "ladder_lower_right",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 5,
+        "columns": 6,
+        "row_labels": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "col_labels": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.09722,
+          "height": 0.0975
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.09722,
+          "vertical": 0.0975
+        },
+        "grid_origin_relative": [
+          0.30833,
+          0.40208
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad the four corner crosses bound."
+      },
+      "notes": "Lower-right density ladder, the upper-left one rotated 180 degrees about the chart's centre: five steps down the right arm, five more leftward along the bottom arm, sharing the corner. TEN STEPS IN AN L, DECLARED AS A 5 x 6 LATTICE WITH TEN OF ITS THIRTY CELLS OCCUPIED. The ladder is not a rectangle: it runs six steps along one arm and five down the other, sharing the corner cell. A lattice with holes describes that exactly and needs no new geometry -- the patches list says which cells exist, as it does for the 168 occupied cells of the ISA FADGI - ISO 19264's 14 x 21. Steps abut, so patch size equals patch spacing and the ROI inset keeps the sample clear of the boundaries."
+    },
+    {
+      "region_id": "slanted_rectangle",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "straight_edges",
+        "straight_edges": [
+          {
+            "id": "top",
+            "start": [
+              0.31087,
+              0.30706
+            ],
+            "end": [
+              0.69993,
+              0.34122
+            ]
+          },
+          {
+            "id": "right",
+            "start": [
+              0.69993,
+              0.34122
+            ],
+            "end": [
+              0.66786,
+              0.70759
+            ]
+          },
+          {
+            "id": "bottom",
+            "start": [
+              0.66786,
+              0.70759
+            ],
+            "end": [
+              0.2788,
+              0.67337
+            ]
+          },
+          {
+            "id": "left",
+            "start": [
+              0.2788,
+              0.67337
+            ],
+            "end": [
+              0.31087,
+              0.30706
+            ]
+          }
+        ],
+        "measured_note": "The four sides fitted individually on the positive to 0.13-0.18 px rms, at 5.017, 95.003, 185.027 and 274.996 degrees -- so the figure is square to 0.03 degrees and tilted 5.02. Its sides are 937.3 and 882.6 rectified px, an aspect of 1.062, which is the printed figure and not a rectification error: the chart's own rules put the cross quad at 25.2 mm across and 25.4 down, the same scale in both axes to 0.8%."
+      },
+      "notes": "One tilted rectangle near the chart's centre, split into two triangles by a wide diagonal band. DECLARED AS FOUR SEPARATE STRAIGHT EDGES RATHER THAN AS A ROTATED SQUARE, and the reason is the band: a rotated square is refined by thresholding the feature out of its surround and taking the minimum-area rectangle of what is left, and here 'what is left' is two disjoint triangles plus the chart's corner-to-corner white rule, which crosses the window end to end. That box came out wrong enough to give peak modulations of 21 and 60 and overshoots in the hundreds of percent, and to lose two of the four edges entirely. Declared one at a time, each side is refined by its own perpendicular profiles and every one of the four comes back. The figure is genuinely not a closed shape on this chart -- the top and left sides belong to the upper-left triangle and the right and bottom to the lower-right one -- so describing it as four edges is also the more truthful description. The band's own boundaries are not used: they run at 45 degrees with the white rule inside them."
+    },
+    {
+      "region_id": "ruler_imperial_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 2.54,
+        "axis": "u",
+        "bounds_relative": [
+          -0.0746,
+          -0.129,
+          1.04,
+          -0.094
+        ],
+        "printed_label": "ONE DIV = 0.10 IN",
+        "measured_note": "Along the top of the printed frame, ticks hanging below it. 241.8 rectified px per division against the left rule's 239.9, which is the same 0.1 inch to 0.8%."
+      },
+      "notes": "Imperial rule along the top edge."
+    },
+    {
+      "region_id": "ruler_metric_bottom",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "u",
+        "bounds_relative": [
+          -0.1683,
+          1.093,
+          1.1638,
+          1.139
+        ],
+        "printed_label": "ONE DIV = 1.0 MM.",
+        "measured_note": "Along the bottom of the frame, ticks rising from it. 94.40 rectified px per division: 2400 / 94.40 = 25.42 mm for the cross quad, against 25.42 from the top rule's inches."
+      },
+      "notes": "Metric rule along the bottom edge."
+    },
+    {
+      "region_id": "ruler_imperial_left",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 2.54,
+        "axis": "v",
+        "bounds_relative": [
+          -0.317,
+          -0.0254,
+          -0.28,
+          0.9946
+        ],
+        "printed_label": "ONE DIV = 0.10 IN",
+        "measured_note": "Down the left of the frame. Two rules per axis at opposite edges is what lets geometric distortion see the field vary rather than only the scale."
+      },
+      "notes": "Imperial rule down the left edge."
+    },
+    {
+      "region_id": "ruler_metric_right",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "v",
+        "bounds_relative": [
+          1.265,
+          0.095,
+          1.304,
+          1.0196
+        ],
+        "printed_label": "ONE DIV = 1.0MM.",
+        "measured_note": "Down the right of the frame, mirroring the bottom rule's unit as the left mirrors the top's."
+      },
+      "notes": "Metric rule down the right edge."
+    },
+    {
+      "region_id": "registration_bullseyes",
+      "kind": "marker",
+      "geometry": {
+        "feature": "concentric_rings",
+        "positions": [
+          [
+            0.125,
+            0.0
+          ],
+          [
+            0.875,
+            0.0
+          ],
+          [
+            0.125,
+            1.0
+          ],
+          [
+            0.875,
+            1.0
+          ]
+        ]
+      },
+      "notes": "Four concentric-ring marks, one inboard of each corner cross and on the same row. Measured at exactly +/-0.375 from the chart's centre in u and on the cross rows in v. Not used as fiducials: a ring's centre is harder to place by eye than a cross's intersection, and the crosses are further apart, so an equal placement error there costs less."
+    },
+    {
+      "region_id": "resolution_wedge_left",
+      "kind": "marker",
+      "geometry": {
+        "feature": "bar_pattern_array",
+        "bounds_relative": [
+          -0.2388,
+          0.1483,
+          -0.0638,
+          0.8025
+        ],
+        "printed_label": "A B C -- VALUES IN 100X DPI AT 10X MAGNIFICATION"
+      },
+      "notes": "Three columns of bar patterns, A B C, against a scale numbered 1 to 6. Declared so the definition does not misrepresent the chart as lacking its principal resolution feature; no metric here reads a bar pattern, and SFR comes from the tilted rectangle instead -- which is the better measurement, being a continuous curve rather than the last group an observer says they can separate."
+    },
+    {
+      "region_id": "resolution_wedge_right",
+      "kind": "marker",
+      "geometry": {
+        "feature": "bar_pattern_array",
+        "bounds_relative": [
+          1.0646,
+          0.1992,
+          1.2379,
+          0.8517
+        ],
+        "printed_label": "A B C -- VALUES IN 100X DPI AT 10X MAGNIFICATION"
+      },
+      "notes": "The same array again on the right of the chart, so resolution can be judged at two field positions."
+    }
+  ],
+  "patches": [
+    {
+      "patch_id": "UL1",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 19
+    },
+    {
+      "patch_id": "UL2",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 17
+    },
+    {
+      "patch_id": "UL3",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 15
+    },
+    {
+      "patch_id": "UL4",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 13
+    },
+    {
+      "patch_id": "UL5",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 11
+    },
+    {
+      "patch_id": "UL6",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    },
+    {
+      "patch_id": "UL7",
+      "grid_position": {
+        "row": 0,
+        "col": 2
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "UL8",
+      "grid_position": {
+        "row": 0,
+        "col": 3
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "UL9",
+      "grid_position": {
+        "row": 0,
+        "col": 4
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "UL10",
+      "grid_position": {
+        "row": 0,
+        "col": 5
+      },
+      "region": "ladder_upper_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 1
+    },
+    {
+      "patch_id": "LR1",
+      "grid_position": {
+        "row": 0,
+        "col": 5
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 20
+    },
+    {
+      "patch_id": "LR2",
+      "grid_position": {
+        "row": 1,
+        "col": 5
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 18
+    },
+    {
+      "patch_id": "LR3",
+      "grid_position": {
+        "row": 2,
+        "col": 5
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 16
+    },
+    {
+      "patch_id": "LR4",
+      "grid_position": {
+        "row": 3,
+        "col": 5
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 14
+    },
+    {
+      "patch_id": "LR5",
+      "grid_position": {
+        "row": 4,
+        "col": 5
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 12
+    },
+    {
+      "patch_id": "LR6",
+      "grid_position": {
+        "row": 4,
+        "col": 4
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 10
+    },
+    {
+      "patch_id": "LR7",
+      "grid_position": {
+        "row": 4,
+        "col": 3
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "LR8",
+      "grid_position": {
+        "row": 4,
+        "col": 2
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "LR9",
+      "grid_position": {
+        "row": 4,
+        "col": 1
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "LR10",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "region": "ladder_lower_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    }
+  ],
+  "reference_data": {
+    "opendice_names": [
+      ["1", "UL1"],
+      ["2", "UL2"],
+      ["3", "UL3"],
+      ["4", "UL4"],
+      ["5", "UL5"],
+      ["6", "UL6"],
+      ["7", "UL7"],
+      ["8", "UL8"],
+      ["9", "UL9"],
+      ["10", "UL10"],
+      ["11", "LR1"],
+      ["12", "LR2"],
+      ["13", "LR3"],
+      ["14", "LR4"],
+      ["15", "LR5"],
+      ["16", "LR6"],
+      ["17", "LR7"],
+      ["18", "LR8"],
+      ["19", "LR9"],
+      ["20", "LR10"]
+    ],
+    "opendice_names_notes": "OpenDICE's profile numbers the two L-shaped ladders straight through: Patch1-10 is the upper-left L, Patch11-20 the lower-right.",
+    "source_type": "per_unit_file",
+    "import_format": "cgats",
+    "required": true,
+    "nominal_values": {
+      "file": "microform_35mm_positive_v1_nominal.txt",
+      "basis": "manufacturer_nominal",
+      "source": "OpenDICE's density ladder for the positive of this chart.",
+      "covers": "All ten steps, applied to both ladders. Density only; the L* aims are derived.",
+      "notes": "THE POSITIVE AND THE NEGATIVE OF THIS CHART DO NOT SHARE A REFERENCE FILE. They are different specimens with different densities, and the two files' ladders run in opposite directions; running either against the other's file inverts the ramp while still sampling every patch."
+    },
+    "notes": "A per-unit file is preferred and used whenever one is supplied. None is published for this chart, which Image Science Associates had discontinued by 2021."
+  },
+  "dimensional_reference": {
+    "available": true,
+    "summary": "Four printed rules, one along each edge of the frame: 0.10 inch per division top and left, 1.0 mm per division bottom and right. Two per axis in two units, which cross-check each other and give geometric distortion the field variation it needs. fiducial_extent_mm is a fallback for a capture whose rules cannot be read: the four crosses measure 1.000 inch apart in both axes on both OpenDICE specimens -- 3157.2 px in a file scanned at 3156 ppi, and 3000.3 px in one scanned at 3000 -- which is a designed dimension confirmed twice, not a reading from one chart. It would not survive a reduced copy of the chart; the printed rules would, so they stay the authority."
+  },
+  "metric_defaults": {
+    "tonal_response": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Twenty patches, a TEN-step ladder measured at two field positions. Ramp positions interleave the ladders because the order is derived from reference lightness and the pairs are equal."
+    }
+  },
+  "notes": "GEOMETRY MEASURED FROM OpenDICE's positive capture and confirmed on its negative. Image Science Associates' Microfilm Preservation Target, discontinued by 2021: four corner crosses one inch apart, four concentric-ring marks, two L-shaped ten-step density ladders, a tilted rectangle giving four slanted edges, bar-pattern resolution arrays left and right labelled 'VALUES IN 100X DPI AT 10X MAGNIFICATION', a corner-to-corner diagonal, and a printed rule along each of the four edges. It carries no colour patches and nobody has published a claim that its neutrals are spectrally neutral, so it declares neither colour accuracy nor white balance -- unlike the ISA transmissive targets, whose manufacturer does make that claim. THIS DEFINITION IS FOR THE POSITIVE. Densities descend with patch number on it, so UL1 is the densest step and UL10 the clear one; the negative's definition places the same physical cells and numbers them the same way, and its ladder ascends. The two differ only in which nominal file they carry, which is exactly why they are two definitions rather than one: nothing else would stop a positive being scored against the negative's ladder. EDGES MAY CLIP. The slanted edges are cut between a near-black field and a near-white one, far more contrast than a reflective chart's 58 levels, so on a capture with any exposure error either plateau can hit the encoding limit. The response is normalized against those levels, so a clipped plateau rescales the whole MTF curve rather than adding noise. `peak_modulation` and `overshoot` per edge, and the ROI clipping flag, show it; check them before believing a bad read."
+}

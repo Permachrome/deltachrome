@@ -1,0 +1,46 @@
+CGATS.17
+
+ORIGINATOR	"Derived from OpenDICE Profile_Negative4x5.txt (Library of Congress)"
+DESCRIPTOR	"ISA transmissive film target 4x5 -- manufacturer nominal aim values"
+MANUFACTURER	"Image Science Associates"
+ILLUMINATION_NAME	"D50"
+OBSERVER_ANGLE	"2"
+KEYWORD	"DELTACHROME_REFERENCE_BASIS"
+DELTACHROME_REFERENCE_BASIS	"manufacturer_nominal"
+KEYWORD	"DELTACHROME_NOMINAL_SOURCE"
+DELTACHROME_NOMINAL_SOURCE	"Density ladder from OpenDICE's Profile_Negative4x5.txt, published by the Library of Congress at digitizationguidelines.gov. Confirmed to be this target by its accompanying sample image 'Negative 4x5.tif', which is the same chart -- ten quarter-disc features at five pair positions, two 2x6 wedges, the diagonal, the ISA logo and the Don Williams signature -- as a negative."
+KEYWORD	"DELTACHROME_NOMINAL_CAVEAT"
+DELTACHROME_NOMINAL_CAVEAT	"Manufacturer nominal aim values for the model, not a measurement of any individual chart. Two further steps sit between this file and a measurement, and both are choices rather than arithmetic: the published data is DENSITY ONLY, anchored here so the lightest step reads L* 96 -- FADGI's own transparency highlight aim -- because a density ladder carries no lightness of its own; and a* = b* = 0 restates the manufacturer's claim that the scales are spectrally neutral as an aim. Density describes the film; L* describes the appearance of a reproduction, and for a transmissive original the mapping between them IS the tone response being measured. Treat tone response against this file as advisory of a rendering intent, not as conformance."
+
+NUMBER_OF_FIELDS	5
+BEGIN_DATA_FORMAT
+SAMPLE_NAME	LAB_L	LAB_A	LAB_B	D
+END_DATA_FORMAT
+
+NUMBER_OF_SETS	24
+BEGIN_DATA
+L1	96.000	0.000	0.000	0.05
+L2	90.141	0.000	0.000	0.12
+L3	84.589	0.000	0.000	0.19
+L4	74.341	0.000	0.000	0.33
+L5	64.516	0.000	0.000	0.48
+L6	50.971	0.000	0.000	0.72
+L7	43.231	0.000	0.000	0.88
+L8	32.145	0.000	0.000	1.15
+L9	22.835	0.000	0.000	1.43
+L10	15.325	0.000	0.000	1.71
+L11	8.130	0.000	0.000	2.05
+L12	5.130	0.000	0.000	2.25
+R1	96.000	0.000	0.000	0.05
+R2	90.141	0.000	0.000	0.12
+R3	84.589	0.000	0.000	0.19
+R4	74.341	0.000	0.000	0.33
+R5	64.516	0.000	0.000	0.48
+R6	50.971	0.000	0.000	0.72
+R7	43.231	0.000	0.000	0.88
+R8	32.145	0.000	0.000	1.15
+R9	22.835	0.000	0.000	1.43
+R10	15.325	0.000	0.000	1.71
+R11	8.130	0.000	0.000	2.05
+R12	5.130	0.000	0.000	2.25
+END_DATA

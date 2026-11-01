@@ -1,0 +1,1425 @@
+{
+  "": 1,
+  "target_id": "isa_golden_thread_dlt_v1",
+  "display_name": "ISA Golden Thread Device Level Target",
+  "manufacturer": "Image Science Associates",
+  "target_type": "reflective_device_level_target",
+  "physical_size_mm": null,
+  "capabilities": [
+    "color_accuracy",
+    "color_registration",
+    "geometric_distortion",
+    "lightness_uniformity",
+    "reproduction_scale",
+    "sfr",
+    "tonal_response",
+    "white_balance"
+  ],
+  "not_capable_of": [],
+  "fiducials": {
+    "method": "printed_discs",
+    "corner_markers": [
+      {
+        "id": "TOP",
+        "relative_position": [
+          0.57262,
+          -0.12659
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "RIGHT",
+        "relative_position": [
+          1.07158,
+          0.37147
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "BOTTOM",
+        "relative_position": [
+          0.5012,
+          1.11854
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "LEFT",
+        "relative_position": [
+          -0.06911,
+          0.49588
+        ],
+        "nearest_patch": null
+      }
+    ],
+    "notes": "Place by the centres of the four solid dark CIRCLES, which sit as a DIAMOND about the chart's centre -- one above, one below, one to each side -- not as a rectangle at its corners. Take them in that cycle: top, right, bottom, left. This is also what the Golden Thread software keys on.\n\nThe discs are chosen because they can be found, not because a diamond is better conditioned: measured by perturbation it is about 25% worse than a rectangle of the corner modules (2.46 px against 2.01 px across the chart for one pixel of fiducial error), because a diamond reaches the corners by extrapolation. `tools/locate_printed_fiducials.py discs` locates all four across twelve thresholds with the centroids holding to 0.16 px, because a disc fills pi/4 of its bounding box and nothing else on this chart does. Refinement then closes the gap: seeded with 8 px of error the placement recovers to 0.13 px from the ten declared features, and from 20 px to 0.11-0.14 px.\n\nThe relative frame's corners are the four corner modules' white 'dots per inch' fields; the discs are declared as four points in that frame.",
+    "superseded": "The relative frame's corners: the centres of the white 'dots per inch' squares in the four corner modules, at relative (0,0), (1,0), (1,1) and (0,1). `tools/locate_dlt_modules.py` measures them, and is how the disc positions above were converted into this frame."
+  },
+  "regions": [
+    {
+      "region_id": "color_right",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 9,
+        "columns": 1,
+        "row_labels": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "col_labels": [
+          ""
+        ],
+        "patch_id_format": "{row_label}",
+        "patch_size_relative": {
+          "width": 0.02917,
+          "height": 0.06271
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.02917,
+          "vertical": 0.06271
+        },
+        "grid_origin_relative": [
+          0.81125,
+          0.20929
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner modules' dpi-pattern squares."
+      },
+      "notes": "Patches 1-9, stacked vertically."
+    },
+    {
+      "region_id": "highlight",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 6,
+        "columns": 1,
+        "row_labels": [
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "col_labels": [
+          ""
+        ],
+        "patch_id_format": "{row_label}",
+        "patch_size_relative": {
+          "width": 0.03042,
+          "height": 0.06225
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.03042,
+          "vertical": 0.06225
+        },
+        "grid_origin_relative": [
+          0.71833,
+          0.30643
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner modules' dpi-pattern squares."
+      },
+      "notes": "Patches 10-15, stacked vertically."
+    },
+    {
+      "region_id": "gray",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 6,
+        "columns": 1,
+        "row_labels": [
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21"
+        ],
+        "col_labels": [
+          ""
+        ],
+        "patch_id_format": "{row_label}",
+        "patch_size_relative": {
+          "width": 0.02792,
+          "height": 0.06236
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.02792,
+          "vertical": 0.06236
+        },
+        "grid_origin_relative": [
+          0.31333,
+          0.30643
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner modules' dpi-pattern squares."
+      },
+      "notes": "Patches 16-21, stacked vertically."
+    },
+    {
+      "region_id": "color_left",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 9,
+        "columns": 1,
+        "row_labels": [
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "col_labels": [
+          ""
+        ],
+        "patch_id_format": "{row_label}",
+        "patch_size_relative": {
+          "width": 0.03083,
+          "height": 0.06246
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.03083,
+          "vertical": 0.06246
+        },
+        "grid_origin_relative": [
+          0.21875,
+          0.21286
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner modules' dpi-pattern squares."
+      },
+      "notes": "Patches 22-30, stacked vertically."
+    },
+    {
+      "region_id": "module_tl",
+      "kind": "slanted_edge",
+      "geometry": {
+        "position": "TL",
+        "center": [
+          0.00073,
+          -0.00183
+        ],
+        "half_size": [
+          0.08912,
+          0.1556
+        ],
+        "tilt_deg": 4.601,
+        "edges": 4,
+        "measured_note": "Measured off a capture. The five dark mounts come out 760.70 px square with a spread of 3.23 and a standard deviation of 0.91, tilted 4.601 degrees with a spread of 0.172. Refinement's residual on this chart is 0.23 px, and a placement seeded 23 px out recovers to 0.10 px."
+      },
+      "notes": "Rotated dark square whose four edges are slanted edges, over a printed 'dots per inch (optical)' visual resolution pattern, with four light registration squares at the module corners and cm/inch rulers on all four sides. The square is declared by centre, half-size and tilt, from which four edge ROIs are cut."
+    },
+    {
+      "region_id": "module_tr",
+      "kind": "slanted_edge",
+      "geometry": {
+        "position": "TR",
+        "center": [
+          1.00061,
+          -0.00241
+        ],
+        "half_size": [
+          0.08912,
+          0.1556
+        ],
+        "tilt_deg": 4.601,
+        "edges": 4,
+        "measured_note": "Measured off a capture. The five dark mounts come out 760.70 px square with a spread of 3.23 and a standard deviation of 0.91, tilted 4.601 degrees with a spread of 0.172. Refinement's residual on this chart is 0.23 px, and a placement seeded 23 px out recovers to 0.10 px."
+      },
+      "notes": "Rotated dark square whose four edges are slanted edges, over a printed 'dots per inch (optical)' visual resolution pattern, with four light registration squares at the module corners and cm/inch rulers on all four sides. The square is declared by centre, half-size and tilt, from which four edge ROIs are cut."
+    },
+    {
+      "region_id": "module_br",
+      "kind": "slanted_edge",
+      "geometry": {
+        "position": "BR",
+        "center": [
+          1.00071,
+          0.99763
+        ],
+        "half_size": [
+          0.08912,
+          0.1556
+        ],
+        "tilt_deg": 4.601,
+        "edges": 4,
+        "measured_note": "Measured off a capture. The five dark mounts come out 760.70 px square with a spread of 3.23 and a standard deviation of 0.91, tilted 4.601 degrees with a spread of 0.172. Refinement's residual on this chart is 0.23 px, and a placement seeded 23 px out recovers to 0.10 px."
+      },
+      "notes": "Rotated dark square whose four edges are slanted edges, over a printed 'dots per inch (optical)' visual resolution pattern, with four light registration squares at the module corners and cm/inch rulers on all four sides. The square is declared by centre, half-size and tilt, from which four edge ROIs are cut."
+    },
+    {
+      "region_id": "module_bl",
+      "kind": "slanted_edge",
+      "geometry": {
+        "position": "BL",
+        "center": [
+          0.00092,
+          0.99824
+        ],
+        "half_size": [
+          0.08912,
+          0.1556
+        ],
+        "tilt_deg": 4.601,
+        "edges": 4,
+        "measured_note": "Measured off a capture. The five dark mounts come out 760.70 px square with a spread of 3.23 and a standard deviation of 0.91, tilted 4.601 degrees with a spread of 0.172. Refinement's residual on this chart is 0.23 px, and a placement seeded 23 px out recovers to 0.10 px."
+      },
+      "notes": "Rotated dark square whose four edges are slanted edges, over a printed 'dots per inch (optical)' visual resolution pattern, with four light registration squares at the module corners and cm/inch rulers on all four sides. The square is declared by centre, half-size and tilt, from which four edge ROIs are cut."
+    },
+    {
+      "region_id": "module_center",
+      "kind": "slanted_edge",
+      "geometry": {
+        "position": "CENTER",
+        "center": [
+          0.50089,
+          0.49768
+        ],
+        "half_size": [
+          0.08912,
+          0.1556
+        ],
+        "tilt_deg": 4.601,
+        "edges": 4,
+        "measured_note": "Measured off a capture. The five dark mounts come out 760.70 px square with a spread of 3.23 and a standard deviation of 0.91, tilted 4.601 degrees with a spread of 0.172. Refinement's residual on this chart is 0.23 px, and a placement seeded 23 px out recovers to 0.10 px."
+      },
+      "notes": "Rotated dark square whose four edges are slanted edges, over a printed 'dots per inch (optical)' visual resolution pattern, with four light registration squares at the module corners and cm/inch rulers on all four sides. The square is declared by centre, half-size and tilt, from which four edge ROIs are cut."
+    },
+    {
+      "region_id": "uniformity_tl",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 2,
+        "columns": 2,
+        "row_labels": [
+          1,
+          2
+        ],
+        "col_labels": [
+          "a",
+          "b"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.04042,
+          "height": 0.07061
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.23588,
+          "vertical": 0.41288
+        },
+        "grid_origin_relative": [
+          -0.13815,
+          -0.24175
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner modules' dpi-pattern squares."
+      },
+      "notes": "The four light registration squares at the corners of the tl module. Ids run 1 top-left, 2 top-right, 3 bottom-left, 4 bottom-right."
+    },
+    {
+      "region_id": "uniformity_tr",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 2,
+        "columns": 2,
+        "row_labels": [
+          1,
+          2
+        ],
+        "col_labels": [
+          "a",
+          "b"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.04042,
+          "height": 0.07061
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.23588,
+          "vertical": 0.41288
+        },
+        "grid_origin_relative": [
+          0.86185,
+          -0.24175
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner modules' dpi-pattern squares."
+      },
+      "notes": "The four light registration squares at the corners of the tr module. Ids run 1 top-left, 2 top-right, 3 bottom-left, 4 bottom-right."
+    },
+    {
+      "region_id": "uniformity_center",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 2,
+        "columns": 2,
+        "row_labels": [
+          1,
+          2
+        ],
+        "col_labels": [
+          "a",
+          "b"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.04042,
+          "height": 0.07061
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.23588,
+          "vertical": 0.41288
+        },
+        "grid_origin_relative": [
+          0.36185,
+          0.25826
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner modules' dpi-pattern squares."
+      },
+      "notes": "The four light registration squares at the corners of the center module. Ids run 1 top-left, 2 top-right, 3 bottom-left, 4 bottom-right."
+    },
+    {
+      "region_id": "uniformity_bl",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 2,
+        "columns": 2,
+        "row_labels": [
+          1,
+          2
+        ],
+        "col_labels": [
+          "a",
+          "b"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.04042,
+          "height": 0.07061
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.23588,
+          "vertical": 0.41288
+        },
+        "grid_origin_relative": [
+          -0.13815,
+          0.75826
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner modules' dpi-pattern squares."
+      },
+      "notes": "The four light registration squares at the corners of the bl module. Ids run 1 top-left, 2 top-right, 3 bottom-left, 4 bottom-right."
+    },
+    {
+      "region_id": "uniformity_br",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 2,
+        "columns": 2,
+        "row_labels": [
+          1,
+          2
+        ],
+        "col_labels": [
+          "a",
+          "b"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.04042,
+          "height": 0.07061
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.23588,
+          "vertical": 0.41288
+        },
+        "grid_origin_relative": [
+          0.86185,
+          0.75826
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner modules' dpi-pattern squares."
+      },
+      "notes": "The four light registration squares at the corners of the br module. Ids run 1 top-left, 2 top-right, 3 bottom-left, 4 bottom-right."
+    },
+    {
+      "region_id": "ruler_tl_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "u",
+        "bounds_relative": [
+          -0.06242,
+          -0.24829,
+          0.06502,
+          -0.24206
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Centimeter rule on the top of the TL module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_tl_bottom",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "u",
+        "bounds_relative": [
+          -0.06242,
+          0.21883,
+          0.06502,
+          0.24145
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Inch rule on the bottom of the TL module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_tl_left",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "v",
+        "bounds_relative": [
+          -0.13991,
+          -0.09438,
+          -0.13147,
+          0.08918
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Inch rule on the left of the TL module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_tl_right",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "v",
+        "bounds_relative": [
+          0.139,
+          -0.114,
+          0.1584,
+          0.1089
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band declared from u 0.139, clear of the solid line the ticks stand on: a band including it puts ink in every column, and the reader's low percentile then finds the baseline instead of the ticks. Reads 23 divisions at 24.012 px/mm, residual 0.53."
+      },
+      "notes": "Centimeter rule on the right of the TL module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_tr_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "u",
+        "bounds_relative": [
+          0.94853,
+          -0.24939,
+          1.05347,
+          -0.24441
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Centimeter rule on the top of the TR module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_tr_bottom",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "u",
+        "bounds_relative": [
+          0.93728,
+          0.23421,
+          1.06472,
+          0.24273
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Inch rule on the bottom of the TR module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_tr_left",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "v",
+        "bounds_relative": [
+          0.8571,
+          -0.0959,
+          0.8781,
+          0.0877
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band declared clear of the rule's own baseline. It reads 18 divisions at 23.970 px/mm with no warnings. A band straddling the baseline has ink in every column, so the comb search chooses among periods that are mostly not the tick pitch: such a band can read confidently wrong -- 14.375 px/mm with a residual of 0.49, where every other rule on the chart reads 23.94 to 24.03. A rule's own residual is not evidence it was read correctly; agreement with the chart's other scales is, which is what the cross-check exists for."
+      },
+      "notes": "Centimeter rule on the left of the TR module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_tr_right",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "v",
+        "bounds_relative": [
+          1.1317,
+          -0.1155,
+          1.1435,
+          0.1074
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band narrowed off the baseline, and set 10 px toward it so the short ticks enter it on more than one capture: bands 4 to 12 px toward the baseline read both captures checked, at 608.9 and 609.3 ppi. Reads 13 divisions at 23.980 px/mm, residual 0.13."
+      },
+      "notes": "Inch rule on the right of the TR module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_br_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "u",
+        "bounds_relative": [
+          0.94853,
+          0.75046,
+          1.05347,
+          0.76423
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Inch rule on the top of the BR module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_br_bottom",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "u",
+        "bounds_relative": [
+          0.94853,
+          1.23282,
+          1.05347,
+          1.23905
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Centimeter rule on the bottom of the BR module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_br_left",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "v",
+        "bounds_relative": [
+          0.8592,
+          0.8639,
+          0.8652,
+          1.1261
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band narrowed to the ticks alone. This rule prints 'cm.' and the digits 0, 1 and 2 beside its ticks, and a digit is ink in a column that projects exactly like a tick. Reads 21 divisions at 23.983 px/mm, residual 0.46; six ticks are dropped as off-comb, which are the remaining digits."
+      },
+      "notes": "Centimeter rule on the left of the BR module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_br_right",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "v",
+        "bounds_relative": [
+          1.13143,
+          0.88355,
+          1.14267,
+          1.10645
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Inch rule on the right of the BR module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_bl_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "u",
+        "bounds_relative": [
+          -0.0617,
+          0.7487,
+          0.0657,
+          0.7559
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band placed where the short ticks cross it as well as the long ones. Reads 13 divisions at 23.962 px/mm, residual 0.11."
+      },
+      "notes": "Inch rule on the top of the BL module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_bl_bottom",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "u",
+        "bounds_relative": [
+          -0.05047,
+          1.23741,
+          0.05447,
+          1.24315
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Centimeter rule on the bottom of the BL module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_bl_left",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "v",
+        "bounds_relative": [
+          -0.13921,
+          0.86698,
+          -0.13077,
+          1.12922
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Inch rule on the left of the BL module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_bl_right",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "v",
+        "bounds_relative": [
+          0.13131,
+          0.90632,
+          0.14105,
+          1.08988
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Centimeter rule on the right of the BL module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_center_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "u",
+        "bounds_relative": [
+          0.43818,
+          0.24876,
+          0.56562,
+          0.25636
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Inch rule on the top of the CENTER module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_center_bottom",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "u",
+        "bounds_relative": [
+          0.44943,
+          0.73367,
+          0.55437,
+          0.74219
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Centimeter rule on the bottom of the CENTER module, running along u. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_center_left",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "v",
+        "bounds_relative": [
+          0.36023,
+          0.36588,
+          0.37147,
+          0.62812
+        ],
+        "printed_label": "in.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Inch rule on the left of the CENTER module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "ruler_center_right",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "v",
+        "bounds_relative": [
+          0.63046,
+          0.38555,
+          0.6417,
+          0.60845
+        ],
+        "printed_label": "cm.",
+        "measured_note": "Band located by tools/locate_dlt_rulers.py against a real capture, then held to the rate the two hand-declared center rules establish. These rules are fine -- 24 px per millimeter, 38 px per sixteenth of an inch -- so a band placed a few pixels off reads the printed digits as ticks and returns a confident wrong pitch. What catches that is the rate gate: at a known sampling rate a centimeter and a sixteenth of an inch are 59% apart, so only one unit can fit."
+      },
+      "notes": "Centimeter rule on the right of the CENTER module, running along v. Band located by tools/locate_dlt_rulers.py against a real capture."
+    },
+    {
+      "region_id": "dpi_field_tl",
+      "kind": "marker",
+      "geometry": {
+        "feature": "resolution_field",
+        "position": "TL",
+        "center": [
+          0.0,
+          0.0
+        ],
+        "half_size": [
+          0.04924,
+          0.08597
+        ],
+        "tilt_deg": -0.376,
+        "measured_note": "Measured off the same capture. The four corner fields define the fiducial quad by construction, so their relative centres are exactly the corner positions; the centre module's is measured at (0.50016, 0.50029). The field is printed SQUARE TO THE CHART -- -0.376 degrees, against the mount's 4.601 -- and that is the design rather than a discrepancy: the mount is slanted because a slanted-edge ROI needs it to be, and the field is not because the bar patterns printed in it are read against the chart's own axes."
+      },
+      "notes": "The white 'dots per inch (optical)' field inside the module's dark mount, and the feature the four corner placements are made on. Declared as a MARKER rather than as a slanted edge: it does print four high-contrast boundaries, but SFR on this chart is measured from the mount, and declaring a second set of edges would double every per-edge figure the report carries. What a marker is for is exactly this -- a feature the chart carries that no metric reads -- and placement refinement is its consumer. Measured 420.30 px square, and NOT concentric with its mount: the field sits about 3.1 px right and 5.4 px up of the mount's centre on every one of the five modules, consistent to about a pixel, so that is the print rather than measurement noise."
+    },
+    {
+      "region_id": "dpi_field_tr",
+      "kind": "marker",
+      "geometry": {
+        "feature": "resolution_field",
+        "position": "TR",
+        "center": [
+          1.0,
+          0.0
+        ],
+        "half_size": [
+          0.04924,
+          0.08597
+        ],
+        "tilt_deg": -0.376,
+        "measured_note": "Measured off the same capture. The four corner fields define the fiducial quad by construction, so their relative centres are exactly the corner positions; the centre module's is measured at (0.50016, 0.50029). The field is printed SQUARE TO THE CHART -- -0.376 degrees, against the mount's 4.601 -- and that is the design rather than a discrepancy: the mount is slanted because a slanted-edge ROI needs it to be, and the field is not because the bar patterns printed in it are read against the chart's own axes."
+      },
+      "notes": "The white 'dots per inch (optical)' field inside the module's dark mount, and the feature the four corner placements are made on. Declared as a MARKER rather than as a slanted edge: it does print four high-contrast boundaries, but SFR on this chart is measured from the mount, and declaring a second set of edges would double every per-edge figure the report carries. What a marker is for is exactly this -- a feature the chart carries that no metric reads -- and placement refinement is its consumer. Measured 420.30 px square, and NOT concentric with its mount: the field sits about 3.1 px right and 5.4 px up of the mount's centre on every one of the five modules, consistent to about a pixel, so that is the print rather than measurement noise."
+    },
+    {
+      "region_id": "dpi_field_br",
+      "kind": "marker",
+      "geometry": {
+        "feature": "resolution_field",
+        "position": "BR",
+        "center": [
+          1.0,
+          1.0
+        ],
+        "half_size": [
+          0.04924,
+          0.08597
+        ],
+        "tilt_deg": -0.376,
+        "measured_note": "Measured off the same capture. The four corner fields define the fiducial quad by construction, so their relative centres are exactly the corner positions; the centre module's is measured at (0.50016, 0.50029). The field is printed SQUARE TO THE CHART -- -0.376 degrees, against the mount's 4.601 -- and that is the design rather than a discrepancy: the mount is slanted because a slanted-edge ROI needs it to be, and the field is not because the bar patterns printed in it are read against the chart's own axes."
+      },
+      "notes": "The white 'dots per inch (optical)' field inside the module's dark mount, and the feature the four corner placements are made on. Declared as a MARKER rather than as a slanted edge: it does print four high-contrast boundaries, but SFR on this chart is measured from the mount, and declaring a second set of edges would double every per-edge figure the report carries. What a marker is for is exactly this -- a feature the chart carries that no metric reads -- and placement refinement is its consumer. Measured 420.30 px square, and NOT concentric with its mount: the field sits about 3.1 px right and 5.4 px up of the mount's centre on every one of the five modules, consistent to about a pixel, so that is the print rather than measurement noise."
+    },
+    {
+      "region_id": "dpi_field_bl",
+      "kind": "marker",
+      "geometry": {
+        "feature": "resolution_field",
+        "position": "BL",
+        "center": [
+          0.0,
+          1.0
+        ],
+        "half_size": [
+          0.04924,
+          0.08597
+        ],
+        "tilt_deg": -0.376,
+        "measured_note": "Measured off the same capture. The four corner fields define the fiducial quad by construction, so their relative centres are exactly the corner positions; the centre module's is measured at (0.50016, 0.50029). The field is printed SQUARE TO THE CHART -- -0.376 degrees, against the mount's 4.601 -- and that is the design rather than a discrepancy: the mount is slanted because a slanted-edge ROI needs it to be, and the field is not because the bar patterns printed in it are read against the chart's own axes."
+      },
+      "notes": "The white 'dots per inch (optical)' field inside the module's dark mount, and the feature the four corner placements are made on. Declared as a MARKER rather than as a slanted edge: it does print four high-contrast boundaries, but SFR on this chart is measured from the mount, and declaring a second set of edges would double every per-edge figure the report carries. What a marker is for is exactly this -- a feature the chart carries that no metric reads -- and placement refinement is its consumer. Measured 420.30 px square, and NOT concentric with its mount: the field sits about 3.1 px right and 5.4 px up of the mount's centre on every one of the five modules, consistent to about a pixel, so that is the print rather than measurement noise."
+    },
+    {
+      "region_id": "dpi_field_center",
+      "kind": "marker",
+      "geometry": {
+        "feature": "resolution_field",
+        "position": "CENTER",
+        "center": [
+          0.50016,
+          0.50029
+        ],
+        "half_size": [
+          0.04924,
+          0.08597
+        ],
+        "tilt_deg": -0.376,
+        "measured_note": "Measured off the same capture. The four corner fields define the fiducial quad by construction, so their relative centres are exactly the corner positions; the centre module's is measured at (0.50016, 0.50029). The field is printed SQUARE TO THE CHART -- -0.376 degrees, against the mount's 4.601 -- and that is the design rather than a discrepancy: the mount is slanted because a slanted-edge ROI needs it to be, and the field is not because the bar patterns printed in it are read against the chart's own axes."
+      },
+      "notes": "The white 'dots per inch (optical)' field inside the module's dark mount, and the feature the four corner placements are made on. Declared as a MARKER rather than as a slanted edge: it does print four high-contrast boundaries, but SFR on this chart is measured from the mount, and declaring a second set of edges would double every per-edge figure the report carries. What a marker is for is exactly this -- a feature the chart carries that no metric reads -- and placement refinement is its consumer. Measured 420.30 px square, and NOT concentric with its mount: the field sits about 3.1 px right and 5.4 px up of the mount's centre on every one of the five modules, consistent to about a pixel, so that is the print rather than measurement noise."
+    }
+  ],
+  "patches": [
+    {
+      "patch_id": "1",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "color_right",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "2",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "color_right",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "3",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "color_right",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "4",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "region": "color_right",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "5",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "region": "color_right",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "6",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "region": "color_right",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "7",
+      "grid_position": {
+        "row": 6,
+        "col": 0
+      },
+      "region": "color_right",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "8",
+      "grid_position": {
+        "row": 7,
+        "col": 0
+      },
+      "region": "color_right",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "9",
+      "grid_position": {
+        "row": 8,
+        "col": 0
+      },
+      "region": "color_right",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "10",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "highlight",
+      "role": "achromatic_ramp",
+      "ramp_position": 1
+    },
+    {
+      "patch_id": "11",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "highlight",
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    },
+    {
+      "patch_id": "12",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "highlight",
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "13",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "region": "highlight",
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "14",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "region": "highlight",
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "15",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "region": "highlight",
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "16",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "gray",
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "17",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "gray",
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "18",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "gray",
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    },
+    {
+      "patch_id": "19",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "region": "gray",
+      "role": "achromatic_ramp",
+      "ramp_position": 10
+    },
+    {
+      "patch_id": "20",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "region": "gray",
+      "role": "achromatic_ramp",
+      "ramp_position": 11
+    },
+    {
+      "patch_id": "21",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "region": "gray",
+      "role": "achromatic_ramp",
+      "ramp_position": 12
+    },
+    {
+      "patch_id": "22",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "color_left",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "23",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "color_left",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "24",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "color_left",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "25",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "region": "color_left",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "26",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "region": "color_left",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "27",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "region": "color_left",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "28",
+      "grid_position": {
+        "row": 6,
+        "col": 0
+      },
+      "region": "color_left",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "29",
+      "grid_position": {
+        "row": 7,
+        "col": 0
+      },
+      "region": "color_left",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "30",
+      "grid_position": {
+        "row": 8,
+        "col": 0
+      },
+      "region": "color_left",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "UTL1",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "uniformity_tl",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UTL2",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "uniformity_tl",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UTL3",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "uniformity_tl",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UTL4",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "region": "uniformity_tl",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UTR1",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "uniformity_tr",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UTR2",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "uniformity_tr",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UTR3",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "uniformity_tr",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UTR4",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "region": "uniformity_tr",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UC1",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "uniformity_center",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UC2",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "uniformity_center",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UC3",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "uniformity_center",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UC4",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "region": "uniformity_center",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UBL1",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "uniformity_bl",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UBL2",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "uniformity_bl",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UBL3",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "uniformity_bl",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UBL4",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "region": "uniformity_bl",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UBR1",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "uniformity_br",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UBR2",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "uniformity_br",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UBR3",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "uniformity_br",
+      "role": "achromatic_border"
+    },
+    {
+      "patch_id": "UBR4",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "region": "uniformity_br",
+      "role": "achromatic_border"
+    }
+  ],
+  "reference_data": {
+    "source_type": "per_unit_file",
+    "import_format": "cgats",
+    "required": true,
+    "nominal_values": {
+      "file": "isa_golden_thread_dlt_v1_nominal.txt",
+      "basis": "manufacturer_nominal",
+      "source": "Mean of the L*a*b* stated by 50 per-unit measurements published by Digital Transitions under the OpenQualia label standard, sampled five per year across 2015-2024 and pooled across the M0/M1/M2 conditions the units are a mix of. Scored leave-one-out against the published units, this mean sits 0.601 dE2000 from a unit, against a unit-to-unit spread of 0.830; the printed batch table sits 1.086 from a unit. Regenerate with tools/derive_nominal_from_openqualia.py, which records the serial list and re-derives the same file.",
+      "covers": "All 30 patches, L*a*b*. Density is not carried: Deltachrome measures no density metric, and the published per-unit files state none.",
+      "notes": "A batch mean of 50 published units: not a measurement of any individual chart, and usable for that reason only with the run reported as ADVISORY. A per-unit file is preferred and used whenever one is supplied. Digital Transitions publish measurements for 1,454 Device Level units; if the chart carries an OpenQualia label, or its serial is known, that unit's own file supersedes this one and makes the run a conformance test. This fallback sits 0.601 dE2000 from an average unit scored leave-one-out, against a unit-to-unit spread of 0.830."
+    },
+    "notes": "A per-unit measurement file is preferred and is used whenever one is supplied. When none is, the manufacturer's nominal values above are used and the run is flagged, rather than refusing to run -- the same fallback OpenDICE makes with its preloaded sample profiles.",
+    "sample_id_aliases": [
+      "A{id}"
+    ],
+    "sample_id_aliases_notes": "Measurement files published for this target through the OpenQualia label standard name its patches 'A1'-'A30' where the chart itself prints '1'-'30'. The chart's own labels are used here, which is also what the OpenQualia measurement file standard specifies for a target labelled with numbers alone -- it names the Golden Thread Device and Object Level targets as its example of exactly that case. The correspondence is declared rather than guessed, is applied only when it matches more patches than reading the file as written, and is reported in the run's warnings when it is used. Verified against published per-unit measurements: all 30 patches matched, and their values agree with this definition's own batch-average nominals to a mean of 0.97 dE2000 (DLT unit D00011) and 0.81 dE2000 (Object Level unit M000559), which is the right magnitude for one unit against a batch mean."
+  },
+  "dimensional_reference": {
+    "available": true,
+    "summary": "Printed cm and inch rules on all four sides of every module -- twenty in all, ten along each axis, at five field positions. The sampling rate is measured from the chart itself rather than from a declared physical size, and the variation between the twenty is what geometric distortion is read from."
+  },
+  "metric_defaults": {
+    "tonal_response": {
+      "uses_roles": [
+        "achromatic_ramp"
+      ],
+      "notes": "Patches 10-21: the highlight strip and the gray strip."
+    },
+    "lightness_uniformity": {
+      "uses_patches": [
+        "achromatic_border"
+      ],
+      "sample_point_count": 20,
+      "sample_distribution": "Four per module at five module positions, so the samples reach every corner of the chart and its center -- an areal coverage neither of the other two targets here offers.",
+      "notes": "THE CHART PRINTS NO VALUES FOR THESE SQUARES. Uniformity does not need any: it is the spread of a set of nominally identical neutrals about their own mean, so the set is its own reference. What is lost without reference values is the chart-corrected figure, which would separate the chart's own spread from the capture's, and the split into families, which needs a nominal lightness to split on. Neither is required by the standard, and both are reported as unavailable rather than silently omitted. Measured by rectifying a capture to the fiducial quad and locating each square by its lightness and, decisively, its neutrality: the squares sit only 4-5 L* above the card, but at chroma 2.6 against the card's 4.3 they separate cleanly where a lightness threshold alone does not. Offsets from the module center came out at 0.11794 +/- 0.0020 in u and 0.20644 +/- 0.0049 in v across seventeen squares located unambiguously."
+    }
+  },
+  "notes": "Device-level target: four patch strips of differing length at four positions, plus five slanted-edge modules. Row and column indices only mean something within one strip, which is why it is declared as regions. Patch ids are the printed numbers 1-30; the printed labels also carry letter suffixes on 11(A), 16(M) and 18(B) whose meaning is not established. The patch-id mapping is confirmed against published per-unit measurements (see sample_id_aliases_notes). Lightness uniformity is read from the four registration squares in each of the five modules, a sample spread across the whole frame.",
+  "openqualia": {
+    "host": "https://targets.digitaltransitions.com/measurements",
+    "manufacturer": "ISA",
+    "target_type": "DLT",
+    "canonical_name": "GoldenThread Device-Level Target",
+    "notes": "How this model is addressed on an OpenQualia measurement host, so that a serial alone is enough to fetch a unit's own measurement. Both spellings were verified against targets.digitaltransitions.com by a fetch. The host matches values without regard to case or whitespace but not to dashes, and its API spellings can differ from its web addresses, so these are recorded rather than derived."
+  }
+}

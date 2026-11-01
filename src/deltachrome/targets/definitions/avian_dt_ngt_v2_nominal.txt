@@ -1,0 +1,152 @@
+CGATS.17
+
+ORIGINATOR	"Derived from OpenDICE Profile_DT_NGT.txt (Library of Congress)"
+DESCRIPTOR	"DT Next Generation Target V2 -- batch average aim values"
+MANUFACTURER	"Avian Rochester"
+ILLUMINATION_NAME	"D50"
+OBSERVER_ANGLE	"2"
+KEYWORD	"DELTACHROME_REFERENCE_BASIS"
+DELTACHROME_REFERENCE_BASIS	"manufacturer_nominal"
+KEYWORD	"DELTACHROME_NOMINAL_SOURCE"
+DELTACHROME_NOMINAL_SOURCE	"OpenDICE's Profile_DT_NGT.txt, published with its sample capture of unit DT-AR-2019056. The V2 shares the earlier NGT's lattice and patch ids exactly -- same 13 columns, same 10 rows, same twelve neutral steps at D2-I2 and D6-I6 -- and is a different chart for all that: its neutrals are printed lighter, at a mean L* 96.1 against the NGT's 92.4. The two reference files are NOT interchangeable and this is the check that says so."
+KEYWORD	"DELTACHROME_NOMINAL_CAVEAT"
+DELTACHROME_NOMINAL_CAVEAT	"The values are batch averages, not design aims and not a measurement of the chart in front of you. Their own arithmetic says so: they quantize to 0.002 rather than to 0.01, which is what a mean of five readings each taken to two decimals does, and ISA print the same convention outright on the Golden Thread Object Level Target -- 'All values are batch averages'. A batch mean sits closer to any individual unit than a design aim would, which makes it better data; it also looks exactly like a per-unit measurement and is not, which is why a run against it reports ADVISORY and makes no conformance claim for the specimen. Avian Rochester measure and ship data with each chart; that file supersedes this one and should be used whenever it is to hand."
+
+NUMBER_OF_FIELDS	5
+BEGIN_DATA_FORMAT
+SAMPLE_NAME	LAB_L	LAB_A	LAB_B	D
+END_DATA_FORMAT
+
+NUMBER_OF_SETS	130
+BEGIN_DATA
+A0	96.110	-0.950	2.130	-
+A1	20.400	-7.990	-1.640	-
+A2	79.400	-32.440	0.470	-
+A3	81.760	-26.080	45.190	-
+A4	96.120	-0.960	2.130	-
+A5	53.030	-1.570	1.780	-
+A6	51.160	45.440	45.170	-
+A7	37.700	-30.030	-29.900	-
+A8	70.970	-23.150	-18.800	-
+A9	96.080	-0.930	2.180	-
+B0	22.970	-25.660	4.210	-
+B1	40.290	-22.060	-1.130	-
+B2	61.070	-41.180	-1.270	-
+B3	68.240	-7.520	-31.250	-
+B4	36.890	57.400	2.830	-
+B5	22.050	8.160	-0.730	-
+B6	25.030	4.370	8.330	-
+B7	26.320	-21.690	-26.410	-
+B8	62.150	-29.620	-25.360	-
+B9	50.590	-21.530	-19.960	-
+C0	30.030	-15.520	10.980	-
+C1	39.160	-32.550	-2.430	-
+C2	61.000	-23.680	-0.070	-
+C3	78.080	-25.740	0.870	-
+C4	23.290	26.020	6.520	-
+C5	60.870	42.940	43.190	-
+C6	41.090	46.830	49.340	-
+C7	30.570	-14.670	-17.000	-
+C8	91.530	-1.000	44.620	-
+C9	87.940	-6.350	-4.340	-
+D0	28.820	-27.310	21.290	-
+D1	51.380	-44.980	-2.230	-
+D2	17.860	-0.700	-0.860	1.618
+D3	30.010	22.310	21.820	-
+D4	58.170	42.870	68.550	-
+D5	21.470	-2.070	-26.100	-
+D6	96.110	-0.940	2.140	0.077
+D7	70.690	17.710	38.350	-
+D8	68.380	-10.000	80.700	-
+D9	22.630	-5.760	-7.500	-
+E0	50.720	-14.390	19.120	-
+E1	50.370	-27.520	45.770	-
+E2	30.470	-0.360	-0.610	1.206
+E3	79.950	21.050	30.290	-
+E4	35.450	-3.570	-49.030	-
+E5	62.430	-50.560	42.590	-
+E6	76.670	-1.140	1.170	0.319
+E7	50.210	14.520	21.280	-
+E8	21.210	9.820	16.000	-
+E9	81.030	0.500	-12.070	-
+F0	60.720	-21.150	32.740	-
+F1	70.070	-14.750	21.110	-
+F2	41.810	-0.460	0.350	0.921
+F3	39.880	-3.900	-25.850	-
+F4	63.020	44.540	4.940	-
+F5	36.100	62.660	43.890	-
+F6	66.070	-1.170	1.840	0.474
+F7	91.240	5.180	12.250	-
+F8	52.140	25.580	22.310	-
+F9	53.010	-1.530	1.820	-
+G0	96.050	-0.920	2.130	-
+G1	81.130	0.870	43.310	-
+G2	61.870	-0.450	2.040	0.536
+G3	46.940	-22.920	23.850	-
+G4	27.850	28.770	-24.410	-
+G5	81.270	2.400	80.920	-
+G6	53.070	-1.550	1.800	0.694
+G7	58.830	10.030	13.210	-
+G8	81.280	6.410	10.990	-
+G9	95.970	-0.910	2.170	-
+H0	53.030	-1.530	1.810	-
+H1	56.140	-2.220	67.590	-
+H2	65.840	-1.140	1.930	0.475
+H3	50.280	15.210	-17.660	-
+H4	71.880	-31.210	57.030	-
+H5	47.610	58.590	6.870	-
+H6	35.140	-0.990	1.330	1.081
+H7	61.410	2.440	15.700	-
+H8	33.520	-1.900	9.900	-
+H9	58.800	-4.760	-32.990	-
+I0	70.070	1.570	44.670	-
+I1	61.010	4.300	61.530	-
+I2	69.430	-0.930	1.090	0.423
+I3	73.720	-39.340	-0.930	-
+I4	71.630	30.940	57.650	-
+I5	45.840	-32.110	-31.660	-
+I6	9.940	-0.010	-0.670	1.969
+I7	90.320	-0.220	-2.540	-
+I8	60.610	5.300	28.390	-
+I9	59.610	-2.870	-15.310	-
+J0	59.250	0.050	15.910	-
+J1	42.060	1.630	15.580	-
+J2	80.820	-0.960	1.740	-
+J3	23.030	7.340	2.970	-
+J4	52.550	12.400	38.390	-
+J5	82.020	8.510	28.850	-
+J6	41.880	27.040	4.540	-
+J7	71.680	2.050	16.340	-
+J8	41.120	14.640	21.690	-
+J9	46.480	-6.640	-47.610	-
+K0	36.940	-3.310	43.670	-
+K1	23.440	-0.350	7.520	-
+K2	87.670	-1.700	0.250	-
+K3	62.740	27.470	22.020	-
+K4	80.690	4.050	14.450	-
+K5	50.950	2.940	13.980	-
+K6	71.230	12.650	26.650	-
+K7	28.850	16.370	17.840	-
+K8	82.230	1.420	56.960	-
+K9	22.240	-15.320	-22.330	-
+L0	30.050	10.570	9.510	-
+L1	44.130	26.260	17.080	-
+L2	50.330	59.480	33.850	-
+L3	82.260	22.220	1.120	-
+L4	49.780	38.700	5.240	-
+L5	90.940	7.320	5.390	-
+L6	42.190	25.400	-19.690	-
+L7	32.320	11.630	-13.610	-
+L8	65.880	17.730	-19.450	-
+L9	8.510	3.990	-11.750	-
+M0	96.040	-0.930	2.120	-
+M1	32.540	9.060	6.370	-
+M2	70.460	35.730	0.050	-
+M3	60.980	28.910	4.070	-
+M4	53.080	-1.540	1.810	-
+M5	96.030	-0.910	2.180	-
+M6	91.570	4.630	2.340	-
+M7	60.880	20.210	-21.480	-
+M8	40.280	29.860	-26.880	-
+M9	96.040	-0.930	2.130	-
+END_DATA

@@ -1,0 +1,338 @@
+{
+  "$schema_version": 1,
+  "target_id": "applied_image_qa62_sfr_v1",
+  "display_name": "Applied Image QA-62 Scanner SFR & OEC #2",
+  "manufacturer": "Applied Image Inc.",
+  "target_type": "reflective_neutral_target",
+  "physical_size_mm": null,
+  "fiducial_extent_mm": {
+    "width": 66.675,
+    "height": 66.675
+  },
+  "capabilities": [
+    "sfr",
+    "color_registration"
+  ],
+  "not_capable_of": [
+    "color_accuracy",
+    "tonal_response",
+    "white_balance",
+    "lightness_uniformity",
+    "reproduction_scale",
+    "geometric_distortion",
+    "flat_field"
+  ],
+  "fiducials": {
+    "method": "printed_crosshairs",
+    "corner_markers": [
+      {
+        "id": "TL",
+        "relative_position": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "TR",
+        "relative_position": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "id": "BR",
+        "relative_position": [
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "id": "BL",
+        "relative_position": [
+          0.0,
+          1.0
+        ]
+      }
+    ],
+    "notes": "The centres of the four printed plus marks, which bound the measurement field and NOT the card: the top pair sit near the card's top corners, the bottom pair beside the 'SCANNER SFR & OEC #2' line with a third of the card -- the maker's address block and the part number -- below them. A placement made on the card's own corners would be about 30% too tall and would put every ROI on the wrong thing.\n\nThe quad is SQUARE, and 2.625 inches (66.675 mm) across in both axes -- a stated design dimension, see dimensional_reference. Measured on four units in one capture it is 1579.2 x 1579.0, 1580.5 x 1579.6, 1577.9 x 1577.0 and 1578.9 x 1577.9 px -- an aspect of 1.0001 to 1.0007. That matters more here than on any other shipped chart: a square quad fits all four rotations equally, and the chart's cells are square too, so implied_quad_aspect cannot separate them either. The chart's own 20-step ring is the only thing that can, which is why it is declared with ramp positions even though nothing measures it.\n\nTWO CONSEQUENCES OF THAT SQUARENESS.\n\nWhich way up it is cannot be read from the geometry, and is read from the ring. The ring is a monotone SPIRAL, so a quarter turn maps step k to step k+5: counting adjacent steps it reads +1.00 the way the chart is and +0.89 a quarter turn round, too narrow a margin to settle anything, but the ladder as a whole is scrambled by the turn and its rank correlation reads +1.00 against -0.13 and -0.50 on all four cards of the board -- which is what settles it. Rank is consulted only where adjacency decides nothing, adjacency being what separates a half-turned ColorChecker SG.\n\nThe placement is also never refined. Refinement needs at least three locatable features to over-determine even a similarity, and this chart declares one: the slanted square. It has nothing else a refiner could snap to -- the ring's steps are butted, so most of their boundaries are not boundaries -- and it does not need one, since the placement is made on four printed marks that hold their positions across every threshold that finds them. Neither is reported on the run."
+  },
+  "regions": [
+    {
+      "region_id": "oec_ring",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 6,
+        "columns": 6,
+        "row_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "col_labels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.146736,
+          "height": 0.14677
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.146736,
+          "vertical": 0.14677
+        },
+        "grid_origin_relative": [
+          0.06497,
+          0.05987
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad the four printed crosshairs bound.",
+        "measured_note": "MEASURED ON FOUR UNITS in one capture by tools/locate_qa62_geometry.py. The field's four outer boundaries are fitted from 200 perpendicular profiles each at their 50% crossings, to 0.09-1.07 px rms; across the four units the origin agrees to 0.00026 relative and the field measures 0.88042 x 0.88062, an aspect of 0.99977. Origin and pitch are the extent divided by six rather than a comb fitted through the interior boundaries, because two of the ten interior boundaries have no contrast at all -- neighbouring steps of nearly equal density. The eight that can be found agree with the six-cell prediction to 0.13%."
+      },
+      "notes": "The OEC ladder: TWENTY STEPS ROUND THE PERIMETER OF A 6 x 6 LATTICE, declared as twenty of its thirty-six cells occupied. The remaining sixteen are one uniform mid-grey field, which is the ground the slanted square is printed on rather than a step, so they are not patches.\n\nThe ladder runs CLOCKWISE FROM THE TOP-LEFT CELL, lightest to darkest, and it is monotone the whole way round -- read on four units it goes 228, 213, 202, 182, 158, 145 across the top, 141, 133, 125, 118 down the right, 108, 95, 90, 85, 79, 75 back along the bottom and 71, 65, 55, 49 up the left. Nothing in the declared geometry says that; the ramp_position on each patch does, and that is what the placement's orientation check reads.\n\nSteps abut, so patch size equals patch spacing and the ROI inset keeps each sample clear of its neighbours."
+    },
+    {
+      "region_id": "slanted_square",
+      "kind": "slanted_edge",
+      "geometry": {
+        "center": [
+          0.5,
+          0.5
+        ],
+        "half_size": [
+          0.19036,
+          0.19036
+        ],
+        "tilt_deg": 5.0,
+        "edges": 4,
+        "measured_note": "Fitted side by side on four units in one capture by tools/locate_qa62_geometry.py, each side from 120 perpendicular profiles at their 50% crossing. The sixteen sides fit to 0.06-0.09 px rms; the figure's centre lands at (0.50004, 0.49993) with a spread of 0.0002, its side measures 0.38072 relative with a spread of 0.00007, and its tilt 4.997 degrees with a spread of 0.024. It is declared as tilted exactly 5.00 degrees, because the spread across four units is wider than the departure from the round number."
+      },
+      "notes": "One dark square tilted 5 degrees on the uniform mid-grey field at the centre of the chart, and the whole reason the target exists. Its four sides are the four slanted edges: two horizontal and two vertical, one field position. Contrast is deliberately modest -- the square reads about 79 against a ground of 146 in 8-bit Adobe RGB, a ratio near 1.85 rather than ISO 12233's 4:1 -- which is what ISO 16067-1 asks of a scanner SFR target and is well within what the edge analysis needs.\n\nDeclared as a rotated square rather than as four straight edges, because it genuinely is one closed figure printed on a plain ground: nothing crosses it, and thresholding it out of that ground is unambiguous."
+    }
+  ],
+  "patches": [
+    {
+      "patch_id": "S01",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 1
+    },
+    {
+      "patch_id": "S02",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    },
+    {
+      "patch_id": "S03",
+      "grid_position": {
+        "row": 0,
+        "col": 2
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "S04",
+      "grid_position": {
+        "row": 0,
+        "col": 3
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "S05",
+      "grid_position": {
+        "row": 0,
+        "col": 4
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "S06",
+      "grid_position": {
+        "row": 0,
+        "col": 5
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "S07",
+      "grid_position": {
+        "row": 1,
+        "col": 5
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "S08",
+      "grid_position": {
+        "row": 2,
+        "col": 5
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "S09",
+      "grid_position": {
+        "row": 3,
+        "col": 5
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    },
+    {
+      "patch_id": "S10",
+      "grid_position": {
+        "row": 4,
+        "col": 5
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 10
+    },
+    {
+      "patch_id": "S11",
+      "grid_position": {
+        "row": 5,
+        "col": 5
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 11
+    },
+    {
+      "patch_id": "S12",
+      "grid_position": {
+        "row": 5,
+        "col": 4
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 12
+    },
+    {
+      "patch_id": "S13",
+      "grid_position": {
+        "row": 5,
+        "col": 3
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 13
+    },
+    {
+      "patch_id": "S14",
+      "grid_position": {
+        "row": 5,
+        "col": 2
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 14
+    },
+    {
+      "patch_id": "S15",
+      "grid_position": {
+        "row": 5,
+        "col": 1
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 15
+    },
+    {
+      "patch_id": "S16",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 16
+    },
+    {
+      "patch_id": "S17",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 17
+    },
+    {
+      "patch_id": "S18",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 18
+    },
+    {
+      "patch_id": "S19",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 19
+    },
+    {
+      "patch_id": "S20",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "oec_ring",
+      "role": "achromatic_ramp",
+      "ramp_position": 20
+    }
+  ],
+  "reference_data": {
+    "source_type": "none",
+    "required": false,
+    "notes": "NOTHING ON THIS CHART IS COMPARED AGAINST A REFERENCE, so no file is needed and none is shipped. Both capabilities -- SFR and colour channel misregistration -- are read from the slanted square's own edges.\n\nThe chart also carries a 20-step neutral OECF ladder, for which no aim values are shipped. Adding them would be additive: a nominal file beside this one, named under nominal_values, with tonal_response and white_balance moved into capabilities and noise added. The twenty patches, their ids, ramp positions and geometry are already declared. Aims are not derived from a capture of the chart, which would make it pass against itself."
+  },
+  "dimensional_reference": {
+    "available": true,
+    "summary": "No printed scale of any kind. The distance between the four crosshair centres is a stated design dimension: Applied Image's documentation gives 2.625 inches (66.675 mm) centre to centre, and the quad is square, so one number serves both axes.",
+    "notes": "2.625 in is 2 5/8 -- a designed number -- and 66.675 mm is its exact conversion.\n\nConfirmed against a capture of four cards, which imply 601.6, 602.1, 601.1 and 601.5 ppi against a nominal 600: a spread of 0.2% across four specimens. It is still weaker evidence than a printed rule: it describes the chart as manufactured and would not survive a reduced copy. --fiducial-extent overrides it for a specimen measured to differ.\n\nThe chart is not reproduction_scale capable although it carries this reference. Sampling frequency is a one-sided floor that a card printed a percent small cannot move; reproduction scale accuracy is a two per cent agreement check against the file's header, and a rate derived from a declared dimension carries the card's manufacturing tolerance straight into it. Only a printed rule measures the chart in front of the camera, so the metric reports N/A here."
+  },
+  "metric_defaults": {
+    "sfr10_sampling_efficiency": {
+      "notes": "Four edges from one square at one field position. A single QA-62 therefore says nothing about how sharpness varies across the frame, which is what the chart is for: it is shot several to a board at the field positions of interest, and the frame is read as several charts.\n\nMTF50 in lp/mm is available on this chart, from the declared crosshair spacing rather than from a printed rule -- so it is only as good as the chart being the size it was manufactured to be. See dimensional_reference."
+    }
+  },
+  "notes": "Applied Image part number QA-62-SFR-P-RP, printed 'SCANNER SFR & OEC #2'. A small reflective card carrying one 5-degree slanted square on a uniform ground, ringed by a 20-step neutral OECF ladder, with four printed crosshairs bounding the measurement field, 2.625 inches (66.675 mm) apart centre to centre.\n\nIt is meant to be shot several to a frame: a card of about 60 mm measures one field position, and four or more are laid on a board at the corners and centre of the copy area. A frame holding four of them is four placements and four runs sharing one decode, combined into one verdict.\n\nThe geometry was measured on four units in one capture, which agree to five decimal places on every figure."
+}

@@ -1,0 +1,249 @@
+{
+  "$schema_version": 1,
+  "profile_id": "fadgi_4star_newspapers_2023",
+  "display_name": "FADGI 4-Star \u2014 Newspapers (2023 3rd Ed.)",
+  "standard_reference": {
+    "body": "FADGI",
+    "document_version": "3rd Edition, May 2023",
+    "edition": "3rd",
+    "published": "2023-05-09",
+    "material_category": "Newspapers",
+    "section": "3.7",
+    "source_url": "https://www.digitizationguidelines.gov/guidelines/FADGI%20Technical%20Guidelines%20for%20Digitizing%20Cultural%20Heritage%20Materials_3rd%20Edition_05092023.pdf",
+    "thresholds_transcribed_from": "Section 3.7 conformance table, pages 47-48",
+    "provisional": false,
+    "star_level": 4
+  },
+  "applicable_target_capabilities_required": [
+    "color_accuracy",
+    "tonal_response",
+    "white_balance"
+  ],
+  "applicable_target_capabilities_optional": [
+    "sfr",
+    "color_registration",
+    "lightness_uniformity",
+    "reproduction_scale"
+  ],
+  "metrics": [
+    {
+      "metric_id": "master_file_format",
+      "algorithm": {
+        "allowed": [
+          "TIFF",
+          "JPEG 2000",
+          "PDF/A"
+        ]
+      },
+      "aggregation": "none"
+    },
+    {
+      "metric_id": "bit_depth",
+      "aggregation": "none",
+      "units": "bits",
+      "algorithm": {
+        "allowed": [
+          8,
+          16
+        ]
+      }
+    },
+    {
+      "metric_id": "color_space",
+      "algorithm": {
+        "allowed": [
+          "Gray Gamma 2.2",
+          "sRGB"
+        ]
+      },
+      "aggregation": "none"
+    },
+    {
+      "metric_id": "sampling_frequency",
+      "aggregation": "none",
+      "pass_condition": "value >= 396",
+      "units": "ppi"
+    },
+    {
+      "metric_id": "average_color_accuracy",
+      "requires_capability": "color_accuracy",
+      "algorithm": {
+        "delta_e_variant": "delta_e_2000",
+        "patch_selection": "all patches"
+      },
+      "aggregation": "mean",
+      "pass_condition": "value < 2",
+      "units": "dE2000"
+    },
+    {
+      "metric_id": "color_accuracy_90th_percentile",
+      "requires_capability": "color_accuracy",
+      "algorithm": {
+        "delta_e_variant": "delta_e_2000",
+        "patch_selection": "all patches",
+        "percentile_method": "linear"
+      },
+      "aggregation": "percentile_90",
+      "pass_condition": "value < 4",
+      "units": "dE2000",
+      "notes": "NOT the maximum. FADGI does not specify an interpolation method, so it is stated explicitly and reported."
+    },
+    {
+      "metric_id": "white_balance",
+      "requires_capability": "white_balance",
+      "algorithm": {
+        "delta_e_variant": "delta_e_2000_ab",
+        "patch_selection": "role == 'achromatic_ramp'"
+      },
+      "aggregation": "max_per_patch",
+      "pass_condition": "value < 2",
+      "units": "dE2000(a*b*)",
+      "notes": "'For any given gray patch', so the worst patch must clear the threshold. CIEDE2000 with the L* component eliminated, as section 2.4.4 defines it; the tables' 'dE(a*b*)' names the same quantity."
+    },
+    {
+      "metric_id": "tone_response_oecf",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "measure": "delta_l_2000",
+        "patch_selection": "role == 'achromatic_ramp'"
+      },
+      "aggregation": "max_per_patch",
+      "pass_condition": "value < 1.5",
+      "units": "dL*2000",
+      "notes": "dL*2000 includes the CIEDE2000 S_L weighting; it is not plain |dL*|."
+    },
+    {
+      "metric_id": "lightness_uniformity",
+      "requires_capability": "lightness_uniformity",
+      "algorithm": {
+        "patch_selection": {
+          "roles": [
+            "achromatic_border"
+          ]
+        },
+        "family_selection": "lightest"
+      },
+      "aggregation": "none",
+      "pass_condition": "value < 1",
+      "units": "% (std dev / mean L*)",
+      "notes": "FADGI states the units as standard deviation divided by mean, so this is a percentage."
+    },
+    {
+      "metric_id": "noise",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": {
+          "roles": [
+            "achromatic_border",
+            "achromatic_ramp",
+            "achromatic_other"
+          ]
+        },
+        "lower_limit": 0.25
+      },
+      "aggregation": "max",
+      "pass_condition": "value < 1",
+      "units": "std dev of L*",
+      "notes": "FADGI also sets a lower limit of > 0.25 at every star level, raised as a warning rather than a failure: near-zero noise indicates noise reduction, which removes detail."
+    },
+    {
+      "metric_id": "gain_modulation_highlight",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": "role == 'achromatic_ramp'",
+        "min_delta_l": 10.0,
+        "evaluation_range": [
+          5.0,
+          95.0
+        ],
+        "l_star_range": [
+          85.0,
+          95.0
+        ]
+      },
+      "aggregation": "worst_case",
+      "pass_condition": "0.8 <= value <= 1.1",
+      "units": "gain",
+      "notes": "FADGI requires gain between 0.8 and 1.1 for highlight patches (average L* 85-95). Gain is the local slope of the OECF; pairing follows ISO/TS 19264-1 6.2, which computes incremental gain between gray steps at least 10 L* apart. Aim is 1.0, and the band fails in both directions -- too flat loses tonal separation, too steep clips sooner."
+    },
+    {
+      "metric_id": "gain_modulation_other",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": "role == 'achromatic_ramp'",
+        "min_delta_l": 10.0,
+        "evaluation_range": [
+          5.0,
+          95.0
+        ],
+        "l_star_range": [
+          85.0,
+          95.0
+        ]
+      },
+      "aggregation": "worst_case",
+      "pass_condition": "0.7 <= value <= 1.3",
+      "units": "gain",
+      "notes": "FADGI requires gain between 0.7 and 1.3 for all other patches. Gain is the local slope of the OECF; pairing follows ISO/TS 19264-1 6.2, which computes incremental gain between gray steps at least 10 L* apart. Aim is 1.0, and the band fails in both directions -- too flat loses tonal separation, too steep clips sooner."
+    },
+    {
+      "metric_id": "color_channel_misregistration",
+      "requires_capability": "color_registration",
+      "aggregation": "max",
+      "pass_condition": "value < 0.33",
+      "units": "pixels"
+    },
+    {
+      "metric_id": "sfr10_sampling_efficiency",
+      "requires_capability": "sfr",
+      "algorithm": {
+        "edge_fit": "linear",
+        "esf_supersample_bin_width": 0.25,
+        "roi_size_px": 100
+      },
+      "aggregation": "worst_edge",
+      "pass_condition": "value > 90",
+      "units": "% of Nyquist",
+      "notes": "FADGI states this as a percentage ratio; the frequency at 10% modulation as a percentage of the Nyquist (half-sampling) frequency."
+    },
+    {
+      "metric_id": "sfr_response_at_nyquist",
+      "requires_capability": "sfr",
+      "aggregation": "worst_edge",
+      "units": "modulation",
+      "pass_condition": "value < 0.2"
+    },
+    {
+      "metric_id": "sfr50",
+      "requires_capability": "sfr",
+      "algorithm": {
+        "edge_fit": "linear",
+        "esf_supersample_bin_width": 0.25
+      },
+      "aggregation": "worst_edge",
+      "pass_condition": "45 <= value <= 65",
+      "units": "% of half-sampling freq",
+      "notes": "A two-sided band: too low is soft, too high means the response extends so far that detail above Nyquist aliases into the image."
+    },
+    {
+      "metric_id": "sharpening",
+      "requires_capability": "sfr",
+      "aggregation": "max",
+      "pass_condition": "value < 1.02",
+      "units": "max modulation"
+    },
+    {
+      "metric_id": "reproduction_scale_accuracy",
+      "requires_capability": "reproduction_scale",
+      "aggregation": "max",
+      "pass_condition": "value < 1",
+      "units": "% difference from header ppi"
+    }
+  ],
+  "overall_pass_rule": "all applicable metrics must pass",
+  "profile_editable": true,
+  "profile_locked_fields": [
+    "standard_reference"
+  ],
+  "notes": "Thresholds read from FADGI 3rd Edition, May 2023, section 3.7 (Newspapers), pages 47-48. SFR50 is modeled as the two-sided band [>45%, <65%] of half sampling frequency. This category marks no row informative-only. A row the table does not carry produces no metric at all, which is different from one measured without a threshold. A metric with no plugin reports NOT IMPLEMENTED and forces INCOMPLETE rather than a pass."
+}

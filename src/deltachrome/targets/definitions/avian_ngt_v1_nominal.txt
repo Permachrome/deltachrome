@@ -1,0 +1,152 @@
+CGATS.17
+
+ORIGINATOR	"Derived from OpenDICE Profile_NGT1.txt (Library of Congress)"
+DESCRIPTOR	"Avian Rochester Next Generation Target -- batch average aim values"
+MANUFACTURER	"Avian Rochester"
+ILLUMINATION_NAME	"D50"
+OBSERVER_ANGLE	"2"
+KEYWORD	"DELTACHROME_REFERENCE_BASIS"
+DELTACHROME_REFERENCE_BASIS	"manufacturer_nominal"
+KEYWORD	"DELTACHROME_NOMINAL_SOURCE"
+DELTACHROME_NOMINAL_SOURCE	"OpenDICE's Profile_NGT1.txt, published by the Library of Congress with its sample capture of unit AR-NGT-2016023. Confirmed to be this target by the layout: 130 patch ids A0-M9 against the chart's own printed column letters A-M and row digits 0-9, and by the twelve density-bearing steps D2-I2 and D6-I6 landing exactly on the two rows of neutrals the chart prints."
+KEYWORD	"DELTACHROME_NOMINAL_CAVEAT"
+DELTACHROME_NOMINAL_CAVEAT	"The values are batch averages, not design aims and not a measurement of the chart in front of you. Their own arithmetic says so: they quantize to 0.002 rather than to 0.01, which is what a mean of five readings each taken to two decimals does, and ISA print the same convention outright on the Golden Thread Object Level Target -- 'All values are batch averages'. A batch mean sits closer to any individual unit than a design aim would, which makes it better data; it also looks exactly like a per-unit measurement and is not, which is why a run against it reports ADVISORY and makes no conformance claim for the specimen. Avian Rochester measure and ship data with each chart; that file supersedes this one and should be used whenever it is to hand."
+
+NUMBER_OF_FIELDS	5
+BEGIN_DATA_FORMAT
+SAMPLE_NAME	LAB_L	LAB_A	LAB_B	D
+END_DATA_FORMAT
+
+NUMBER_OF_SETS	130
+BEGIN_DATA
+A0	92.628	-0.652	2.510	-
+A1	19.728	-7.688	-1.740	-
+A2	76.408	-30.510	0.234	-
+A3	78.208	-24.414	43.060	-
+A4	92.292	-0.596	2.502	-
+A5	45.628	-0.622	1.168	-
+A6	49.092	43.666	43.898	-
+A7	36.392	-29.490	-29.726	-
+A8	68.654	-21.496	-17.702	-
+A9	92.376	-0.614	2.386	-
+B0	22.350	-23.738	3.388	-
+B1	39.858	-21.462	-1.230	-
+B2	59.726	-39.872	-1.428	-
+B3	66.148	-6.922	-29.316	-
+B4	36.428	56.434	2.058	-
+B5	22.420	7.836	-0.964	-
+B6	51.156	24.458	21.162	-
+B7	25.890	-21.780	-26.370	-
+B8	60.700	-28.104	-24.090	-
+B9	49.720	-20.802	-19.308	-
+C0	29.760	-15.584	10.130	-
+C1	37.956	-31.640	-2.396	-
+C2	58.844	-22.624	-0.016	-
+C3	75.294	-23.510	0.458	-
+C4	22.926	25.300	5.722	-
+C5	59.232	41.074	40.776	-
+C6	41.192	47.102	48.584	-
+C7	29.044	-14.090	-16.476	-
+C8	87.736	-0.348	41.990	-
+C9	84.536	-5.794	-4.226	-
+D0	27.294	-25.454	20.040	-
+D1	50.252	-43.236	-2.336	-
+D2	17.130	-0.596	-0.750	1.65
+D3	29.880	21.890	20.752	-
+D4	57.350	42.298	66.622	-
+D5	21.810	-2.256	-25.472	-
+D6	92.330	-0.658	2.322	0.09
+D7	67.788	16.650	35.980	-
+D8	66.940	-9.634	77.774	-
+D9	21.374	-5.602	-7.346	-
+E0	50.030	-14.288	18.256	-
+E1	49.354	-26.738	44.372	-
+E2	29.770	-0.324	-0.578	1.21
+E3	77.780	18.890	26.888	-
+E4	34.736	-4.122	-47.720	-
+E5	59.826	-47.734	40.330	-
+E6	74.438	-1.006	1.038	0.33
+E7	49.064	13.580	20.206	-
+E8	20.452	9.060	14.538	-
+E9	77.750	0.414	-11.058	-
+F0	59.712	-20.726	31.742	-
+F1	67.708	-14.150	20.068	-
+F2	41.140	-0.428	0.328	0.92
+F3	39.190	-3.768	-24.920	-
+F4	61.554	41.924	4.192	-
+F5	35.756	61.264	41.488	-
+F6	64.518	-1.134	1.648	0.48
+F7	87.636	4.738	11.160	-
+F8	49.390	25.422	21.894	-
+F9	45.852	-0.672	1.048	-
+G0	92.406	-0.602	2.624	-
+G1	77.918	0.642	40.740	-
+G2	54.248	-1.346	1.354	0.66
+G3	45.912	-22.180	23.290	-
+G4	27.396	28.144	-24.534	-
+G5	78.996	2.634	77.046	-
+G6	45.758	-0.664	1.086	0.82
+G7	56.854	9.448	12.806	-
+G8	78.294	5.866	10.266	-
+G9	92.724	-0.658	2.104	-
+H0	45.886	-0.666	1.194	-
+H1	54.722	-2.116	64.824	-
+H2	60.402	-0.462	1.830	0.54
+H3	49.572	14.564	-16.850	-
+H4	69.988	-29.920	54.710	-
+H5	47.098	57.664	7.050	-
+H6	34.168	-0.936	1.194	1.1
+H7	59.706	2.366	14.534	-
+H8	33.280	-1.916	9.716	-
+H9	57.162	-4.402	-31.576	-
+I0	68.128	1.294	42.518	-
+I1	59.508	3.980	59.756	-
+I2	67.590	-0.724	1.422	0.42
+I3	71.744	-36.994	-0.978	-
+I4	69.258	29.470	54.872	-
+I5	44.448	-31.062	-31.328	-
+I6	9.504	0.026	-0.758	1.98
+I7	86.266	-0.146	-2.472	-
+I8	59.022	4.994	27.092	-
+I9	57.632	-2.794	-15.186	-
+J0	57.710	-0.062	14.674	-
+J1	41.864	1.574	14.922	-
+J2	78.262	-0.870	1.592	-
+J3	22.490	7.246	2.796	-
+J4	51.500	11.380	37.382	-
+J5	78.660	7.546	26.094	-
+J6	41.460	26.234	3.928	-
+J7	68.210	2.034	14.958	-
+J8	40.844	14.024	20.830	-
+J9	46.388	-6.540	-45.672	-
+K0	36.660	-3.374	42.414	-
+K1	23.188	-0.412	7.068	-
+K2	84.066	-1.352	0.334	-
+K3	59.724	25.600	20.526	-
+K4	77.482	3.392	13.132	-
+K5	49.942	2.816	13.106	-
+K6	68.754	11.660	25.424	-
+K7	28.502	15.558	16.312	-
+K8	78.734	0.978	53.828	-
+K9	21.208	-14.862	-22.236	-
+L0	28.710	10.578	9.630	-
+L1	43.080	25.496	16.322	-
+L2	48.732	57.412	32.602	-
+L3	78.880	20.938	1.332	-
+L4	47.396	36.912	4.744	-
+L5	86.746	6.636	5.010	-
+L6	40.888	24.848	-18.928	-
+L7	31.640	11.594	-13.428	-
+L8	64.378	15.904	-17.720	-
+L9	8.132	4.208	-12.132	-
+M0	92.402	-0.630	2.516	-
+M1	31.658	8.814	6.122	-
+M2	67.372	34.428	0.520	-
+M3	59.096	27.860	3.712	-
+M4	91.708	-0.598	2.380	-
+M5	45.750	-0.652	1.144	-
+M6	87.124	4.334	2.276	-
+M7	58.578	19.244	-20.440	-
+M8	39.010	28.606	-26.120	-
+M9	92.280	-0.620	2.270	-
+END_DATA

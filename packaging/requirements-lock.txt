@@ -1,0 +1,21 @@
+# The exact libraries a release is built with. Not OpenCV, which is our own
+# build (packaging/build_opencv.sh) without FFmpeg.
+#
+# PySide6 is 6.9.3 rather than the 6.11 used in development: 6.10 and 6.11
+# declare macOS 13 on their wheels but compile their bindings for macOS 15, and
+# 6.9.3 is the newest whose every binary agrees with its label (macOS 12). NumPy
+# and SciPy are installed from their macOS 11/12 wheels (OpenBLAS) rather than
+# the 14.0 ones (Accelerate); measured against development on three captures,
+# every verdict and status is identical and values differ at the twelfth
+# significant figure.
+colour-science==0.4.7
+imagecodecs==2026.8.16
+numpy==2.5.2
+pillow==12.3.0
+PySide6==6.9.3
+PySide6_Addons==6.9.3
+PySide6_Essentials==6.9.3
+scipy==1.18.0
+shiboken6==6.9.3
+tifffile==2026.8.16
+zxing-cpp==3.1.1

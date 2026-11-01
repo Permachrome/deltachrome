@@ -1,0 +1,44 @@
+{
+  "target_id": "flat_field_v1",
+  "display_name": "Frame-filling white field",
+  "manufacturer": null,
+  "target_type": "flat_field",
+  "physical_size_mm": null,
+  "capabilities": ["flat_field"],
+  "not_capable_of": [
+    "color_accuracy",
+    "tonal_response",
+    "white_balance",
+    "lightness_uniformity",
+    "sfr",
+    "color_registration",
+    "reproduction_scale",
+    "geometric_distortion"
+  ],
+  "fiducials": {
+    "method": "chart_corners",
+    "corner_markers": [
+      { "id": "TL", "relative_position": [0.0, 0.0] },
+      { "id": "TR", "relative_position": [1.0, 0.0] },
+      { "id": "BR", "relative_position": [1.0, 1.0] },
+      { "id": "BL", "relative_position": [0.0, 1.0] }
+    ],
+    "notes": "The corners of the AREA TO BE MEASURED, not of a chart -- there is no chart. Normally the four corners of the image, since the sheet is meant to fill the frame. Place them inside the frame to exclude a border the sheet did not reach, or the fall-off of a sheet smaller than the platen; anything included that is not the white sheet is measured as if it were, and reads as illumination fall-off."
+  },
+  "regions": [],
+  "patches": [],
+  "reference_data": {
+    "source_type": "none",
+    "required": false,
+    "notes": "Nothing is compared against a reference. Both metrics on this target are differences between one part of the image plane and another, so the sheet's own color cancels and only its evenness is measured. This is why an unmeasured sheet of paper is a legitimate target here and would not be anywhere else. Metamorfoze asks for L* of approximately 95; the metric warns if the field is far darker, because a darker field compresses the same fall-off into a smaller Delta L*."
+  },
+  "dimensional_reference": {
+    "method": "none",
+    "notes": "No printed scale and no known dimension. Sampling frequency has to come from another capture in the session, or from the operator."
+  },
+  "metric_defaults": {
+    "illumination_non_uniformity": { "grid": 7, "spot_size": 0.04 },
+    "white_balance_non_uniformity": { "grid": 7, "spot_size": 0.04 }
+  },
+  "notes": "Metamorfoze 2.0 section 2.9 measures illumination evenness and white balance across the image plane on 'a frame-filling UTT or a frame-filling L*a*b* measured white sheet (made of paper, cardboard or plastic)' -- deliberately not on a chart. A chart occupies the middle of the frame, so a chart-based uniformity figure describes the middle of the frame; the fall-off toward the corners, which is what the requirement is about, is outside it. Hence a target with no patches at all.\n\nEvenness of the SHEET is measured as if it were evenness of the lighting, and the two cannot be told apart from a single capture. Rotating the sheet 180 degrees and re-shooting separates them: the lighting's pattern stays where it is, the sheet's turns with it."
+}

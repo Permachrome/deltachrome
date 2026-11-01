@@ -1,0 +1,58 @@
+CGATS.17
+
+ORIGINATOR	"Derived by Deltachrome from per-unit measurements published by Digital Transitions under the OpenQualia label standard"
+DESCRIPTOR	"Golden Thread Device Level Target -- batch mean of published per-unit measurements"
+MANUFACTURER	"Image Science Associates"
+ILLUMINATION_NAME	"D50"
+OBSERVER_ANGLE	"2"
+KEYWORD	"DELTACHROME_REFERENCE_BASIS"
+DELTACHROME_REFERENCE_BASIS	"population_mean"
+KEYWORD	"DELTACHROME_NOMINAL_HELD_OUT_DE"
+DELTACHROME_NOMINAL_HELD_OUT_DE	0.601
+KEYWORD	"DELTACHROME_NOMINAL_POPULATION_SPREAD_DE"
+DELTACHROME_NOMINAL_POPULATION_SPREAD_DE	0.83
+KEYWORD	"DELTACHROME_NOMINAL_POPULATION_UNITS"
+DELTACHROME_NOMINAL_POPULATION_UNITS	50
+KEYWORD	"DELTACHROME_NOMINAL_SOURCE"
+DELTACHROME_NOMINAL_SOURCE	"Mean of the L*a*b* values stated by 50 per-unit measurement files published by Digital Transitions under the OpenQualia label standard, fetched from https://targets.digitaltransitions.com/measurements?Manufacturer=ISA&TargetType=DLT&TargetID=<serial>. Serials, sampled evenly across the years the host publishes: D00001 D00031 D00054 D00077 D00100 D00102 D00111 D00126 D00134 D00142 D00143 D00162 D00178 D00194 D00210 D00211 D00224 D00233 D00243 D00252 D00259 D00282 D00306 D00334 D00358 D00359 D00377 D00396 D00413 D00432 D00055 D00462 D00497 D00531 D00564 D00472 D00625 D00688 D00750 D00812 D00813 D00934 D01053 D01174 D01294 D01139 D01344 D01396 D01447 D01499. Replaces the table printed on unit D00453's own card, transcribed from a capture of it: one print run's batch average, which sits 1.086 dE2000 from an average published unit against a unit-to-unit spread of 0.830. Scored leave-one-out against the same units, this file sits 0.601 dE2000 from an average chart against the previous file's 1.086, with the unit-to-unit spread at 0.830. Pooled across the M0/M1/M2 measurement conditions the units are a mix of, which was measured rather than assumed: a single-condition mean is better within its own condition and worse overall, and a nominal is used precisely when there is no per-unit measurement whose condition it could be matched to. The files' own stated Lab is averaged rather than their spectra; the two differ by 0.05 dE2000, which is this engine's integration agreement rather than a difference between the methods. Regenerate with tools/derive_nominal_from_openqualia.py."
+KEYWORD	"DELTACHROME_NOMINAL_CAVEAT"
+DELTACHROME_NOMINAL_CAVEAT	"A batch mean of 50 individually measured units, not a measurement of the chart in front of you and not a design aim. It is the best available answer to 'what does a chart of this model look like' and it is still not an answer to 'what does THIS chart look like', which is why a run against it reports ADVISORY and makes no conformance claim for the specimen. Two things follow. First, if your own unit's serial is published -- and most are -- fetch it: Deltachrome reads the chart's OpenQualia label and will pair the capture with that unit's own file, which is a conformance test where this is not. Second, the values printed on your own card are a batch average too, of your batch rather than of the population; they are not more authoritative than these and are drawn from a smaller sample. The residual error this leaves is genuine unit-to-unit variation and cannot be reduced by averaging more units: held-out error converges to the floor set by the population's own scatter by about ten units."
+
+NUMBER_OF_FIELDS	4
+BEGIN_DATA_FORMAT
+SAMPLE_NAME	LAB_L	LAB_A	LAB_B
+END_DATA_FORMAT
+
+NUMBER_OF_SETS	30
+BEGIN_DATA
+1	38.928	13.440	14.308
+2	65.748	19.258	18.093
+3	50.163	-4.019	-22.364
+4	43.689	-13.280	22.708
+5	55.590	9.850	-25.012
+6	71.091	-33.380	-0.605
+7	63.399	35.894	58.286
+8	40.483	10.580	-45.862
+9	52.154	48.780	17.159
+10	97.137	-0.743	1.777
+11	92.736	-0.770	1.631
+12	87.983	-1.067	1.133
+13	83.007	-1.082	0.650
+14	72.794	-1.142	0.146
+15	62.506	-1.137	0.122
+16	49.483	-0.994	-0.105
+17	38.810	-0.744	-0.228
+18	28.282	-0.694	-0.210
+19	17.159	-0.462	-0.376
+20	9.587	0.120	-0.347
+21	4.895	0.043	-0.479
+22	30.792	23.389	-20.860
+23	73.031	-24.122	57.506
+24	72.820	19.137	68.785
+25	29.569	14.202	-50.547
+26	55.599	-39.413	31.779
+27	43.114	51.543	28.831
+28	82.674	2.561	80.999
+29	52.585	50.324	-13.449
+30	50.989	-27.849	-28.391
+END_DATA

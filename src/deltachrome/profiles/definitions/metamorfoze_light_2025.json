@@ -1,0 +1,293 @@
+{
+  "$schema_version": 1,
+  "profile_id": "metamorfoze_light_2025",
+  "display_name": "Metamorfoze Light (2.0, April 2025)",
+  "standard_reference": {
+    "body": "Metamorfoze",
+    "document_version": "version 2.0, April 2025",
+    "quality_level": "Metamorfoze Light",
+    "source_url": "https://www.metamorfoze.nl/sites/default/files/documents/Preservation%20Imaging%20Guidelines%20English%202.0%2C%20April%202025.pdf"
+  },
+  "applicable_target_capabilities_required": [
+    "tonal_response",
+    "white_balance"
+  ],
+  "applicable_target_capabilities_optional": [
+    "color_accuracy",
+    "color_registration",
+    "flat_field",
+    "geometric_distortion",
+    "reproduction_scale",
+    "sfr"
+  ],
+  "metrics": [
+    {
+      "metric_id": "master_file_format",
+      "aggregation": "none",
+      "algorithm": {
+        "allowed": [
+          "TIFF",
+          "JPEG 2000",
+          "JPEG"
+        ]
+      },
+      "notes": "TIFF 6.0 uncompressed is the assumed master; the others need the client's approval, which this cannot check."
+    },
+    {
+      "metric_id": "color_space",
+      "aggregation": "none",
+      "algorithm": {
+        "allowed": [
+          "ECIRGB_v2",
+          "eciRGB v2",
+          "Adobe RGB (1998)"
+        ]
+      }
+    },
+    {
+      "metric_id": "bit_depth",
+      "aggregation": "none",
+      "units": "bits",
+      "algorithm": {
+        "allowed": [
+          8,
+          16
+        ]
+      }
+    },
+    {
+      "metric_id": "white_balance",
+      "requires_capability": "white_balance",
+      "algorithm": {
+        "delta_e_variant": "delta_e_2000_ab",
+        "patch_selection": {
+          "roles": [
+            "achromatic_ramp"
+          ],
+          "min_reference_L": 20.0
+        }
+      },
+      "aggregation": "max_per_patch",
+      "units": "dE2000(a*b*)",
+      "pass_condition": "value <= 3",
+      "notes": "CIEDE2000 without the luminance term, which is what Metamorfoze specifies -- not the Euclidean dE(a*b*). Near the neutral axis the two differ by about 6%, in the permissive direction if the Euclidean one is used."
+    },
+    {
+      "metric_id": "tone_response_oecf",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "measure": "delta_l",
+        "patch_selection": {
+          "roles": [
+            "achromatic_ramp"
+          ],
+          "min_reference_L": 20.0
+        }
+      },
+      "aggregation": "max_per_patch",
+      "units": "dL*",
+      "pass_condition": "value <= 2",
+      "notes": "Plain dL* (CIE2000 with S_L = 1), not FADGI's dL*2000. At the ends of the ramp the two differ by more than a factor of 1.5."
+    },
+    {
+      "metric_id": "gain_modulation_highlight",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": {
+          "roles": [
+            "achromatic_ramp"
+          ],
+          "min_reference_L": 20.0
+        },
+        "l_star_range": [
+          85.0,
+          95.0
+        ],
+        "min_delta_l": 10.0,
+        "evaluation_range": [
+          5.0,
+          95.0
+        ]
+      },
+      "aggregation": "worst_case",
+      "units": "gain",
+      "pass_condition": "0.8 <= value <= 1.1"
+    },
+    {
+      "metric_id": "gain_modulation_other",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": {
+          "roles": [
+            "achromatic_ramp"
+          ],
+          "min_reference_L": 20.0
+        },
+        "min_delta_l": 10.0,
+        "evaluation_range": [
+          5.0,
+          95.0
+        ]
+      },
+      "aggregation": "worst_case",
+      "units": "gain",
+      "pass_condition": "0.6 <= value <= 1.4"
+    },
+    {
+      "metric_id": "noise",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": {
+          "roles": [
+            "achromatic_ramp"
+          ],
+          "min_reference_L": 20.0
+        },
+        "lower_limit": 0.25
+      },
+      "aggregation": "max",
+      "units": "std dev of L*",
+      "pass_condition": "value <= 1.6"
+    },
+    {
+      "metric_id": "illumination_non_uniformity",
+      "requires_capability": "flat_field",
+      "aggregation": "max",
+      "units": "dL*",
+      "pass_condition_by": {
+        "parameter": "original_size",
+        "description": "Largest originals this system is being qualified for. Metamorfoze bands the illumination tolerance by it, and the measurement is made on a blank white sheet that has no size of its own.",
+        "bands": [
+          {
+            "band": "A3",
+            "label": "originals up to A3",
+            "max_mm": 420.0,
+            "pass_condition": "value <= 3"
+          },
+          {
+            "band": "A2",
+            "label": "originals over A3, up to A2",
+            "max_mm": 594.0,
+            "pass_condition": "value <= 4"
+          },
+          {
+            "band": "A1",
+            "label": "originals over A2, up to A1",
+            "max_mm": 841.0,
+            "pass_condition": "value <= 5"
+          },
+          {
+            "band": "A0",
+            "label": "originals over A1, up to A0",
+            "max_mm": 1189.0,
+            "pass_condition": "value <= 6"
+          }
+        ]
+      },
+      "notes": "Measured on a frame-filling white sheet at about L* 95, not on a chart. A chart occupies the middle of the frame; the fall-off this is about is at the corners."
+    },
+    {
+      "metric_id": "average_color_accuracy",
+      "requires_capability": "color_accuracy",
+      "algorithm": {
+        "delta_e_variant": "delta_e_2000",
+        "patch_selection": "all patches"
+      },
+      "aggregation": "mean",
+      "units": "Delta E2000",
+      "pass_condition": "value <= 4"
+    },
+    {
+      "metric_id": "color_accuracy_max",
+      "requires_capability": "color_accuracy",
+      "algorithm": {
+        "delta_e_variant": "delta_e_2000",
+        "patch_selection": "all patches"
+      },
+      "aggregation": "max",
+      "units": "Delta E2000",
+      "pass_condition": "value <= 14",
+      "notes": "Metamorfoze states a maximum where FADGI states a 90th percentile. One bad patch decides it."
+    },
+    {
+      "metric_id": "white_balance_non_uniformity",
+      "requires_capability": "flat_field",
+      "aggregation": "max",
+      "units": "dE2000(a*b*)",
+      "pass_condition": "value <= 3",
+      "notes": "White balance across the entire image plane, on the same frame-filling white sheet. Catches a cast that varies across the frame, which a white balance read at the center cannot see."
+    },
+    {
+      "metric_id": "sampling_frequency",
+      "aggregation": "none",
+      "units": "ppi",
+      "pass_condition": "value >= 300",
+      "notes": "300 ppi for originals of DIN A5 and larger. Originals smaller than A5 may go up to 600 ppi; that ceiling is not modeled here, since it is a permission rather than a requirement."
+    },
+    {
+      "metric_id": "reproduction_scale_accuracy",
+      "requires_capability": "reproduction_scale",
+      "aggregation": "max",
+      "units": "% difference from header ppi",
+      "pass_condition": "value <= 2",
+      "notes": "Metamorfoze's 'difference between claimed and obtained sampling rate'. The claimed rate is the file header's; the obtained rate is measured off the chart's own printed scale."
+    },
+    {
+      "metric_id": "sfr10_sampling_efficiency",
+      "requires_capability": "sfr",
+      "aggregation": "worst_edge",
+      "units": "% of Nyquist",
+      "pass_condition": "value >= 85",
+      "algorithm": {
+        "edge_aggregation": "worst"
+      },
+      "notes": "Metamorfoze applies this to both dimensions and to every MTF target in the image plane, so the worst edge governs rather than the mean OpenDICE reports."
+    },
+    {
+      "metric_id": "mtf50",
+      "requires_capability": "sfr",
+      "aggregation": "worst_edge",
+      "units": "% of half-sampling freq",
+      "algorithm": {
+        "frequency_units": "% of half-sampling freq",
+        "edge_aggregation": "worst"
+      },
+      "pass_condition": "value >= 38.25",
+      "notes": "Stated as '>= 45% of the minimum required lp/mm at MTF10'. That MTF10 requirement is sampling efficiency >= 85% of Nyquist, so the sampling rate cancels and the requirement is 0.45 x 0.85 = 38.25% of the half-sampling frequency at any rate. CONFIRMED against the guideline's own section 2.14: 'regardless of the sampling rate size' the requirement is stated as a fraction of MTF10 performance, not anchored to the 300 ppi standard rate -- which is what would make it a flat 2.259 lp/mm instead. Set frequency_units to lp/mm to see the same measurement in the unit the standard writes it in."
+    },
+    {
+      "metric_id": "sharpening",
+      "requires_capability": "sfr",
+      "aggregation": "worst_edge",
+      "units": "max modulation",
+      "algorithm": {
+        "edge_aggregation": "worst"
+      },
+      "pass_condition": "value <= 1.05"
+    },
+    {
+      "metric_id": "color_channel_misregistration",
+      "requires_capability": "color_registration",
+      "aggregation": "max",
+      "units": "pixels",
+      "algorithm": {
+        "registration_aggregation": "worst",
+        "component": "per_axis"
+      },
+      "pass_condition": "value <= 0.5"
+    },
+    {
+      "metric_id": "geometric_distortion",
+      "requires_capability": "geometric_distortion",
+      "aggregation": "max",
+      "units": "%",
+      "pass_condition": "value <= 2"
+    }
+  ],
+  "overall_pass_rule": "all applicable metrics must pass",
+  "profile_editable": true,
+  "profile_locked_fields": [
+    "standard_reference"
+  ],
+  "notes": "Metamorfoze Light, from the specification table in section 1.6 of Metamorfoze Preservation Imaging Guidelines version 2.0, April 2025.\n\nNo single target carries everything this profile asks for. Illumination and white balance across the image plane are measured on a frame-filling white sheet (target flat_field_v1); color and tone come from a patch chart; sharpness, registration and distortion from a chart carrying slanted edges and printed scales. Run them together as a session -- metrics no capture reaches are reported as such and never counted as failures.\n\nTwo entries are readings rather than quotations and say so in their own notes: the MTF50 requirement, and the 'maximum L* value for assessing neutrals' which is applied here as the darkest tone the ladder is judged down to.\n\n'Artefacts' is not modeled at any level: Full and Light state N/A, and Extra Light states a prose requirement that text remain readable, which is not machine-checkable."
+}

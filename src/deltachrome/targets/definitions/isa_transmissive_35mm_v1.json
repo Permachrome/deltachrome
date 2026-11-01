@@ -1,0 +1,680 @@
+{
+  "$schema_version": 1,
+  "target_id": "isa_transmissive_35mm_v1",
+  "display_name": "ISA Transmissive Film Target, 35mm",
+  "manufacturer": "Image Science Associates",
+  "target_type": "transmissive_neutral_target",
+  "physical_size_mm": null,
+  "capabilities": [
+    "tonal_response",
+    "white_balance",
+    "sfr",
+    "color_registration",
+    "geometric_distortion",
+    "reproduction_scale"
+  ],
+  "not_capable_of": [
+    "color_accuracy",
+    "lightness_uniformity"
+  ],
+  "fiducials": {
+    "method": "printed_frame_corners",
+    "corner_markers": [
+      {
+        "id": "TL",
+        "relative_position": [
+          -0.29665,
+          -0.29349
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "TR",
+        "relative_position": [
+          1.29421,
+          -0.29676
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "BR",
+        "relative_position": [
+          1.29571,
+          1.2948
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "BL",
+        "relative_position": [
+          -0.29538,
+          1.29791
+        ],
+        "nearest_patch": null
+      }
+    ],
+    "notes": "Place by the four corners of the thin dark KEYLINE printed just inside the chart's border -- the intersections of its four fitted sides. `tools/locate_printed_fiducials.py frame` finds them, as for the LaserSoft ISO 12641-2: scan for the boundary along a few hundred lines a side, fit a line through what was found with strays thrown out, intersect adjacent lines. On the sample capture that is 1140 to 1322 of about 1250 scan lines a side, residuals 0.11 to 0.39 px. This keyline is lighter than the 4x5's -- 0.665 of the card's level against 0.51 -- which `FRAME_DARK_FRACTION` (0.80) accommodates.\n\nTHE RELATIVE FRAME IS THE QUARTER-DISC PAIRS' APEX MIDPOINTS, (0,0) to (1,1), and every patch, module, rule and marker coordinate here is in it; the keyline is declared as four points in that frame, about +/-0.25 outside it on every side. A keyline corner is the intersection of two long straight lines and better conditioned than the apexes: one pixel of fiducial error displaces the chart by 1.44 px against the apexes' 1.93. The discs are the SFR features and what refinement snaps to -- ten of them, enough to over-determine a homography.",
+    "superseded": "The relative frame's corners, as for the 4x5: the point where the two quarter discs of each CORNER pair meet, clockwise from top-left in the target's own orientation. On the capture measured here the center pair landed at relative (0.5000, 0.5001)."
+  },
+  "regions": [
+    {
+      "region_id": "wedge_left",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 3,
+        "columns": 4,
+        "row_labels": [
+          1,
+          2,
+          3
+        ],
+        "col_labels": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.09347,
+          "height": 0.14394
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.09347,
+          "vertical": 0.14394
+        },
+        "grid_origin_relative": [
+          -0.1244,
+          0.27995
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner quarter-disc pairs' apex midpoints."
+      },
+      "notes": "Twelve-step neutral wedge, left of the chart, as three rows of four. The ramp runs in reading order, lightest first."
+    },
+    {
+      "region_id": "wedge_right",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 3,
+        "columns": 4,
+        "row_labels": [
+          1,
+          2,
+          3
+        ],
+        "col_labels": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.09347,
+          "height": 0.14394
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.09347,
+          "vertical": 0.14394
+        },
+        "grid_origin_relative": [
+          0.7576,
+          0.28211
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quad formed by the four corner quarter-disc pairs' apex midpoints."
+      },
+      "notes": "Twelve-step neutral wedge, right of the chart, as three rows of four. The ramp runs in REVERSE reading order: the darkest step is top-left and the lightest bottom-right, mirroring the left block."
+    },
+    {
+      "region_id": "module_tl",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "TL",
+        "discs": [
+          {
+            "center": [
+              -0.0712,
+              0.0938
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          },
+          {
+            "center": [
+              0.0712,
+              -0.0938
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. Grid pitch comes from the blocks' own interior step boundaries -- the outermost detected edge is the block's border and does not sit a whole pitch from the first interior line -- and the two blocks then agree on pitch to 0.00001 in u and 0.00000 in v, which is the check that they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture."
+      },
+      "notes": "Two dark quarter discs placed apex to apex, as on the 4x5. Four slanted edges per pair -- two per image axis, of opposite polarity."
+    },
+    {
+      "region_id": "module_tr",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "TR",
+        "discs": [
+          {
+            "center": [
+              0.9288,
+              0.0938
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          },
+          {
+            "center": [
+              1.0712,
+              -0.0938
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. Grid pitch comes from the blocks' own interior step boundaries -- the outermost detected edge is the block's border and does not sit a whole pitch from the first interior line -- and the two blocks then agree on pitch to 0.00001 in u and 0.00000 in v, which is the check that they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture."
+      },
+      "notes": "Two dark quarter discs placed apex to apex, as on the 4x5. Four slanted edges per pair -- two per image axis, of opposite polarity."
+    },
+    {
+      "region_id": "module_center",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "CENTER",
+        "discs": [
+          {
+            "center": [
+              0.4288,
+              0.5938
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          },
+          {
+            "center": [
+              0.5712,
+              0.4062
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. Grid pitch comes from the blocks' own interior step boundaries -- the outermost detected edge is the block's border and does not sit a whole pitch from the first interior line -- and the two blocks then agree on pitch to 0.00001 in u and 0.00000 in v, which is the check that they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture."
+      },
+      "notes": "Two dark quarter discs placed apex to apex, as on the 4x5. Four slanted edges per pair -- two per image axis, of opposite polarity."
+    },
+    {
+      "region_id": "module_bl",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "BL",
+        "discs": [
+          {
+            "center": [
+              -0.0712,
+              1.0938
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          },
+          {
+            "center": [
+              0.0712,
+              0.9062
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. Grid pitch comes from the blocks' own interior step boundaries -- the outermost detected edge is the block's border and does not sit a whole pitch from the first interior line -- and the two blocks then agree on pitch to 0.00001 in u and 0.00000 in v, which is the check that they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture."
+      },
+      "notes": "Two dark quarter discs placed apex to apex, as on the 4x5. Four slanted edges per pair -- two per image axis, of opposite polarity."
+    },
+    {
+      "region_id": "module_br",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "quarter_disc_pair",
+        "position": "BR",
+        "discs": [
+          {
+            "center": [
+              0.9288,
+              1.0938
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          },
+          {
+            "center": [
+              1.0712,
+              0.9062
+            ],
+            "half_size": [
+              0.0607,
+              0.0939
+            ],
+            "tilt_deg": 5.24
+          }
+        ],
+        "edges": 4,
+        "measured_note": "Measured by rectifying a capture to the fiducial quad. Grid pitch comes from the blocks' own interior step boundaries -- the outermost detected edge is the block's border and does not sit a whole pitch from the first interior line -- and the two blocks then agree on pitch to 0.00001 in u and 0.00000 in v, which is the check that they are the same printed block twice. Disc geometry is approximate on purpose: the exact quarter disc is located in each capture."
+      },
+      "notes": "Two dark quarter discs placed apex to apex, as on the 4x5. Four slanted edges per pair -- two per image axis, of opposite polarity."
+    },
+    {
+      "region_id": "ruler_metric_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "u",
+        "bounds_relative": [
+          0.3259,
+          -0.196,
+          0.7974,
+          -0.177
+        ],
+        "printed_label": "1 division = 0.1 mm",
+        "measured_note": "THE DIVISION USED CONTRADICTS THE CHART'S PRINTED LABEL, which reads '1 division = 0.1 mm'. The two imperial rules carry no metric label and so are independent of it: at 1 mm per division the metric rules read 156.85 and 156.82 px/mm and the imperial rules 156.81 and 156.79, agreeing to 0.04%. At the printed 0.1 mm they would read ten times that and put the 35mm frame at about 4 mm across. The ISA 120 carries the same label and is read the same way."
+      },
+      "notes": "Metric rule above the chart, nine usable divisions. THE BAND STOPS ABOVE THE RULE'S OWN BASELINE: the ticks stand up from a solid line, and a band that included it would put ink in every column, so the reader's low percentile would find the baseline rather than the ticks. Declared to stop 0.002 above it, it reads 9 divisions at 0.92 px residual."
+    },
+    {
+      "region_id": "ruler_imperial_top",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "u",
+        "bounds_relative": [
+          0.17,
+          -0.143,
+          0.82,
+          -0.128
+        ],
+        "printed_label": "1 division = .0625 in",
+        "measured_note": "Band chosen by sweeping it over the printed feature and keeping the fit with the lowest comb residual, from a capture rectified to the fiducial quad. The four rules agree on the sampling rate to 0.04%, which is what makes each one's own band trustworthy."
+      },
+      "notes": "Imperial rule directly below the metric one, eight divisions -- exactly the floor the reader fits a comb through. It is what settles the metric rules' printed label. Ticks hang DOWNWARD here, so the band runs below the baseline rather than above it."
+    },
+    {
+      "region_id": "ruler_metric_left",
+      "kind": "scale",
+      "geometry": {
+        "unit": "mm",
+        "division_mm": 1.0,
+        "axis": "v",
+        "bounds_relative": [
+          -0.232,
+          0.03,
+          -0.22,
+          0.78
+        ],
+        "printed_label": "1 division = 0.1 mm",
+        "measured_note": "THE DIVISION USED CONTRADICTS THE CHART'S PRINTED LABEL, which reads '1 division = 0.1 mm'. The two imperial rules carry no metric label and so are independent of it: at 1 mm per division the metric rules read 156.85 and 156.82 px/mm and the imperial rules 156.81 and 156.79, agreeing to 0.04%. At the printed 0.1 mm they would read ten times that and put the 35mm frame at about 4 mm across. The ISA 120 carries the same label and is read the same way."
+      },
+      "notes": "The same metric rule again, printed down the left-hand side, nine divisions. Two rules per axis is what lets geometric distortion see the field vary rather than only the scale."
+    },
+    {
+      "region_id": "ruler_imperial_left",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 1.5875,
+        "axis": "v",
+        "bounds_relative": [
+          -0.196,
+          0.0,
+          -0.182,
+          1.0
+        ],
+        "printed_label": "1 division = .0625 in",
+        "measured_note": "Band chosen by sweeping it over the printed feature and keeping the fit with the lowest comb residual, from a capture rectified to the fiducial quad. The four rules agree on the sampling rate to 0.04%, which is what makes each one's own band trustworthy."
+      },
+      "notes": "The imperial rule down the left-hand side, eight divisions. Its ticks hang toward the chart from a baseline at u -0.202, which is the opposite sense from the metric rule beside it -- hence the two bands lying on opposite sides of their own lines."
+    }
+  ],
+  "patches": [
+    {
+      "patch_id": "L1",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 1
+    },
+    {
+      "patch_id": "L2",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "L3",
+      "grid_position": {
+        "row": 0,
+        "col": 2
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "L4",
+      "grid_position": {
+        "row": 0,
+        "col": 3
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "L5",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    },
+    {
+      "patch_id": "L6",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 11
+    },
+    {
+      "patch_id": "L7",
+      "grid_position": {
+        "row": 1,
+        "col": 2
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 13
+    },
+    {
+      "patch_id": "L8",
+      "grid_position": {
+        "row": 1,
+        "col": 3
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 15
+    },
+    {
+      "patch_id": "L9",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 17
+    },
+    {
+      "patch_id": "L10",
+      "grid_position": {
+        "row": 2,
+        "col": 1
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 19
+    },
+    {
+      "patch_id": "L11",
+      "grid_position": {
+        "row": 2,
+        "col": 2
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 21
+    },
+    {
+      "patch_id": "L12",
+      "grid_position": {
+        "row": 2,
+        "col": 3
+      },
+      "region": "wedge_left",
+      "role": "achromatic_ramp",
+      "ramp_position": 23
+    },
+    {
+      "patch_id": "R1",
+      "grid_position": {
+        "row": 2,
+        "col": 3
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    },
+    {
+      "patch_id": "R2",
+      "grid_position": {
+        "row": 2,
+        "col": 2
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "R3",
+      "grid_position": {
+        "row": 2,
+        "col": 1
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "R4",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "R5",
+      "grid_position": {
+        "row": 1,
+        "col": 3
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 10
+    },
+    {
+      "patch_id": "R6",
+      "grid_position": {
+        "row": 1,
+        "col": 2
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 12
+    },
+    {
+      "patch_id": "R7",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 14
+    },
+    {
+      "patch_id": "R8",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 16
+    },
+    {
+      "patch_id": "R9",
+      "grid_position": {
+        "row": 0,
+        "col": 3
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 18
+    },
+    {
+      "patch_id": "R10",
+      "grid_position": {
+        "row": 0,
+        "col": 2
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 20
+    },
+    {
+      "patch_id": "R11",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 22
+    },
+    {
+      "patch_id": "R12",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "wedge_right",
+      "role": "achromatic_ramp",
+      "ramp_position": 24
+    }
+  ],
+  "reference_data": {
+    "opendice_names": [
+      ["1", "L1"],
+      ["2", "L2"],
+      ["3", "L3"],
+      ["4", "L4"],
+      ["5", "L5"],
+      ["6", "L6"],
+      ["7", "L7"],
+      ["8", "L8"],
+      ["9", "L9"],
+      ["10", "L10"],
+      ["11", "L11"],
+      ["12", "L12"],
+      ["13", "R1"],
+      ["14", "R2"],
+      ["15", "R3"],
+      ["16", "R4"],
+      ["17", "R5"],
+      ["18", "R6"],
+      ["19", "R7"],
+      ["20", "R8"],
+      ["21", "R9"],
+      ["22", "R10"],
+      ["23", "R11"],
+      ["24", "R12"]
+    ],
+    "opendice_names_notes": "OpenDICE's profile numbers the two ladders straight through: Patch1-12 is the left ladder, Patch13-24 the right, each lightest first.",
+    "source_type": "per_unit_file",
+    "import_format": "cgats",
+    "required": true,
+    "nominal_values": {
+      "file": "isa_transmissive_35mm_v1_nominal.txt",
+      "basis": "manufacturer_nominal",
+      "source": "The ISA film wedge, D 0.05 to 2.25, from OpenDICE's published Profile_Negative4x5.txt -- the ladder of this chart's 4x5 sibling, used for all three ISA film targets because every 35mm capture tried fits it best, OpenDICE's own sample included.",
+      "covers": "Twelve densities, D 0.05 to 2.25, applied to both wedges. Density only; the L* aims are derived.",
+      "notes": "Chosen partly by fit, which the file's own caveat says: four captures of two formats from two sources agree on this ladder, but only ISA can confirm what the chart prints. The published data is density only, anchored so the lightest step reads FADGI's transparency highlight aim of 96 L*, and a* = b* = 0 restates ISA's claim that the scales are spectrally neutral. Nominal for the model rather than measured from any individual chart, so a run against them is advisory."
+    },
+    "notes": "A per-unit file is preferred and used whenever one is supplied. None exists for this target."
+  },
+  "dimensional_reference": {
+    "available": true,
+    "summary": "Four printed rules -- a metric and an imperial scale above the chart and the same pair down the left-hand side. Two per axis, which is what geometric distortion needs, and two units per position, which is what settles the metric rules' printed label. They agree on the sampling rate to 0.04%: 156.85, 156.81, 156.82 and 156.79 px/mm.",
+    "notes": "Two rules per axis in two units: the imperial pair settles the metric rules' printed label, and each band stops short of its own rule's baseline."
+  },
+  "metric_defaults": {
+    "tonal_response": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Twenty-four patches, a TWELVE-step ladder measured at two field positions. Ramp positions interleave the blocks because the order is derived from reference lightness and the pairs are equal."
+    },
+    "white_balance": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Delta E(a*b*) against a neutral aim, L* excluded."
+    }
+  },
+  "notes": "GEOMETRY MEASURED FROM ONE CAPTURE, UNVALIDATED AGAINST A REFERENCE FILE. The 35mm target and the slide-mounted one are the same pattern -- same ten quarter discs at the same five pair positions, same two 4x3 wedges -- so this definition serves both; only the framing differs. The right-hand wedge runs in reverse, which is a property of the print and not a convention chosen here: sampling confirms the two blocks agree step for step to within 0.5 L*. FADGI's category for this format is Photographic Transparencies 35mm to 4x5."
+}

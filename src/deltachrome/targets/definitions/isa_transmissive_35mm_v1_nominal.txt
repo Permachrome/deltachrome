@@ -1,0 +1,46 @@
+CGATS.17
+
+ORIGINATOR	"Derived from OpenDICE Profile_Negative4x5.txt (Library of Congress)"
+DESCRIPTOR	"ISA transmissive film target 35mm -- manufacturer nominal aim values"
+MANUFACTURER	"Image Science Associates"
+ILLUMINATION_NAME	"D50"
+OBSERVER_ANGLE	"2"
+KEYWORD	"DELTACHROME_REFERENCE_BASIS"
+DELTACHROME_REFERENCE_BASIS	"manufacturer_nominal"
+KEYWORD	"DELTACHROME_NOMINAL_SOURCE"
+DELTACHROME_NOMINAL_SOURCE	"The ISA film wedge, D 0.05 to 2.25, from OpenDICE's Profile_Negative4x5.txt -- the ladder published for this chart's 4x5 sibling. It replaces twelve recommended L* values of untraced origin (93, 76, 70, 62, 53, 38, 28, 20, 17, 13, 9, 7). Fitted with free gain and flare, three ISA 35mm captures -- a 35mm, a slide and OpenDICE's 'Negative 35mm (2)' -- read 3.2, 3.3 and 2.2 L* rms against this ladder, 4.9, 6.5 and 8.2 against the ladder OpenDICE publishes for that sample (Profile_35mm_Negative2.txt, D 0.06 to 1.83), and 7.2, 8.3 and 9.8 against the values it replaces. One wedge serves all three ISA film targets."
+KEYWORD	"DELTACHROME_NOMINAL_CAVEAT"
+DELTACHROME_NOMINAL_CAVEAT	"Manufacturer nominal aim values for the model, not a measurement of any individual chart. Two further steps sit between this file and a measurement, and both are choices rather than arithmetic: the published data is DENSITY ONLY, anchored here so the lightest step reads L* 96 -- FADGI's own transparency highlight aim -- because a density ladder carries no lightness of its own; and a* = b* = 0 restates the manufacturer's claim that the scales are spectrally neutral as an aim. Density describes the film; L* describes the appearance of a reproduction, and for a transmissive original the mapping between them IS the tone response being measured. Treat tone response against this file as advisory of a rendering intent, not as conformance. CHOSEN PARTLY BY FIT, which is said rather than hidden: four captures of two formats from two sources agree on this ladder, but only ISA can confirm what the chart prints."
+
+NUMBER_OF_FIELDS	5
+BEGIN_DATA_FORMAT
+SAMPLE_NAME	LAB_L	LAB_A	LAB_B	D
+END_DATA_FORMAT
+
+NUMBER_OF_SETS	24
+BEGIN_DATA
+L1	96.000	0.000	0.000	0.05
+L2	90.141	0.000	0.000	0.12
+L3	84.589	0.000	0.000	0.19
+L4	74.341	0.000	0.000	0.33
+L5	64.516	0.000	0.000	0.48
+L6	50.971	0.000	0.000	0.72
+L7	43.231	0.000	0.000	0.88
+L8	32.145	0.000	0.000	1.15
+L9	22.835	0.000	0.000	1.43
+L10	15.325	0.000	0.000	1.71
+L11	8.130	0.000	0.000	2.05
+L12	5.130	0.000	0.000	2.25
+R1	96.000	0.000	0.000	0.05
+R2	90.141	0.000	0.000	0.12
+R3	84.589	0.000	0.000	0.19
+R4	74.341	0.000	0.000	0.33
+R5	64.516	0.000	0.000	0.48
+R6	50.971	0.000	0.000	0.72
+R7	43.231	0.000	0.000	0.88
+R8	32.145	0.000	0.000	1.15
+R9	22.835	0.000	0.000	1.43
+R10	15.325	0.000	0.000	1.71
+R11	8.130	0.000	0.000	2.05
+R12	5.130	0.000	0.000	2.25
+END_DATA

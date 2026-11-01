@@ -1,0 +1,200 @@
+{
+  "$schema_version": 1,
+  "profile_id": "fadgi_2star_photographic_transparencies_35mm_to_4x5_2023",
+  "display_name": "FADGI 2-Star \u2014 Photographic Transparencies: 35mm up to 4\u201dx5\u201d (2023 3rd Ed.)",
+  "standard_reference": {
+    "body": "FADGI",
+    "document_version": "3rd Edition, May 2023",
+    "edition": "3rd",
+    "published": "2023-05-09",
+    "material_category": "Photographic Transparencies: 35mm up to 4\u201dx5\u201d",
+    "section": "3.9",
+    "source_url": "https://www.digitizationguidelines.gov/guidelines/FADGI%20Technical%20Guidelines%20for%20Digitizing%20Cultural%20Heritage%20Materials_3rd%20Edition_05092023.pdf",
+    "thresholds_transcribed_from": "Section 3.9 conformance table, pages 54-55",
+    "provisional": true,
+    "star_level": 2
+  },
+  "applicable_target_capabilities_required": [
+    "tonal_response",
+    "white_balance"
+  ],
+  "applicable_target_capabilities_optional": [
+    "sfr",
+    "color_registration",
+    "lightness_uniformity",
+    "reproduction_scale"
+  ],
+  "metrics": [
+    {
+      "metric_id": "master_file_format",
+      "algorithm": {
+        "allowed": [
+          "TIFF",
+          "JPEG 2000"
+        ]
+      },
+      "aggregation": "none"
+    },
+    {
+      "metric_id": "bit_depth",
+      "aggregation": "none",
+      "units": "bits",
+      "algorithm": {
+        "allowed": [
+          8,
+          16
+        ]
+      }
+    },
+    {
+      "metric_id": "color_space",
+      "algorithm": {
+        "allowed": [
+          "Gray Gamma 2.2",
+          "sRGB",
+          "Adobe RGB (1998)",
+          "ProPhoto",
+          "ProPhoto RGB",
+          "ECIRGB_v2",
+          "eciRGB v2"
+        ]
+      },
+      "aggregation": "none"
+    },
+    {
+      "metric_id": "sampling_frequency",
+      "aggregation": "none",
+      "pass_condition": "value >= 1950",
+      "units": "ppi"
+    },
+    {
+      "metric_id": "highlight_tolerance",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": "role == 'achromatic_ramp'"
+      },
+      "aggregation": "none",
+      "units": "L*",
+      "notes": "FADGI 2.4.15, informative-only for this category. The table's own aim is 96 +/- 2 L* for the highlight end of the ramp, checked here against the measured value directly rather than judged."
+    },
+    {
+      "metric_id": "shadow_tolerance",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": "role == 'achromatic_ramp'"
+      },
+      "aggregation": "none",
+      "units": "L*",
+      "notes": "FADGI 2.4.15, informative-only for this category. The table's own aim is 2.7 +/- 1.5 L* for the shadow end of the ramp, checked here against the measured value directly rather than judged."
+    },
+    {
+      "metric_id": "dynamic_range",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": "role == 'achromatic_ramp'"
+      },
+      "aggregation": "none",
+      "units": "D",
+      "notes": "FADGI 2.4.16, informative-only. The table's own figure for this level is 3.8. What is reported is the density span of this target's own declared reference ramp, restricted to patches this capture resolved without clipping -- FADGI gives no measurement procedure of its own, calling this 'an emerging area'. N/A for a target whose reference carries no density column, which is every reflective target."
+    },
+    {
+      "metric_id": "white_balance",
+      "requires_capability": "white_balance",
+      "algorithm": {
+        "delta_e_variant": "delta_e_2000_ab",
+        "patch_selection": "role == 'achromatic_ramp'"
+      },
+      "aggregation": "max_per_patch",
+      "pass_condition": "value < 4",
+      "units": "dE2000(a*b*)",
+      "notes": "'For any given gray patch', so the worst patch must clear the threshold. CIEDE2000 with the L* component eliminated, as section 2.4.4 defines it; the tables' 'dE(a*b*)' names the same quantity."
+    },
+    {
+      "metric_id": "tone_response_oecf",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "measure": "delta_l_2000",
+        "patch_selection": "role == 'achromatic_ramp'"
+      },
+      "aggregation": "max_per_patch",
+      "pass_condition": "value < 4",
+      "units": "dL*2000",
+      "notes": "dL*2000 includes the CIEDE2000 S_L weighting; it is not plain |dL*|."
+    },
+    {
+      "metric_id": "lightness_uniformity",
+      "requires_capability": "lightness_uniformity",
+      "algorithm": {
+        "patch_selection": {
+          "roles": [
+            "achromatic_border"
+          ]
+        },
+        "family_selection": "lightest"
+      },
+      "aggregation": "none",
+      "pass_condition": "value < 5",
+      "units": "% (std dev / mean L*)",
+      "notes": "FADGI states the units as standard deviation divided by mean, so this is a percentage."
+    },
+    {
+      "metric_id": "color_channel_misregistration",
+      "requires_capability": "color_registration",
+      "aggregation": "max",
+      "pass_condition": "value < 0.8",
+      "units": "pixels"
+    },
+    {
+      "metric_id": "sfr10_sampling_efficiency",
+      "requires_capability": "sfr",
+      "algorithm": {
+        "edge_fit": "linear",
+        "esf_supersample_bin_width": 0.25,
+        "roi_size_px": 100
+      },
+      "aggregation": "worst_edge",
+      "pass_condition": "value > 70",
+      "units": "% of Nyquist",
+      "notes": "FADGI states this as a percentage ratio; the frequency at 10% modulation as a percentage of the Nyquist (half-sampling) frequency."
+    },
+    {
+      "metric_id": "sfr_response_at_nyquist",
+      "requires_capability": "sfr",
+      "aggregation": "worst_edge",
+      "units": "modulation",
+      "notes": "FADGI marks this row informative only for this category: 'not a required parameter for each FADGI star level'. The reading is reported and the table's figure for this level is < 0.4, but it is not judged, because failing a run on a criterion the standard does not impose would misrepresent the standard just as surely as passing one it does."
+    },
+    {
+      "metric_id": "sfr50",
+      "requires_capability": "sfr",
+      "algorithm": {
+        "edge_fit": "linear",
+        "esf_supersample_bin_width": 0.25
+      },
+      "aggregation": "worst_edge",
+      "pass_condition": "35 <= value <= 85",
+      "units": "% of half-sampling freq",
+      "notes": "A two-sided band: too low is soft, too high means the response extends so far that detail above Nyquist aliases into the image."
+    },
+    {
+      "metric_id": "sharpening",
+      "requires_capability": "sfr",
+      "aggregation": "max",
+      "pass_condition": "value < 1.1",
+      "units": "max modulation"
+    },
+    {
+      "metric_id": "reproduction_scale_accuracy",
+      "requires_capability": "reproduction_scale",
+      "aggregation": "max",
+      "pass_condition": "value < 2.5",
+      "units": "% difference from header ppi"
+    }
+  ],
+  "overall_pass_rule": "all applicable metrics must pass",
+  "profile_editable": true,
+  "profile_locked_fields": [
+    "standard_reference"
+  ],
+  "notes": "Thresholds read from FADGI 3rd Edition, May 2023, section 3.9 (Photographic Transparencies: 35mm up to 4\u201dx5\u201d), pages 54-55. SFR50 is modeled as the two-sided band [>35%, <85%] of half sampling frequency. Rows this category marks informative-only are measured and reported without a pass condition, so they read MEASURED: sfr_response_at_nyquist, highlight_tolerance, shadow_tolerance, dynamic_range. A row the table does not carry produces no metric at all, which is different from one measured without a threshold. A metric with no plugin reports NOT IMPLEMENTED and forces INCOMPLETE rather than a pass. This category specifies NO color accuracy metric: FADGI notes that film content is not scene referred, so there is no unambiguous original to judge colorimetric accuracy against. Delta E measured against a target's own reference file is still useful and can be run with a custom profile, but it is not a FADGI conformance criterion here and must not be reported as one. FADGI marks this category's measurement parameters provisional: the values were compared against optical density equivalents up to 2.2 and are to be adopted until there is evidence to the contrary."
+}

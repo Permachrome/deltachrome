@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "deltachrome"
+dynamic = ["version"]
+description = "Cultural heritage imaging QC — analyze photographic test targets against FADGI, Metamorfoze and ISO 19264."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Permachrome" }]
+keywords = ["fadgi", "metamorfoze", "iso19264", "digitization", "colorimetry", "imaging", "quality-control"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Multimedia :: Graphics :: Capture",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "colour-science>=0.4.4",
+  "opencv-python-headless>=4.9",
+  "pillow>=10.2",
+  "tifffile>=2024.1.30",
+  "imagecodecs>=2024.1.1",
+  # Reads QR, Data Matrix and the 1-D symbologies OpenCV cannot. The engine
+  # still runs without it, which is exactly why it is declared: a build that
+  # left it out would stop reading most printed codes and say nothing.
+  "zxing-cpp>=2.2",
+]
+
+[project.optional-dependencies]
+# openpyxl is here rather than in the package because nothing the engine or
+# the frontend does needs a spreadsheet: it is for tools/export_copy.py,
+# which is a maintainer's round trip for editing the application's prose.
+dev = ["pytest>=8.0", "pytest-cov>=4.1", "openpyxl>=3.1"]
+# The desktop frontend. Deliberately optional: the engine is a library, and a
+# library that drags a GUI toolkit into every CI runner and every headless import
+# is not one. `deltachrome_ui` is a separate top-level package for the same reason.
+gui = ["PySide6>=6.6"]
+
+[project.scripts]
+deltachrome = "deltachrome.cli:main"
+
+[project.gui-scripts]
+deltachrome-gui = "deltachrome_ui.app:main"
+
+# One place states the version: the package's own __version__, which the
+# application shows in About and writes into every run record.
+[tool.hatch.version]
+path = "src/deltachrome/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/deltachrome", "src/deltachrome_ui"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

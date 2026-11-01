@@ -1,0 +1,1190 @@
+{
+  "$schema_version": 1,
+  "target_id": "dt_nexus_transmissive_ntvt_rev_b_v1",
+  "display_name": "DT Nexus Transmissive Validation Target (Revision B)",
+  "manufacturer": "Digital Transitions / Gray Sky Imaging",
+  "target_type": "transmissive_color_chart",
+  "physical_size_mm": {
+    "width": 131.06,
+    "height": 105.66
+  },
+  "capabilities": [
+    "color_accuracy",
+    "tonal_response",
+    "white_balance"
+  ],
+  "not_capable_of": [
+    "color_registration",
+    "flat_field",
+    "geometric_distortion",
+    "lightness_uniformity",
+    "reproduction_scale",
+    "sfr"
+  ],
+  "fiducials": {
+    "method": "patch_array_corners",
+    "corner_markers": [
+      {
+        "id": "TL",
+        "relative_position": [
+          0.02844,
+          0.1401
+        ],
+        "nearest_patch": "A-1"
+      },
+      {
+        "id": "TR",
+        "relative_position": [
+          0.89271,
+          0.03735
+        ],
+        "nearest_patch": "L-0"
+      },
+      {
+        "id": "BR",
+        "relative_position": [
+          0.97128,
+          0.85935
+        ],
+        "nearest_patch": "M-8"
+      },
+      {
+        "id": "BL",
+        "relative_position": [
+          0.18558,
+          0.9621
+        ],
+        "nearest_patch": "C-9"
+      }
+    ],
+    "notes": "The centres of four circles near the corners -- the same four on all four DT Nexus charts: TL the second circle down the left edge (A-1), TR the second circle along the top, beside the QR label (L-0), BR the second circle up the right edge (M-8), BL the third circle along the bottom (C-9). Not the corners of the lattice: in a transmissive capture the frame is black, and the lattice's corner cells can be as dark as the frame -- the Profiling target's A-9 is opaque, L* 0, and the Validation target's M-9 reads L* 1. These four read L* 42 or more on every captured unit of both models and both revisions. The QR label is not used: it is stuck on, and sits 0.02 to 0.10 of a pitch from its cell's centre depending on the unit. Detection fits the whole lattice of visible circles and maps these four points through that fit, so which four are declared does not change what it finds."
+  },
+  "patch_grid": {
+    "rows": 10,
+    "columns": 13,
+    "row_labels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "col_labels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M"
+    ],
+    "patch_id_format": "{column_letter}-{row_number}",
+    "patch_size_relative": {
+      "width": 0.05703,
+      "height": 0.07486
+    },
+    "patch_spacing_relative": {
+      "horizontal": 0.07857,
+      "vertical": 0.10275
+    },
+    "grid_origin_relative": [
+      -7e-05,
+      -8e-05
+    ],
+    "coordinate_frame": "Relative to the bounding box of the patch array itself: the outer corners of the A-0, M-0, M-9 and A-9 cells.",
+    "measured_from": {
+      "method": "tools/locate_patch_lattice.py --rows 10 --columns 13 --shape circle",
+      "unit": "borrowed from the Revision B Profiling target (TP26008)",
+      "capture": "none of this model and revision",
+      "patches_located": "n/a",
+      "lattice_residual_working_px": null,
+      "patch_size_spread_pct": null,
+      "notes": "Borrowed, and assumed rather than flagged: no capture of a Revision B Validation target exists here, so the lattice is the Revision B Profiling target's, measured from unit TP26008. DT state the two models share every dimension and differ only in patch colours, the QR's content and the serial prefix, and the three charts that HAVE been measured -- two Revision A models and one Revision B -- agree in relative geometry to 0.3%, which is the evidence for borrowing it. It is still a borrowed number, to be confirmed against a capture of this model."
+    }
+  },
+  "patches": [
+    {
+      "patch_id": "A-0",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-0",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-0",
+      "grid_position": {
+        "row": 0,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D-0",
+      "grid_position": {
+        "row": 0,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-0",
+      "grid_position": {
+        "row": 0,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-0",
+      "grid_position": {
+        "row": 0,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G-0",
+      "grid_position": {
+        "row": 0,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-0",
+      "grid_position": {
+        "row": 0,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I-0",
+      "grid_position": {
+        "row": 0,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J-0",
+      "grid_position": {
+        "row": 0,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K-0",
+      "grid_position": {
+        "row": 0,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L-0",
+      "grid_position": {
+        "row": 0,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A-1",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-1",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-1",
+      "grid_position": {
+        "row": 1,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D-1",
+      "grid_position": {
+        "row": 1,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-1",
+      "grid_position": {
+        "row": 1,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-1",
+      "grid_position": {
+        "row": 1,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G-1",
+      "grid_position": {
+        "row": 1,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-1",
+      "grid_position": {
+        "row": 1,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I-1",
+      "grid_position": {
+        "row": 1,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J-1",
+      "grid_position": {
+        "row": 1,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K-1",
+      "grid_position": {
+        "row": 1,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L-1",
+      "grid_position": {
+        "row": 1,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M-1",
+      "grid_position": {
+        "row": 1,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A-2",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-2",
+      "grid_position": {
+        "row": 2,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-2",
+      "grid_position": {
+        "row": 2,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D-2",
+      "grid_position": {
+        "row": 2,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-2",
+      "grid_position": {
+        "row": 2,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-2",
+      "grid_position": {
+        "row": 2,
+        "col": 5
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "G-2",
+      "grid_position": {
+        "row": 2,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-2",
+      "grid_position": {
+        "row": 2,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I-2",
+      "grid_position": {
+        "row": 2,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J-2",
+      "grid_position": {
+        "row": 2,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K-2",
+      "grid_position": {
+        "row": 2,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L-2",
+      "grid_position": {
+        "row": 2,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M-2",
+      "grid_position": {
+        "row": 2,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A-3",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-3",
+      "grid_position": {
+        "row": 3,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-3",
+      "grid_position": {
+        "row": 3,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D-3",
+      "grid_position": {
+        "row": 3,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-3",
+      "grid_position": {
+        "row": 3,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-3",
+      "grid_position": {
+        "row": 3,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G-3",
+      "grid_position": {
+        "row": 3,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-3",
+      "grid_position": {
+        "row": 3,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I-3",
+      "grid_position": {
+        "row": 3,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J-3",
+      "grid_position": {
+        "row": 3,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K-3",
+      "grid_position": {
+        "row": 3,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L-3",
+      "grid_position": {
+        "row": 3,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M-3",
+      "grid_position": {
+        "row": 3,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A-4",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-4",
+      "grid_position": {
+        "row": 4,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-4",
+      "grid_position": {
+        "row": 4,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D-4",
+      "grid_position": {
+        "row": 4,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-4",
+      "grid_position": {
+        "row": 4,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-4",
+      "grid_position": {
+        "row": 4,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G-4",
+      "grid_position": {
+        "row": 4,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-4",
+      "grid_position": {
+        "row": 4,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I-4",
+      "grid_position": {
+        "row": 4,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J-4",
+      "grid_position": {
+        "row": 4,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K-4",
+      "grid_position": {
+        "row": 4,
+        "col": 10
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "L-4",
+      "grid_position": {
+        "row": 4,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M-4",
+      "grid_position": {
+        "row": 4,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A-5",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-5",
+      "grid_position": {
+        "row": 5,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-5",
+      "grid_position": {
+        "row": 5,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D-5",
+      "grid_position": {
+        "row": 5,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-5",
+      "grid_position": {
+        "row": 5,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-5",
+      "grid_position": {
+        "row": 5,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G-5",
+      "grid_position": {
+        "row": 5,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-5",
+      "grid_position": {
+        "row": 5,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I-5",
+      "grid_position": {
+        "row": 5,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J-5",
+      "grid_position": {
+        "row": 5,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K-5",
+      "grid_position": {
+        "row": 5,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L-5",
+      "grid_position": {
+        "row": 5,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M-5",
+      "grid_position": {
+        "row": 5,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A-6",
+      "grid_position": {
+        "row": 6,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-6",
+      "grid_position": {
+        "row": 6,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-6",
+      "grid_position": {
+        "row": 6,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D-6",
+      "grid_position": {
+        "row": 6,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-6",
+      "grid_position": {
+        "row": 6,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-6",
+      "grid_position": {
+        "row": 6,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G-6",
+      "grid_position": {
+        "row": 6,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-6",
+      "grid_position": {
+        "row": 6,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I-6",
+      "grid_position": {
+        "row": 6,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J-6",
+      "grid_position": {
+        "row": 6,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K-6",
+      "grid_position": {
+        "row": 6,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L-6",
+      "grid_position": {
+        "row": 6,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M-6",
+      "grid_position": {
+        "row": 6,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A-7",
+      "grid_position": {
+        "row": 7,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-7",
+      "grid_position": {
+        "row": 7,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-7",
+      "grid_position": {
+        "row": 7,
+        "col": 2
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    },
+    {
+      "patch_id": "D-7",
+      "grid_position": {
+        "row": 7,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-7",
+      "grid_position": {
+        "row": 7,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-7",
+      "grid_position": {
+        "row": 7,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G-7",
+      "grid_position": {
+        "row": 7,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-7",
+      "grid_position": {
+        "row": 7,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I-7",
+      "grid_position": {
+        "row": 7,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J-7",
+      "grid_position": {
+        "row": 7,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K-7",
+      "grid_position": {
+        "row": 7,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L-7",
+      "grid_position": {
+        "row": 7,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M-7",
+      "grid_position": {
+        "row": 7,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A-8",
+      "grid_position": {
+        "row": 8,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-8",
+      "grid_position": {
+        "row": 8,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-8",
+      "grid_position": {
+        "row": 8,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D-8",
+      "grid_position": {
+        "row": 8,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-8",
+      "grid_position": {
+        "row": 8,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-8",
+      "grid_position": {
+        "row": 8,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G-8",
+      "grid_position": {
+        "row": 8,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-8",
+      "grid_position": {
+        "row": 8,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I-8",
+      "grid_position": {
+        "row": 8,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J-8",
+      "grid_position": {
+        "row": 8,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K-8",
+      "grid_position": {
+        "row": 8,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L-8",
+      "grid_position": {
+        "row": 8,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M-8",
+      "grid_position": {
+        "row": 8,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A-9",
+      "grid_position": {
+        "row": 9,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B-9",
+      "grid_position": {
+        "row": 9,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C-9",
+      "grid_position": {
+        "row": 9,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D-9",
+      "grid_position": {
+        "row": 9,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E-9",
+      "grid_position": {
+        "row": 9,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F-9",
+      "grid_position": {
+        "row": 9,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G-9",
+      "grid_position": {
+        "row": 9,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H-9",
+      "grid_position": {
+        "row": 9,
+        "col": 7
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 1
+    },
+    {
+      "patch_id": "I-9",
+      "grid_position": {
+        "row": 9,
+        "col": 8
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "J-9",
+      "grid_position": {
+        "row": 9,
+        "col": 9
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "K-9",
+      "grid_position": {
+        "row": 9,
+        "col": 10
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "L-9",
+      "grid_position": {
+        "row": 9,
+        "col": 11
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "M-9",
+      "grid_position": {
+        "row": 9,
+        "col": 12
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    }
+  ],
+  "reference_data": {
+    "source_type": "per_unit_file",
+    "import_format": "cgats",
+    "required": true,
+    "notes": "Every unit is individually measured with a NIST-traceable spectroradiometer and published, so there is no nominal fallback and none is wanted: the measurement of the chart in front of you is a download away. Deltachrome reads the OpenQualia QR in the top-right cell and offers to fetch it, or the serial printed under the QR can be typed into Settings. Files are OQM, which is CGATS.17 with several optional keywords made mandatory, and carry Lab, XYZ and 31 spectral bands per patch."
+  },
+  "dimensional_reference": {
+    "available": true,
+    "summary": "No printed scale. The patch array's bounding box is 101.73 x 78.52 mm.",
+    "fiducial_extent_mm": {
+      "width": 101.73,
+      "height": 78.52
+    },
+    "notes": "MEASURED, not taken from the drawing. DT's capture of TP26008 carries a 2133 ppi resolution tag, and the located quad spans 8542.7 x 6594.2 px -- 101.73 x 78.52 mm. The drawing-derived figure was 102.46 x 78.46 mm, so the two agree to 0.08% in height and 0.7% in width, which is the strongest single check on this whole family of numbers: two entirely independent paths, a machining callout and a capture with a stated scale.\n\nREPRODUCTION SCALE IS NOT CLAIMED: a floor on sampling frequency is not moved by a chart a percent out, while a two percent agreement check against the file's header would carry that tolerance straight into the quantity judged."
+  },
+  "openqualia": {
+    "host": "https://targets.digitaltransitions.com/measurements",
+    "manufacturer": "DT",
+    "target_type": "DTNTVT",
+    "canonical_name": "DT Nexus Transmissive Validation Target",
+    "notes": "Verified by an actual fetch. The revision a unit belongs to is decided by its serial, not by the host, which serves every DT NTVT measurement under one target type: DT NTPT TP26008 and higher; DT NTVT TV26001 and higher."
+  },
+  "notes": "Intended for INDEPENDENT VALIDATION of a profile built with something else -- the Profiling target, most obviously. Judging a profile against the very chart it was built from measures the fit rather than the system, which is what this chart exists to avoid.\n\nNo opaque patch. Its darkest, M-9, is a real patch with a measurable non-zero tone, and so are the other very dark ones -- they may be invisible on screen depending on the profile and monitor, and they are not blank.\n\nTHE NEUTRAL SERIES IS NINE SCATTERED PATCHES: H-9, C-7, I-9, K-4, J-9, K-9, F-2, L-9 and M-9, spanning L* 80 down to L* 0.6. Not a column and not in reading order, which for a chart whose whole purpose is INDEPENDENT validation is a reasonable thing to do on purpose.\n\nDECLARED FROM MEASUREMENT. Resolving neutrals by chroma alone gives a different answer per unit -- nine patches on the Revision A units, six on TV26001 and five on TV26011 -- yet the same nine positions are the series on every one of the five published units read, across both revisions; only their chroma differs, worst C*ab 3.71 on Revision A and 5.20 on Revision B. The positions are a property of the design, which is why they are declared here rather than inferred from a threshold.\n\nTHE ORDER IS NOT STABLE and the engine re-derives it. Between units the lightness of these patches moves a long way -- C-7 reads L* 65.9 on TV24017 and 52.4 on TV26001 -- so which step is which changes. The positions declared here are one unit's order; the run orders them from the reference file it was given and says so when the two differ, which on this chart is expected rather than a fault.\n\nWhite balance and tone response compare a measurement against the reference file's own a*b* and L*, not against a neutral ideal, so a patch sitting at C*ab 5 costs nothing: what is measured is the capture system's error, not the patch's neutrality.\n\nREVISION. Two revisions exist. The patch pitch is about 8% tighter in real units on Revision B, but both definitions place on the patch array's own bounding box, so the relative geometry is nearly identical: the far column's centre sits at 0.9708 of the quad on Revision A and 0.9685 on Revision B, about 5 px on a 2175 px array against a 64 px patch radius. What differs is the physical size of the quad, 110.5 x 85.1 mm against 102.5 x 78.5 mm, 7.3% narrower; sampling frequency and any lp/mm figure scale directly with it, which is why both revisions ship.\n\nThis definition is Revision B -- DT NTPT TP26008 and higher; DT NTVT TV26001 and higher. The two are otherwise identical in patch count, layout and ordering, and the outer dimensions of the target itself did not change.\n\nThe Profiling and Validation targets share every dimension and are told apart only by their patch colours, their QR content and the serial prefix printed under it (TP or TV). The text on the metal border is not usefully visible in a transmissive capture.\n\nGEOMETRY IS MEASURED, though not from a unit of THIS model and revision -- no capture of a Revision B Validation target exists here, so the lattice is the Revision B Profiling target's. See provisional_reason. The three charts that have been measured, two Revision A models and one Revision B, agree in relative geometry to 0.3%.\n\nPLACED ON THE PATCH ARRAY, NOT THE FRAME, which is not a preference. The outer border is opaque anodised aluminium and, properly masked, is not distinguishable from the surround in a transmissive capture; and Revision B's drawing states that the glass assembly floats in the frame so the outside dimensions vary. The array is the only stable datum. Its corners are the outer corners of the A-0, M-0, M-9 and A-9 cells.\n\nTHE TOP-RIGHT CELL M-0 HOLDS THE OpenQualia QR CODE and is not a patch. It is printed 0.254 in square -- the patch diameter -- so it fills its cell and the array's bounding box is unaffected. There are 129 patches, not 130.\n\nROWS ARE 0-INDEXED and patch ids carry a dash: the first row is 0, and the top-left patch is A-0. DT chose both deliberately. The dash is not a minus sign.\n\nNO PATCH IS FULLY TRANSPARENT, on purpose, to avoid intra-frame flare -- the lightest is around L* 83 on the Profiling target and L* 80 on the Validation target. A capture of this chart therefore carries no white, and its neutral series does not reach one.\n\nSAMPLING. DT recommend a circular sample between a half and three-quarters of the circle diameter and a median or IQR mean rather than a plain average, because the patches carry a fine diagonal texture (about +/-1 RGB value, deliberate, usable for focus and planarity checks) and a capture will carry dust and scratches. Deltachrome samples a rectangular inset and reports its own contamination flag; the inset default of 0.55 sits inside the recommended range.\n\nEVERY ROLE IS RESOLVED FROM THE REFERENCE FILE rather than declared. Every unit is individually measured and published, so there is always a per-unit file to resolve from, and hand-declaring a neutral series would be asserting something about a chart nobody here has measured.",
+  "metric_defaults": {
+    "tonal_response": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "THE NEUTRAL SERIES IS NINE SCATTERED PATCHES: H-9, C-7, I-9, K-4, J-9, K-9, F-2, L-9 and M-9, spanning L* 80 down to L* 0.6. Not a column and not in reading order, which for a chart whose whole purpose is INDEPENDENT validation is a reasonable thing to do on purpose.\n\nDECLARED FROM MEASUREMENT. Resolving neutrals by chroma alone gives a different answer per unit -- nine patches on the Revision A units, six on TV26001 and five on TV26011 -- yet the same nine positions are the series on every one of the five published units read, across both revisions; only their chroma differs, worst C*ab 3.71 on Revision A and 5.20 on Revision B. The positions are a property of the design, which is why they are declared here rather than inferred from a threshold.\n\nTHE ORDER IS NOT STABLE and the engine re-derives it. Between units the lightness of these patches moves a long way -- C-7 reads L* 65.9 on TV24017 and 52.4 on TV26001 -- so which step is which changes. The positions declared here are one unit's order; the run orders them from the reference file it was given and says so when the two differ, which on this chart is expected rather than a fault.\n\nWhite balance and tone response compare a measurement against the reference file's own a*b* and L*, not against a neutral ideal, so a patch sitting at C*ab 5 costs nothing: what is measured is the capture system's error, not the patch's neutrality."
+    }
+  }
+}

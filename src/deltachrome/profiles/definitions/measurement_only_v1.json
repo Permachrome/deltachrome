@@ -1,0 +1,69 @@
+{
+  "$schema_version": 1,
+  "profile_id": "measurement_only_v1",
+  "display_name": "Measurement only — no standard, no thresholds",
+  "standard_reference": {
+    "body": "none",
+    "document_version": "n/a",
+    "material_category": "any",
+    "notice": "This profile references no standard and sets no thresholds. It reports measurements so they can be tracked or compared; results from it must never be described as conformance to any standard."
+  },
+  "applicable_target_capabilities_required": [],
+  "applicable_target_capabilities_optional": [
+    "color_accuracy", "tonal_response", "white_balance", "lightness_uniformity"
+  ],
+  "metrics": [
+    {
+      "metric_id": "average_color_accuracy",
+      "requires_capability": "color_accuracy",
+      "algorithm": { "delta_e_variant": "delta_e_2000", "patch_selection": "all patches" },
+      "aggregation": "mean",
+      "units": "dE2000"
+    },
+    {
+      "metric_id": "color_accuracy_90th_percentile",
+      "requires_capability": "color_accuracy",
+      "algorithm": {
+        "delta_e_variant": "delta_e_2000",
+        "patch_selection": "all patches",
+        "percentile_method": "linear"
+      },
+      "aggregation": "percentile_90",
+      "units": "dE2000"
+    },
+    {
+      "metric_id": "white_balance",
+      "requires_capability": "white_balance",
+      "algorithm": {
+        "delta_e_variant": "delta_e_ab",
+        "patch_selection": "role == 'achromatic_ramp'"
+      },
+      "aggregation": "max_per_patch",
+      "units": "dE(a*b*)"
+    },
+    {
+      "metric_id": "tone_response_oecf",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "measure": "delta_l_2000",
+        "patch_selection": "role == 'achromatic_ramp'"
+      },
+      "aggregation": "max_per_patch",
+      "units": "dL*2000"
+    },
+    {
+      "metric_id": "noise",
+      "requires_capability": "tonal_response",
+      "algorithm": {
+        "patch_selection": { "roles": ["achromatic_border", "achromatic_ramp", "achromatic_other"] },
+        "lower_limit": 0.25
+      },
+      "aggregation": "max",
+      "units": "std dev of L*"
+    }
+  ],
+  "overall_pass_rule": "nothing is judged; this profile reports measurements only",
+  "profile_editable": true,
+  "profile_locked_fields": [],
+  "notes": "For targets or materials a standard does not cover — FADGI specifies no color accuracy metric for photographic transparencies, for example, because film is not scene referred. Measuring Delta E against a target's own per-unit reference is still useful for tracking a device over time or comparing two systems; it just is not a conformance claim, and the verdict line says MEASURED rather than PASS so no one can mistake it for one."
+}

@@ -1,0 +1,593 @@
+{
+  "$schema_version": 1,
+  "target_id": "isa_object_level_1x_v1",
+  "display_name": "ISA Golden Thread Object Level Target, 1X",
+  "manufacturer": "Image Science Associates",
+  "target_type": "reflective_color_chart",
+  "physical_size_mm": {
+    "width": 234.95,
+    "height": 25.4
+  },
+  "fiducial_extent_mm": {
+    "width": 214.86,
+    "height": 6.32
+  },
+  "capabilities": [
+    "color_accuracy",
+    "tonal_response",
+    "white_balance",
+    "reproduction_scale",
+    "sfr",
+    "color_registration"
+  ],
+  "not_capable_of": [
+    "lightness_uniformity",
+    "geometric_distortion",
+    "flat_field"
+  ],
+  "fiducials": {
+    "method": "patch_array_corners",
+    "corner_markers": [
+      {
+        "id": "TL",
+        "relative_position": [
+          0.0,
+          0.0
+        ],
+        "nearest_patch": "1"
+      },
+      {
+        "id": "TR",
+        "relative_position": [
+          1.0,
+          0.0
+        ],
+        "nearest_patch": "30"
+      },
+      {
+        "id": "BR",
+        "relative_position": [
+          1.0,
+          1.0
+        ],
+        "nearest_patch": "30"
+      },
+      {
+        "id": "BL",
+        "relative_position": [
+          0.0,
+          1.0
+        ],
+        "nearest_patch": "1"
+      }
+    ],
+    "notes": "Click the four outer corners of the patch strip itself: the top-left and bottom-left of patch 1, and the top-right and bottom-right of patch 30. The patches are butted squares against a grey card, so those corners are sharp. THE QUAD IS 34 PITCHES LONG AND ONE PATCH TALL: place it along the strip's own axis rather than the pixel grid. A strip laid down half a degree off square drifts a quarter of a patch height from end to end, and features off the patch row -- the printed rules especially -- then run out of their declared bands; clicking the real corners handles it, because the homography absorbs the rotation.\n\nA third disc glued to the middle of the top edge, which some V2 cards carry in place of V1's printed centre disc, is ignored. The quad is fitted from the patch lattice in both axes, so the discs play no part in placement. On a capture of a V2 carrying a printed third dot, the strip places from 18 of its 34 slots at a lattice residual of 0.47 px, and the disc finder refuses every region of the frame, so the dot is not taken for a Device Level Target.\n\nA frame holding both a Device Level Target and a dotted Object Level strip has not been measured. find_printed_discs runs once per region and can only combine discs it finds within one region.",
+    "printed_marks": {
+      "present": true,
+      "kind": "disc",
+      "used_for_placement": false,
+      "count": "three on the older version, two on the current one",
+      "notes": "The strip prints solid dark discs, and HOW MANY DEPENDS ON THE VERSION. The older product -- no yellow border -- prints three: one at each end and one at the centre. The current product, revamped by ISA with a yellow border, a serial box and an 'All values are batch averages' caption, DROPPED THE CENTRE ONE and prints two. Measured positions in this definition's own frame: ends at u -0.0215 and +1.0214, agreeing between the two versions to 0.0003 of the strip -- one pixel in three thousand four hundred -- and the older version's centre disc at u +0.50003, dead centre, at v -0.429. Placement does not key on them because two points cannot define a quad and the third is not on every card; they are recorded because they are the best registered features on the target and are what an automatic placement should use, taking the centre disc as a bonus where it exists.",
+      "discs_relative": {
+        "left_end": [
+          -0.02146,
+          0.55783
+        ],
+        "right_end": [
+          1.02144,
+          0.52076
+        ],
+        "centre_older_version_only": [
+          0.50003,
+          -0.42907
+        ]
+      }
+    }
+  },
+  "regions": [
+    {
+      "region_id": "patches",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 1,
+        "columns": 34,
+        "row_labels": [
+          1
+        ],
+        "col_labels": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "-",
+          "-",
+          "-",
+          "-",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30"
+        ],
+        "patch_id_format": "{col_label}",
+        "patch_size_relative": {
+          "width": 0.029412,
+          "height": 1.0
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.029412,
+          "vertical": 1.0
+        },
+        "grid_origin_relative": [
+          0.0,
+          0.0
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the patch strip's own bounding quad: the outer corners of patches 1 and 30, taken along the strip's axis.",
+        "notes": "ONE ROW OF THIRTY-FOUR SLOTS, of which thirty carry patches and four -- 15 to 18 -- are the resolution module. The patches are butted, so patch size equals the spacing exactly and the 0.55 sampling inset is the only thing holding an ROI off the boundary. The height is 1.0 because the quad is the patch row: an ROI samples the middle 55% of the patch in both axes.",
+        "measured_from": {
+          "method": "patches located as square regions between edges, then a line fitted through their centres against slot index in BOTH axes -- which is what establishes the strip's own axis rather than assuming the pixel grid",
+          "units": "two, from OpenDICE's published samples: ObjectDICE.tif (older version) and ObjectLevel_2.tif (current)",
+          "patches_located": "30 of 30 and 22 of 30",
+          "pitch_px": [
+            99.596,
+            99.883
+          ],
+          "strip_tilt_deg": [
+            -0.438,
+            0.077
+          ],
+          "notes": "The two specimens' patch blocks come out the same physical length to 0.3%, and their end discs agree on position to 0.0003 of it, so this geometry is measured on two units rather than one. One capture is rotated 0.438 degrees and the other is square."
+        }
+      },
+      "notes": "Thirty patches, ids 1 to 30, as numbered on the chart itself."
+    },
+    {
+      "region_id": "module",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "straight_edges",
+        "position": "CENTER",
+        "edges": 2,
+        "straight_edges": [
+          {
+            "id": "h",
+            "orientation": "horizontal",
+            "start": [
+              0.472,
+              1.40546
+            ],
+            "end": [
+              0.532,
+              1.58047
+            ],
+            "roi_half_width": 35,
+            "note": "NARROWER THAN THE DEFAULT 50 px. The block above this edge is 60 px deep and the chart's own printed value table starts about 25 px below it, so a 50 px ROI takes in both: the edge-line fit scatters 17.7 px instead of 0.06 and peak modulation reads 1.624. At 35 px and below both specimens read cleanly and agree -- angle -4.47 and -5.21, peak exactly 1.000 -- and the reading is stable from 35 down to 18. Declared from u 0.472 to 0.532, inside the block's right-hand end at 0.526 to 0.538 depending on the specimen, so the ROI is centred on the block; beyond it the white field carries the chart's printed value numerals. Phase coverage is 8 and 10 px against a 4 px target."
+          },
+          {
+            "id": "v",
+            "orientation": "vertical",
+            "start": [
+              0.45825,
+              0.0466
+            ],
+            "end": [
+              0.45305,
+              1.97235
+            ],
+            "roi_half_width": 35,
+            "note": "NARROWER THAN THE DEFAULT 50 px, for the same reason as the edge above it. This edge is the dark bar's right-hand boundary, and the plateau on that side is only about 48 px wide before the white 'dots per inch' field begins; a wider ROI reaches into that field and puts a second edge inside it. Swept from 50 down to 20, overshoot is +6.20 and +26.26 at 50, +0.41 and +2.99 at 45, 0.0000 and +0.44 at 40, and exactly 0.0000 on both specimens from 35 down, while MTF50 moves by 0.003 across the whole range. 35 px is the first width both units read clean at, and the same width the horizontal edge uses."
+          }
+        ],
+        "measured_note": "Located by slant on both specimens and averaged; they agreed on u to 0.0008 of the strip. The same module design as the ISA FADGI-ISO 19264 chart carries, turned ninety degrees: a white 'dots per inch (optical)' field, a band whose boundary slants about 5 degrees and a block beside it whose boundary slants by the same amount. Both edges are bounded by their surroundings rather than by the default: the module packs a slanted band, a slanted block and a white resolution field into about a sixtieth of the strip, so on this target the 50 px default reaches a neighbouring feature from either edge."
+      },
+      "notes": "The resolution module, occupying slots 15 to 18 of the strip. Its two slanted edges BELONG TO DIFFERENT FIGURES and are declared one at a time; the white field's own borders are the highest-contrast boundaries in the module and are not edges, being axis-aligned. One module means SFR at ONE field position -- which is what an object level target is: a strip that lies beside the object, not a chart that fills the frame."
+    },
+    {
+      "region_id": "ruler_left_in",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 3.175,
+        "axis": "u",
+        "bounds_relative": [
+          0.02,
+          -0.275,
+          0.46,
+          -0.195
+        ],
+        "printed_label": "inches, eighths",
+        "measured_note": "Band chosen to read on both specimens: 26 divisions at 15.702 px/mm on ObjectDICE and 22 at 15.715 on ObjectLevel_2, 0.08% apart."
+      },
+      "notes": "The inch rule, along the left half of the strip above the patches."
+    },
+    {
+      "region_id": "ruler_right_cm",
+      "kind": "scale",
+      "geometry": {
+        "unit": "cm",
+        "division_mm": 10.0,
+        "axis": "u",
+        "bounds_relative": [
+          0.54,
+          -0.13,
+          0.98,
+          -0.07
+        ],
+        "printed_label": "centimetres",
+        "measured_note": "THE CENTIMETRE MAJORS, NOT THE MILLIMETRE COMB. The 1 mm comb reads correctly on either specimen alone, but its band sits four to six pixels differently between them and no single declared band reads on both; the 10 mm majors do -- 9 divisions at 15.732 px/mm on ObjectDICE and 8 at 15.702 on ObjectLevel_2. With both rules reading on both units, the inch and centimetre families cross-check each other on each specimen, 0.19% apart on the older unit and 0.08% on the current one against a 1% tolerance."
+      },
+      "notes": "The centimetre rule, along the right half. Declared so the strip carries a metric and an imperial scale that cross-check: the two agree to 0.2% on both specimens, which is the only check available that each scale's divisions were read as the chart intends."
+    },
+    {
+      "region_id": "checker_right_cm",
+      "kind": "scale",
+      "geometry": {
+        "unit": "cm",
+        "division_mm": 10.0,
+        "axis": "u",
+        "pattern": "blocks",
+        "bounds_relative": [
+          0.58,
+          -0.72,
+          0.96,
+          -0.6
+        ],
+        "printed_label": "centimetre checkerboard",
+        "measured_note": "THE CHECKERBOARD ABOVE THE CENTIMETRE RULE, not the rule itself. Two rows of alternating light and dark cells, one centimetre each, marking the same divisions as the cm rule's major ticks. Its boundaries are transitions between large filled areas rather than marks three pixels wide, so the band is averaged down its whole height and grain averages away. Measured against three units whose rate is known independently, it fits about thirty times more regularly than the ticks -- 0.0009 to 0.004 of the pitch against 0.028 -- and lands within 0.09% to 0.41% of the rate. The band is central rather than tuned: the pattern sits at v -0.46 on the older unit and v -0.87 on a V2, and the band search finds it. The two rows are complementary, so a band spanning both averages to a flat line and refuses; the search moves off it. CELL SIZE IS INFERRED, NOT PUBLISHED: 9.958 mm measured on the cleanest unit and taken as 10, corroborated to 0.4% across three units against independent rates. If the cell is not 1 cm, every reading from this region shifts by that fraction, which is why the cm rule is kept beside it."
+      },
+      "notes": "The centimetre checkerboard along the right half, above the cm rule. Declared because the cm rule cannot be read on every specimen: its millimetre comb scatters 10% on one capture and its 10 mm majors cannot be isolated at 600 ppi the way they can at 400."
+    }
+  ],
+  "patches": [
+    {
+      "patch_id": "1",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "2",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "3",
+      "grid_position": {
+        "row": 0,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "4",
+      "grid_position": {
+        "row": 0,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "5",
+      "grid_position": {
+        "row": 0,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "6",
+      "grid_position": {
+        "row": 0,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "7",
+      "grid_position": {
+        "row": 0,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "8",
+      "grid_position": {
+        "row": 0,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "9",
+      "grid_position": {
+        "row": 0,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "10",
+      "grid_position": {
+        "row": 0,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 1
+    },
+    {
+      "patch_id": "11",
+      "grid_position": {
+        "row": 0,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    },
+    {
+      "patch_id": "12",
+      "grid_position": {
+        "row": 0,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "13",
+      "grid_position": {
+        "row": 0,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "14",
+      "grid_position": {
+        "row": 0,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "15",
+      "grid_position": {
+        "row": 0,
+        "col": 14
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "16",
+      "grid_position": {
+        "row": 0,
+        "col": 19
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "17",
+      "grid_position": {
+        "row": 0,
+        "col": 20
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "18",
+      "grid_position": {
+        "row": 0,
+        "col": 21
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    },
+    {
+      "patch_id": "19",
+      "grid_position": {
+        "row": 0,
+        "col": 22
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 10
+    },
+    {
+      "patch_id": "20",
+      "grid_position": {
+        "row": 0,
+        "col": 23
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 11
+    },
+    {
+      "patch_id": "21",
+      "grid_position": {
+        "row": 0,
+        "col": 24
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 12
+    },
+    {
+      "patch_id": "22",
+      "grid_position": {
+        "row": 0,
+        "col": 25
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "23",
+      "grid_position": {
+        "row": 0,
+        "col": 26
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "24",
+      "grid_position": {
+        "row": 0,
+        "col": 27
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "25",
+      "grid_position": {
+        "row": 0,
+        "col": 28
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "26",
+      "grid_position": {
+        "row": 0,
+        "col": 29
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "27",
+      "grid_position": {
+        "row": 0,
+        "col": 30
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "28",
+      "grid_position": {
+        "row": 0,
+        "col": 31
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "29",
+      "grid_position": {
+        "row": 0,
+        "col": 32
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "30",
+      "grid_position": {
+        "row": 0,
+        "col": 33
+      },
+      "region": "patches",
+      "role": "unassigned"
+    }
+  ],
+  "reference_data": {
+    "source_type": "per_unit_file",
+    "import_format": "cgats",
+    "required": true,
+    "nominal_values": {
+      "file": "isa_object_level_1x_v1_nominal.txt",
+      "basis": "manufacturer_nominal",
+      "source": "Mean of the L*a*b* stated by 40 per-unit measurements published by Digital Transitions under the OpenQualia label standard, sampled evenly across 2019-2026 and pooled across the M0/M1 conditions the units are a mix of. Scored leave-one-out against the published units, this mean sits 0.457 dE2000 from a unit, against a unit-to-unit spread of 0.610; the printed batch table sits 0.853 from a unit. Regenerate with tools/derive_nominal_from_openqualia.py, which records the serial list and re-derives the same file.",
+      "covers": "All 30 patches, L*a*b*.",
+      "notes": "A per-unit file is preferred and used whenever one is supplied, and for this target there are two ways to get one: Digital Transitions publish measurements for 1,266 Object Level units, and the card prints its own table beside the patches. Either supersedes this file. The printed table is a batch average of its own batch rather than a per-unit measurement. This fallback sits at 0.457 dE2000 from an average unit scored leave-one-out, against a unit-to-unit spread of 0.610."
+    },
+    "notes": "A per-unit file is preferred and used whenever one is supplied. Failing that, the L*a*b* table printed on the card is the per-unit data and can be transcribed.",
+    "sample_id_aliases": [
+      "A{id}"
+    ],
+    "sample_id_aliases_notes": "Measurement files published for this target through the OpenQualia label standard name its patches 'A1'-'A30' where the chart itself prints '1'-'30'. The chart's own labels are used here, which is also what the OpenQualia measurement file standard specifies for a target labelled with numbers alone -- it names the Golden Thread Device and Object Level targets as its example of exactly that case. The correspondence is declared rather than guessed, is applied only when it matches more patches than reading the file as written, and is reported in the run's warnings when it is used. Verified against published per-unit measurements: all 30 patches matched, and their values agree with this definition's own batch-average nominals to a mean of 0.97 dE2000 (DLT unit D00011) and 0.81 dE2000 (Object Level unit M000559), which is the right magnitude for one unit against a batch mean."
+  },
+  "dimensional_reference": {
+    "available": true,
+    "kind": "printed_scale",
+    "location": "above the patch row: inches along the left half, centimetres along the right",
+    "summary": "Two printed rules in two units, cross-checking to 0.2%. Sampling rate is therefore measurable from any specimen's own capture.",
+    "notes": "physical_size_mm is ISA's PUBLISHED product dimension for the 1X -- 9-1/4 x 1 inch -- and is the whole card. fiducial_extent_mm is the quad the four placed corners bound, which is a different and much smaller thing: 214.86 x 6.32 mm, an aspect of 34:1 against the card's 9.25:1.\n\nThe end discs of a physical specimen of the current version measure 224 mm centre to centre by hand. Those discs sit at u -0.02129 and +1.02123, so the distance is 1.04252 quad widths and the quad is 224.0 / 1.04252 = 214.86 mm; the patch pitch is a thirty-fourth of it, 6.32 mm. The height is one pitch on the design assumption that the patches are square, which the captures support: stacking every patch into one composite gives height/pitch of 0.97 and 0.98 on the two units, inside that method's 4% scatter. Independently, the chart's printed rules imply a disc separation of 224.77 and 225.51 mm on the two units, and a 214.86 mm block leaves exactly 10.0 mm at each end of ISA's published 234.95 mm card. The printed rules remain the authority for sampling rate.\n\nThis figure is for the 1X only. ISA sell the target in three sizes and they are not one design scaled: the lengths double while the widths run 5/8, 1 and 1-11/16 inch."
+  },
+  "metric_defaults": {
+    "tonal_response": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Twelve steps, D 0.05 to 2.38, at patches 10 to 21 -- the six either side of the resolution module. Ordered by the density OpenDICE states, which here is also their printed order."
+    },
+    "white_balance": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Delta E(a*b*) against the reference chroma, L* excluded."
+    }
+  },
+  "notes": "GEOMETRY MEASURED FROM TWO CAPTURES, of two different units -- the only target here of which that is true. The Golden Thread Object Level Target is a ruled strip meant to lie beside the object being digitised rather than to fill the frame: thirty patches in one row, a resolution module in the middle, an inch rule and a centimetre rule, and its own reference table printed beside the patches. TWO VERSIONS EXIST AND THIS DEFINITION SERVES BOTH. The current product, revamped by ISA, carries a yellow border, a serial box and an 'All values are batch averages' caption; the older one carries none of those and prints a THIRD fiducial disc at the centre, which the revamp dropped. Geometrically they are the same design -- patch pitch, lattice and end-disc positions agree to a pixel in three thousand -- and their reference tables differ by 0.99 Delta E2000, which is batch drift. So one definition, and the version difference is recorded under printed_marks. WHAT IT CANNOT DO. Lightness uniformity needs repeated neutrals spread over an area and the thirty patches include no repeats at all. Geometric distortion needs scale read at several places and on both axes; the strip's rules run along one axis only, so a reading would describe one direction and be reported as if it described the field.",
+  "openqualia": {
+    "host": "https://targets.digitaltransitions.com/measurements",
+    "manufacturer": "ISA",
+    "target_type": "OLT1x",
+    "canonical_name": "GoldenThread Object-Level Target 1x",
+    "notes": "How this model is addressed on an OpenQualia measurement host, so that a serial alone is enough to fetch a unit's own measurement. Both spellings were verified against targets.digitaltransitions.com by a fetch. The host matches values without regard to case or whitespace but not to dashes, and its API spellings can differ from its web addresses, so these are recorded rather than derived."
+  }
+}

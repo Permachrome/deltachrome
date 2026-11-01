@@ -1,0 +1,7193 @@
+{
+  "": 1,
+  "target_id": "lasersoft_iso12641_2_advanced_v1",
+  "display_name": "LaserSoft Imaging ISO 12641-2 Target (transmissive)",
+  "manufacturer": "LaserSoft Imaging AG",
+  "target_type": "transmissive_color_chart",
+  "physical_size_mm": null,
+  "capabilities": [
+    "color_accuracy",
+    "tonal_response",
+    "white_balance"
+  ],
+  "not_capable_of": [
+    "sfr",
+    "geometric_distortion",
+    "color_registration",
+    "lightness_uniformity",
+    "reproduction_scale"
+  ],
+  "fiducials": {
+    "method": "printed_frame_corners",
+    "corner_markers": [
+      {
+        "id": "TL",
+        "relative_position": [
+          0.0,
+          0.0
+        ],
+        "nearest_patch": "A1"
+      },
+      {
+        "id": "TR",
+        "relative_position": [
+          1.0,
+          0.0
+        ],
+        "nearest_patch": "A36"
+      },
+      {
+        "id": "BR",
+        "relative_position": [
+          1.0,
+          1.0
+        ],
+        "nearest_patch": "X36"
+      },
+      {
+        "id": "BL",
+        "relative_position": [
+          0.0,
+          1.0
+        ],
+        "nearest_patch": "X1"
+      }
+    ],
+    "printed_marks": {
+      "present": true,
+      "kind": "frame_corner_with_L_bracket",
+      "count": 4,
+      "location": "corners of the thin black frame enclosing the patch array and its printed row/column labels; a white L-bracket sits just inside each",
+      "relative_position_measured": true
+    },
+    "notes": "Place the target by the four corners of the black frame -- the vertex where its horizontal and vertical rules meet, which is a crisp line intersection rather than a rounded patch corner. Order is the TARGET's, clockwise from the corner nearest patch A1. The frame encloses the printed row and column labels as well as the patches, so the patch array is inset from it."
+  },
+  "patch_grid": {
+    "rows": 24,
+    "columns": 36,
+    "row_labels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X"
+    ],
+    "col_labels": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36"
+    ],
+    "patch_id_format": "{row_label}{col_label}",
+    "patch_size_relative": {
+      "width": 0.026323,
+      "height": 0.038361
+    },
+    "patch_spacing_relative": {
+      "horizontal": 0.026323,
+      "vertical": 0.038361
+    },
+    "grid_origin_relative": [
+      0.025,
+      0.0405
+    ],
+    "provisional": false,
+    "coordinate_frame": "Relative to the quadrilateral formed by the four black frame corners.",
+    "measured_from": {
+      "method": "perspective-rectified capture of a physical unit; grid optimised for agreement with the unit's own CxF reference",
+      "unit": "LaserSoft ISO 12641-2 advanced target, serial T1910021, Fuji Provia 100F",
+      "date": "2026-08-19",
+      "mean_delta_e_2000_at_fit": 0.836,
+      "notes": "Patches butt directly together on this target, with no gaps, so gradient projection cannot find every boundary -- an edge only appears where adjacent patches differ. Autocorrelation fixed the pitch and the origin was then optimised against the reference. A mean of 0.836 dE2000 across all 864 patches is only achievable if the grid and the patch-id mapping are both right."
+    },
+    "notes": "24 rows (A-X) x 36 columns (1-36) = 864 patches. Patch id is {row_letter}{column_number}, e.g. 'X36' -- the opposite convention to the ColorChecker SG, confirmed against the unit's CxF file."
+  },
+  "reference_data": {
+    "source_type": "per_unit_file",
+    "import_format": "cxf",
+    "required": true,
+    "notes": "LaserSoft publish a per-unit CxF3 measurement keyed by the barcode printed on the target. The file's Serial tag carries the same value, so it pairs automatically once it is in a reference library."
+  },
+  "patches": [
+    {
+      "patch_id": "A1",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A2",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A3",
+      "grid_position": {
+        "row": 0,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A4",
+      "grid_position": {
+        "row": 0,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A5",
+      "grid_position": {
+        "row": 0,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A6",
+      "grid_position": {
+        "row": 0,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A7",
+      "grid_position": {
+        "row": 0,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A8",
+      "grid_position": {
+        "row": 0,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A9",
+      "grid_position": {
+        "row": 0,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A10",
+      "grid_position": {
+        "row": 0,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A11",
+      "grid_position": {
+        "row": 0,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A12",
+      "grid_position": {
+        "row": 0,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A13",
+      "grid_position": {
+        "row": 0,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A14",
+      "grid_position": {
+        "row": 0,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A15",
+      "grid_position": {
+        "row": 0,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A16",
+      "grid_position": {
+        "row": 0,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A17",
+      "grid_position": {
+        "row": 0,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A18",
+      "grid_position": {
+        "row": 0,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A19",
+      "grid_position": {
+        "row": 0,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A20",
+      "grid_position": {
+        "row": 0,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A21",
+      "grid_position": {
+        "row": 0,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A22",
+      "grid_position": {
+        "row": 0,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A23",
+      "grid_position": {
+        "row": 0,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A24",
+      "grid_position": {
+        "row": 0,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A25",
+      "grid_position": {
+        "row": 0,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A26",
+      "grid_position": {
+        "row": 0,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A27",
+      "grid_position": {
+        "row": 0,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A28",
+      "grid_position": {
+        "row": 0,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A29",
+      "grid_position": {
+        "row": 0,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A30",
+      "grid_position": {
+        "row": 0,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A31",
+      "grid_position": {
+        "row": 0,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 73
+    },
+    {
+      "patch_id": "A32",
+      "grid_position": {
+        "row": 0,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 72
+    },
+    {
+      "patch_id": "A33",
+      "grid_position": {
+        "row": 0,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 25
+    },
+    {
+      "patch_id": "A34",
+      "grid_position": {
+        "row": 0,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 24
+    },
+    {
+      "patch_id": "A35",
+      "grid_position": {
+        "row": 0,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A36",
+      "grid_position": {
+        "row": 0,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B1",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B2",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B3",
+      "grid_position": {
+        "row": 1,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B4",
+      "grid_position": {
+        "row": 1,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B5",
+      "grid_position": {
+        "row": 1,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B6",
+      "grid_position": {
+        "row": 1,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B7",
+      "grid_position": {
+        "row": 1,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B8",
+      "grid_position": {
+        "row": 1,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B9",
+      "grid_position": {
+        "row": 1,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B10",
+      "grid_position": {
+        "row": 1,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B11",
+      "grid_position": {
+        "row": 1,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B12",
+      "grid_position": {
+        "row": 1,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B13",
+      "grid_position": {
+        "row": 1,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B14",
+      "grid_position": {
+        "row": 1,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B15",
+      "grid_position": {
+        "row": 1,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B16",
+      "grid_position": {
+        "row": 1,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B17",
+      "grid_position": {
+        "row": 1,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B18",
+      "grid_position": {
+        "row": 1,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B19",
+      "grid_position": {
+        "row": 1,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B20",
+      "grid_position": {
+        "row": 1,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B21",
+      "grid_position": {
+        "row": 1,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B22",
+      "grid_position": {
+        "row": 1,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B23",
+      "grid_position": {
+        "row": 1,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B24",
+      "grid_position": {
+        "row": 1,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B25",
+      "grid_position": {
+        "row": 1,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B26",
+      "grid_position": {
+        "row": 1,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B27",
+      "grid_position": {
+        "row": 1,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B28",
+      "grid_position": {
+        "row": 1,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B29",
+      "grid_position": {
+        "row": 1,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B30",
+      "grid_position": {
+        "row": 1,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B31",
+      "grid_position": {
+        "row": 1,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 74
+    },
+    {
+      "patch_id": "B32",
+      "grid_position": {
+        "row": 1,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 71
+    },
+    {
+      "patch_id": "B33",
+      "grid_position": {
+        "row": 1,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 26
+    },
+    {
+      "patch_id": "B34",
+      "grid_position": {
+        "row": 1,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 23
+    },
+    {
+      "patch_id": "B35",
+      "grid_position": {
+        "row": 1,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B36",
+      "grid_position": {
+        "row": 1,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C1",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C2",
+      "grid_position": {
+        "row": 2,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C3",
+      "grid_position": {
+        "row": 2,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C4",
+      "grid_position": {
+        "row": 2,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C5",
+      "grid_position": {
+        "row": 2,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C6",
+      "grid_position": {
+        "row": 2,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C7",
+      "grid_position": {
+        "row": 2,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C8",
+      "grid_position": {
+        "row": 2,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C9",
+      "grid_position": {
+        "row": 2,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C10",
+      "grid_position": {
+        "row": 2,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C11",
+      "grid_position": {
+        "row": 2,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C12",
+      "grid_position": {
+        "row": 2,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C13",
+      "grid_position": {
+        "row": 2,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C14",
+      "grid_position": {
+        "row": 2,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C15",
+      "grid_position": {
+        "row": 2,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C16",
+      "grid_position": {
+        "row": 2,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C17",
+      "grid_position": {
+        "row": 2,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C18",
+      "grid_position": {
+        "row": 2,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C19",
+      "grid_position": {
+        "row": 2,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C20",
+      "grid_position": {
+        "row": 2,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C21",
+      "grid_position": {
+        "row": 2,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C22",
+      "grid_position": {
+        "row": 2,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C23",
+      "grid_position": {
+        "row": 2,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C24",
+      "grid_position": {
+        "row": 2,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C25",
+      "grid_position": {
+        "row": 2,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C26",
+      "grid_position": {
+        "row": 2,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C27",
+      "grid_position": {
+        "row": 2,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C28",
+      "grid_position": {
+        "row": 2,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C29",
+      "grid_position": {
+        "row": 2,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C30",
+      "grid_position": {
+        "row": 2,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C31",
+      "grid_position": {
+        "row": 2,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 75
+    },
+    {
+      "patch_id": "C32",
+      "grid_position": {
+        "row": 2,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 70
+    },
+    {
+      "patch_id": "C33",
+      "grid_position": {
+        "row": 2,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 27
+    },
+    {
+      "patch_id": "C34",
+      "grid_position": {
+        "row": 2,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 22
+    },
+    {
+      "patch_id": "C35",
+      "grid_position": {
+        "row": 2,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C36",
+      "grid_position": {
+        "row": 2,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D1",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D2",
+      "grid_position": {
+        "row": 3,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D3",
+      "grid_position": {
+        "row": 3,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D4",
+      "grid_position": {
+        "row": 3,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D5",
+      "grid_position": {
+        "row": 3,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D6",
+      "grid_position": {
+        "row": 3,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D7",
+      "grid_position": {
+        "row": 3,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D8",
+      "grid_position": {
+        "row": 3,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D9",
+      "grid_position": {
+        "row": 3,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D10",
+      "grid_position": {
+        "row": 3,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D11",
+      "grid_position": {
+        "row": 3,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D12",
+      "grid_position": {
+        "row": 3,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D13",
+      "grid_position": {
+        "row": 3,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D14",
+      "grid_position": {
+        "row": 3,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D15",
+      "grid_position": {
+        "row": 3,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D16",
+      "grid_position": {
+        "row": 3,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D17",
+      "grid_position": {
+        "row": 3,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D18",
+      "grid_position": {
+        "row": 3,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D19",
+      "grid_position": {
+        "row": 3,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D20",
+      "grid_position": {
+        "row": 3,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D21",
+      "grid_position": {
+        "row": 3,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D22",
+      "grid_position": {
+        "row": 3,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D23",
+      "grid_position": {
+        "row": 3,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D24",
+      "grid_position": {
+        "row": 3,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D25",
+      "grid_position": {
+        "row": 3,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D26",
+      "grid_position": {
+        "row": 3,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D27",
+      "grid_position": {
+        "row": 3,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D28",
+      "grid_position": {
+        "row": 3,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D29",
+      "grid_position": {
+        "row": 3,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D30",
+      "grid_position": {
+        "row": 3,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D31",
+      "grid_position": {
+        "row": 3,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 76
+    },
+    {
+      "patch_id": "D32",
+      "grid_position": {
+        "row": 3,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 69
+    },
+    {
+      "patch_id": "D33",
+      "grid_position": {
+        "row": 3,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 28
+    },
+    {
+      "patch_id": "D34",
+      "grid_position": {
+        "row": 3,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 21
+    },
+    {
+      "patch_id": "D35",
+      "grid_position": {
+        "row": 3,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D36",
+      "grid_position": {
+        "row": 3,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E1",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E2",
+      "grid_position": {
+        "row": 4,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E3",
+      "grid_position": {
+        "row": 4,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E4",
+      "grid_position": {
+        "row": 4,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E5",
+      "grid_position": {
+        "row": 4,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E6",
+      "grid_position": {
+        "row": 4,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E7",
+      "grid_position": {
+        "row": 4,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E8",
+      "grid_position": {
+        "row": 4,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E9",
+      "grid_position": {
+        "row": 4,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E10",
+      "grid_position": {
+        "row": 4,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E11",
+      "grid_position": {
+        "row": 4,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E12",
+      "grid_position": {
+        "row": 4,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E13",
+      "grid_position": {
+        "row": 4,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E14",
+      "grid_position": {
+        "row": 4,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E15",
+      "grid_position": {
+        "row": 4,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E16",
+      "grid_position": {
+        "row": 4,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E17",
+      "grid_position": {
+        "row": 4,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E18",
+      "grid_position": {
+        "row": 4,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E19",
+      "grid_position": {
+        "row": 4,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E20",
+      "grid_position": {
+        "row": 4,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E21",
+      "grid_position": {
+        "row": 4,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E22",
+      "grid_position": {
+        "row": 4,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E23",
+      "grid_position": {
+        "row": 4,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E24",
+      "grid_position": {
+        "row": 4,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E25",
+      "grid_position": {
+        "row": 4,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E26",
+      "grid_position": {
+        "row": 4,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E27",
+      "grid_position": {
+        "row": 4,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E28",
+      "grid_position": {
+        "row": 4,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E29",
+      "grid_position": {
+        "row": 4,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E30",
+      "grid_position": {
+        "row": 4,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E31",
+      "grid_position": {
+        "row": 4,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 77
+    },
+    {
+      "patch_id": "E32",
+      "grid_position": {
+        "row": 4,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 68
+    },
+    {
+      "patch_id": "E33",
+      "grid_position": {
+        "row": 4,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 29
+    },
+    {
+      "patch_id": "E34",
+      "grid_position": {
+        "row": 4,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 20
+    },
+    {
+      "patch_id": "E35",
+      "grid_position": {
+        "row": 4,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E36",
+      "grid_position": {
+        "row": 4,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F1",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F2",
+      "grid_position": {
+        "row": 5,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F3",
+      "grid_position": {
+        "row": 5,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F4",
+      "grid_position": {
+        "row": 5,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F5",
+      "grid_position": {
+        "row": 5,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F6",
+      "grid_position": {
+        "row": 5,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F7",
+      "grid_position": {
+        "row": 5,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F8",
+      "grid_position": {
+        "row": 5,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F9",
+      "grid_position": {
+        "row": 5,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F10",
+      "grid_position": {
+        "row": 5,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F11",
+      "grid_position": {
+        "row": 5,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F12",
+      "grid_position": {
+        "row": 5,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F13",
+      "grid_position": {
+        "row": 5,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F14",
+      "grid_position": {
+        "row": 5,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F15",
+      "grid_position": {
+        "row": 5,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F16",
+      "grid_position": {
+        "row": 5,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F17",
+      "grid_position": {
+        "row": 5,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F18",
+      "grid_position": {
+        "row": 5,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F19",
+      "grid_position": {
+        "row": 5,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F20",
+      "grid_position": {
+        "row": 5,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F21",
+      "grid_position": {
+        "row": 5,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F22",
+      "grid_position": {
+        "row": 5,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F23",
+      "grid_position": {
+        "row": 5,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F24",
+      "grid_position": {
+        "row": 5,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F25",
+      "grid_position": {
+        "row": 5,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F26",
+      "grid_position": {
+        "row": 5,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F27",
+      "grid_position": {
+        "row": 5,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F28",
+      "grid_position": {
+        "row": 5,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F29",
+      "grid_position": {
+        "row": 5,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F30",
+      "grid_position": {
+        "row": 5,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F31",
+      "grid_position": {
+        "row": 5,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 78
+    },
+    {
+      "patch_id": "F32",
+      "grid_position": {
+        "row": 5,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 67
+    },
+    {
+      "patch_id": "F33",
+      "grid_position": {
+        "row": 5,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 30
+    },
+    {
+      "patch_id": "F34",
+      "grid_position": {
+        "row": 5,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 19
+    },
+    {
+      "patch_id": "F35",
+      "grid_position": {
+        "row": 5,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F36",
+      "grid_position": {
+        "row": 5,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G1",
+      "grid_position": {
+        "row": 6,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G2",
+      "grid_position": {
+        "row": 6,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G3",
+      "grid_position": {
+        "row": 6,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G4",
+      "grid_position": {
+        "row": 6,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G5",
+      "grid_position": {
+        "row": 6,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G6",
+      "grid_position": {
+        "row": 6,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G7",
+      "grid_position": {
+        "row": 6,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G8",
+      "grid_position": {
+        "row": 6,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G9",
+      "grid_position": {
+        "row": 6,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G10",
+      "grid_position": {
+        "row": 6,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G11",
+      "grid_position": {
+        "row": 6,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G12",
+      "grid_position": {
+        "row": 6,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G13",
+      "grid_position": {
+        "row": 6,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G14",
+      "grid_position": {
+        "row": 6,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G15",
+      "grid_position": {
+        "row": 6,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G16",
+      "grid_position": {
+        "row": 6,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G17",
+      "grid_position": {
+        "row": 6,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G18",
+      "grid_position": {
+        "row": 6,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G19",
+      "grid_position": {
+        "row": 6,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G20",
+      "grid_position": {
+        "row": 6,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G21",
+      "grid_position": {
+        "row": 6,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G22",
+      "grid_position": {
+        "row": 6,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G23",
+      "grid_position": {
+        "row": 6,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G24",
+      "grid_position": {
+        "row": 6,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G25",
+      "grid_position": {
+        "row": 6,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G26",
+      "grid_position": {
+        "row": 6,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G27",
+      "grid_position": {
+        "row": 6,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G28",
+      "grid_position": {
+        "row": 6,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G29",
+      "grid_position": {
+        "row": 6,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G30",
+      "grid_position": {
+        "row": 6,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G31",
+      "grid_position": {
+        "row": 6,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 79
+    },
+    {
+      "patch_id": "G32",
+      "grid_position": {
+        "row": 6,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 66
+    },
+    {
+      "patch_id": "G33",
+      "grid_position": {
+        "row": 6,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 31
+    },
+    {
+      "patch_id": "G34",
+      "grid_position": {
+        "row": 6,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 18
+    },
+    {
+      "patch_id": "G35",
+      "grid_position": {
+        "row": 6,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G36",
+      "grid_position": {
+        "row": 6,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H1",
+      "grid_position": {
+        "row": 7,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H2",
+      "grid_position": {
+        "row": 7,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H3",
+      "grid_position": {
+        "row": 7,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H4",
+      "grid_position": {
+        "row": 7,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H5",
+      "grid_position": {
+        "row": 7,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H6",
+      "grid_position": {
+        "row": 7,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H7",
+      "grid_position": {
+        "row": 7,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H8",
+      "grid_position": {
+        "row": 7,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H9",
+      "grid_position": {
+        "row": 7,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H10",
+      "grid_position": {
+        "row": 7,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H11",
+      "grid_position": {
+        "row": 7,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H12",
+      "grid_position": {
+        "row": 7,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H13",
+      "grid_position": {
+        "row": 7,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H14",
+      "grid_position": {
+        "row": 7,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H15",
+      "grid_position": {
+        "row": 7,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H16",
+      "grid_position": {
+        "row": 7,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H17",
+      "grid_position": {
+        "row": 7,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H18",
+      "grid_position": {
+        "row": 7,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H19",
+      "grid_position": {
+        "row": 7,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H20",
+      "grid_position": {
+        "row": 7,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H21",
+      "grid_position": {
+        "row": 7,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H22",
+      "grid_position": {
+        "row": 7,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H23",
+      "grid_position": {
+        "row": 7,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H24",
+      "grid_position": {
+        "row": 7,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H25",
+      "grid_position": {
+        "row": 7,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H26",
+      "grid_position": {
+        "row": 7,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H27",
+      "grid_position": {
+        "row": 7,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H28",
+      "grid_position": {
+        "row": 7,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H29",
+      "grid_position": {
+        "row": 7,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H30",
+      "grid_position": {
+        "row": 7,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H31",
+      "grid_position": {
+        "row": 7,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 80
+    },
+    {
+      "patch_id": "H32",
+      "grid_position": {
+        "row": 7,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 65
+    },
+    {
+      "patch_id": "H33",
+      "grid_position": {
+        "row": 7,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 32
+    },
+    {
+      "patch_id": "H34",
+      "grid_position": {
+        "row": 7,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 17
+    },
+    {
+      "patch_id": "H35",
+      "grid_position": {
+        "row": 7,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H36",
+      "grid_position": {
+        "row": 7,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I1",
+      "grid_position": {
+        "row": 8,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I2",
+      "grid_position": {
+        "row": 8,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I3",
+      "grid_position": {
+        "row": 8,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I4",
+      "grid_position": {
+        "row": 8,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I5",
+      "grid_position": {
+        "row": 8,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I6",
+      "grid_position": {
+        "row": 8,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I7",
+      "grid_position": {
+        "row": 8,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I8",
+      "grid_position": {
+        "row": 8,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I9",
+      "grid_position": {
+        "row": 8,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I10",
+      "grid_position": {
+        "row": 8,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I11",
+      "grid_position": {
+        "row": 8,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I12",
+      "grid_position": {
+        "row": 8,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I13",
+      "grid_position": {
+        "row": 8,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I14",
+      "grid_position": {
+        "row": 8,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I15",
+      "grid_position": {
+        "row": 8,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I16",
+      "grid_position": {
+        "row": 8,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I17",
+      "grid_position": {
+        "row": 8,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I18",
+      "grid_position": {
+        "row": 8,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I19",
+      "grid_position": {
+        "row": 8,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I20",
+      "grid_position": {
+        "row": 8,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I21",
+      "grid_position": {
+        "row": 8,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I22",
+      "grid_position": {
+        "row": 8,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I23",
+      "grid_position": {
+        "row": 8,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I24",
+      "grid_position": {
+        "row": 8,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I25",
+      "grid_position": {
+        "row": 8,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I26",
+      "grid_position": {
+        "row": 8,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I27",
+      "grid_position": {
+        "row": 8,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I28",
+      "grid_position": {
+        "row": 8,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I29",
+      "grid_position": {
+        "row": 8,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I30",
+      "grid_position": {
+        "row": 8,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I31",
+      "grid_position": {
+        "row": 8,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 81
+    },
+    {
+      "patch_id": "I32",
+      "grid_position": {
+        "row": 8,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 64
+    },
+    {
+      "patch_id": "I33",
+      "grid_position": {
+        "row": 8,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 33
+    },
+    {
+      "patch_id": "I34",
+      "grid_position": {
+        "row": 8,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 16
+    },
+    {
+      "patch_id": "I35",
+      "grid_position": {
+        "row": 8,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I36",
+      "grid_position": {
+        "row": 8,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J1",
+      "grid_position": {
+        "row": 9,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J2",
+      "grid_position": {
+        "row": 9,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J3",
+      "grid_position": {
+        "row": 9,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J4",
+      "grid_position": {
+        "row": 9,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J5",
+      "grid_position": {
+        "row": 9,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J6",
+      "grid_position": {
+        "row": 9,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J7",
+      "grid_position": {
+        "row": 9,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J8",
+      "grid_position": {
+        "row": 9,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J9",
+      "grid_position": {
+        "row": 9,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J10",
+      "grid_position": {
+        "row": 9,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J11",
+      "grid_position": {
+        "row": 9,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J12",
+      "grid_position": {
+        "row": 9,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J13",
+      "grid_position": {
+        "row": 9,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J14",
+      "grid_position": {
+        "row": 9,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J15",
+      "grid_position": {
+        "row": 9,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J16",
+      "grid_position": {
+        "row": 9,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J17",
+      "grid_position": {
+        "row": 9,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J18",
+      "grid_position": {
+        "row": 9,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J19",
+      "grid_position": {
+        "row": 9,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J20",
+      "grid_position": {
+        "row": 9,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J21",
+      "grid_position": {
+        "row": 9,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J22",
+      "grid_position": {
+        "row": 9,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J23",
+      "grid_position": {
+        "row": 9,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J24",
+      "grid_position": {
+        "row": 9,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J25",
+      "grid_position": {
+        "row": 9,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J26",
+      "grid_position": {
+        "row": 9,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J27",
+      "grid_position": {
+        "row": 9,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J28",
+      "grid_position": {
+        "row": 9,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J29",
+      "grid_position": {
+        "row": 9,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J30",
+      "grid_position": {
+        "row": 9,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J31",
+      "grid_position": {
+        "row": 9,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 82
+    },
+    {
+      "patch_id": "J32",
+      "grid_position": {
+        "row": 9,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 63
+    },
+    {
+      "patch_id": "J33",
+      "grid_position": {
+        "row": 9,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 34
+    },
+    {
+      "patch_id": "J34",
+      "grid_position": {
+        "row": 9,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 15
+    },
+    {
+      "patch_id": "J35",
+      "grid_position": {
+        "row": 9,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J36",
+      "grid_position": {
+        "row": 9,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K1",
+      "grid_position": {
+        "row": 10,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K2",
+      "grid_position": {
+        "row": 10,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K3",
+      "grid_position": {
+        "row": 10,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K4",
+      "grid_position": {
+        "row": 10,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K5",
+      "grid_position": {
+        "row": 10,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K6",
+      "grid_position": {
+        "row": 10,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K7",
+      "grid_position": {
+        "row": 10,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K8",
+      "grid_position": {
+        "row": 10,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K9",
+      "grid_position": {
+        "row": 10,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K10",
+      "grid_position": {
+        "row": 10,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K11",
+      "grid_position": {
+        "row": 10,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K12",
+      "grid_position": {
+        "row": 10,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K13",
+      "grid_position": {
+        "row": 10,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K14",
+      "grid_position": {
+        "row": 10,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K15",
+      "grid_position": {
+        "row": 10,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K16",
+      "grid_position": {
+        "row": 10,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K17",
+      "grid_position": {
+        "row": 10,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K18",
+      "grid_position": {
+        "row": 10,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K19",
+      "grid_position": {
+        "row": 10,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K20",
+      "grid_position": {
+        "row": 10,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K21",
+      "grid_position": {
+        "row": 10,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K22",
+      "grid_position": {
+        "row": 10,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K23",
+      "grid_position": {
+        "row": 10,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K24",
+      "grid_position": {
+        "row": 10,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K25",
+      "grid_position": {
+        "row": 10,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K26",
+      "grid_position": {
+        "row": 10,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K27",
+      "grid_position": {
+        "row": 10,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K28",
+      "grid_position": {
+        "row": 10,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K29",
+      "grid_position": {
+        "row": 10,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K30",
+      "grid_position": {
+        "row": 10,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K31",
+      "grid_position": {
+        "row": 10,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 83
+    },
+    {
+      "patch_id": "K32",
+      "grid_position": {
+        "row": 10,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 62
+    },
+    {
+      "patch_id": "K33",
+      "grid_position": {
+        "row": 10,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 35
+    },
+    {
+      "patch_id": "K34",
+      "grid_position": {
+        "row": 10,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 14
+    },
+    {
+      "patch_id": "K35",
+      "grid_position": {
+        "row": 10,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K36",
+      "grid_position": {
+        "row": 10,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L1",
+      "grid_position": {
+        "row": 11,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L2",
+      "grid_position": {
+        "row": 11,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L3",
+      "grid_position": {
+        "row": 11,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L4",
+      "grid_position": {
+        "row": 11,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L5",
+      "grid_position": {
+        "row": 11,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L6",
+      "grid_position": {
+        "row": 11,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L7",
+      "grid_position": {
+        "row": 11,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L8",
+      "grid_position": {
+        "row": 11,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L9",
+      "grid_position": {
+        "row": 11,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L10",
+      "grid_position": {
+        "row": 11,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L11",
+      "grid_position": {
+        "row": 11,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L12",
+      "grid_position": {
+        "row": 11,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L13",
+      "grid_position": {
+        "row": 11,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L14",
+      "grid_position": {
+        "row": 11,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L15",
+      "grid_position": {
+        "row": 11,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L16",
+      "grid_position": {
+        "row": 11,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L17",
+      "grid_position": {
+        "row": 11,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L18",
+      "grid_position": {
+        "row": 11,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L19",
+      "grid_position": {
+        "row": 11,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L20",
+      "grid_position": {
+        "row": 11,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L21",
+      "grid_position": {
+        "row": 11,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L22",
+      "grid_position": {
+        "row": 11,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L23",
+      "grid_position": {
+        "row": 11,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L24",
+      "grid_position": {
+        "row": 11,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L25",
+      "grid_position": {
+        "row": 11,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L26",
+      "grid_position": {
+        "row": 11,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L27",
+      "grid_position": {
+        "row": 11,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L28",
+      "grid_position": {
+        "row": 11,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L29",
+      "grid_position": {
+        "row": 11,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L30",
+      "grid_position": {
+        "row": 11,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L31",
+      "grid_position": {
+        "row": 11,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 84
+    },
+    {
+      "patch_id": "L32",
+      "grid_position": {
+        "row": 11,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 61
+    },
+    {
+      "patch_id": "L33",
+      "grid_position": {
+        "row": 11,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 36
+    },
+    {
+      "patch_id": "L34",
+      "grid_position": {
+        "row": 11,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 13
+    },
+    {
+      "patch_id": "L35",
+      "grid_position": {
+        "row": 11,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L36",
+      "grid_position": {
+        "row": 11,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M1",
+      "grid_position": {
+        "row": 12,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M2",
+      "grid_position": {
+        "row": 12,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M3",
+      "grid_position": {
+        "row": 12,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M4",
+      "grid_position": {
+        "row": 12,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M5",
+      "grid_position": {
+        "row": 12,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M6",
+      "grid_position": {
+        "row": 12,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M7",
+      "grid_position": {
+        "row": 12,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M8",
+      "grid_position": {
+        "row": 12,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M9",
+      "grid_position": {
+        "row": 12,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M10",
+      "grid_position": {
+        "row": 12,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M11",
+      "grid_position": {
+        "row": 12,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M12",
+      "grid_position": {
+        "row": 12,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M13",
+      "grid_position": {
+        "row": 12,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M14",
+      "grid_position": {
+        "row": 12,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M15",
+      "grid_position": {
+        "row": 12,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M16",
+      "grid_position": {
+        "row": 12,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M17",
+      "grid_position": {
+        "row": 12,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M18",
+      "grid_position": {
+        "row": 12,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M19",
+      "grid_position": {
+        "row": 12,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M20",
+      "grid_position": {
+        "row": 12,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M21",
+      "grid_position": {
+        "row": 12,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M22",
+      "grid_position": {
+        "row": 12,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M23",
+      "grid_position": {
+        "row": 12,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M24",
+      "grid_position": {
+        "row": 12,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M25",
+      "grid_position": {
+        "row": 12,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M26",
+      "grid_position": {
+        "row": 12,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M27",
+      "grid_position": {
+        "row": 12,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M28",
+      "grid_position": {
+        "row": 12,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M29",
+      "grid_position": {
+        "row": 12,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M30",
+      "grid_position": {
+        "row": 12,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M31",
+      "grid_position": {
+        "row": 12,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 85
+    },
+    {
+      "patch_id": "M32",
+      "grid_position": {
+        "row": 12,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 60
+    },
+    {
+      "patch_id": "M33",
+      "grid_position": {
+        "row": 12,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 37
+    },
+    {
+      "patch_id": "M34",
+      "grid_position": {
+        "row": 12,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 12
+    },
+    {
+      "patch_id": "M35",
+      "grid_position": {
+        "row": 12,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M36",
+      "grid_position": {
+        "row": 12,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N1",
+      "grid_position": {
+        "row": 13,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N2",
+      "grid_position": {
+        "row": 13,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N3",
+      "grid_position": {
+        "row": 13,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N4",
+      "grid_position": {
+        "row": 13,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N5",
+      "grid_position": {
+        "row": 13,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N6",
+      "grid_position": {
+        "row": 13,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N7",
+      "grid_position": {
+        "row": 13,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N8",
+      "grid_position": {
+        "row": 13,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N9",
+      "grid_position": {
+        "row": 13,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N10",
+      "grid_position": {
+        "row": 13,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N11",
+      "grid_position": {
+        "row": 13,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N12",
+      "grid_position": {
+        "row": 13,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N13",
+      "grid_position": {
+        "row": 13,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N14",
+      "grid_position": {
+        "row": 13,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N15",
+      "grid_position": {
+        "row": 13,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N16",
+      "grid_position": {
+        "row": 13,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N17",
+      "grid_position": {
+        "row": 13,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N18",
+      "grid_position": {
+        "row": 13,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N19",
+      "grid_position": {
+        "row": 13,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N20",
+      "grid_position": {
+        "row": 13,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N21",
+      "grid_position": {
+        "row": 13,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N22",
+      "grid_position": {
+        "row": 13,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N23",
+      "grid_position": {
+        "row": 13,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N24",
+      "grid_position": {
+        "row": 13,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N25",
+      "grid_position": {
+        "row": 13,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N26",
+      "grid_position": {
+        "row": 13,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N27",
+      "grid_position": {
+        "row": 13,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N28",
+      "grid_position": {
+        "row": 13,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N29",
+      "grid_position": {
+        "row": 13,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N30",
+      "grid_position": {
+        "row": 13,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N31",
+      "grid_position": {
+        "row": 13,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 86
+    },
+    {
+      "patch_id": "N32",
+      "grid_position": {
+        "row": 13,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 59
+    },
+    {
+      "patch_id": "N33",
+      "grid_position": {
+        "row": 13,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 38
+    },
+    {
+      "patch_id": "N34",
+      "grid_position": {
+        "row": 13,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 11
+    },
+    {
+      "patch_id": "N35",
+      "grid_position": {
+        "row": 13,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "N36",
+      "grid_position": {
+        "row": 13,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O1",
+      "grid_position": {
+        "row": 14,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O2",
+      "grid_position": {
+        "row": 14,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O3",
+      "grid_position": {
+        "row": 14,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O4",
+      "grid_position": {
+        "row": 14,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O5",
+      "grid_position": {
+        "row": 14,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O6",
+      "grid_position": {
+        "row": 14,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O7",
+      "grid_position": {
+        "row": 14,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O8",
+      "grid_position": {
+        "row": 14,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O9",
+      "grid_position": {
+        "row": 14,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O10",
+      "grid_position": {
+        "row": 14,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O11",
+      "grid_position": {
+        "row": 14,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O12",
+      "grid_position": {
+        "row": 14,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O13",
+      "grid_position": {
+        "row": 14,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O14",
+      "grid_position": {
+        "row": 14,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O15",
+      "grid_position": {
+        "row": 14,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O16",
+      "grid_position": {
+        "row": 14,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O17",
+      "grid_position": {
+        "row": 14,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O18",
+      "grid_position": {
+        "row": 14,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O19",
+      "grid_position": {
+        "row": 14,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O20",
+      "grid_position": {
+        "row": 14,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O21",
+      "grid_position": {
+        "row": 14,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O22",
+      "grid_position": {
+        "row": 14,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O23",
+      "grid_position": {
+        "row": 14,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O24",
+      "grid_position": {
+        "row": 14,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O25",
+      "grid_position": {
+        "row": 14,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O26",
+      "grid_position": {
+        "row": 14,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O27",
+      "grid_position": {
+        "row": 14,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O28",
+      "grid_position": {
+        "row": 14,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O29",
+      "grid_position": {
+        "row": 14,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O30",
+      "grid_position": {
+        "row": 14,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O31",
+      "grid_position": {
+        "row": 14,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 87
+    },
+    {
+      "patch_id": "O32",
+      "grid_position": {
+        "row": 14,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 58
+    },
+    {
+      "patch_id": "O33",
+      "grid_position": {
+        "row": 14,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 39
+    },
+    {
+      "patch_id": "O34",
+      "grid_position": {
+        "row": 14,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 10
+    },
+    {
+      "patch_id": "O35",
+      "grid_position": {
+        "row": 14,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "O36",
+      "grid_position": {
+        "row": 14,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P1",
+      "grid_position": {
+        "row": 15,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P2",
+      "grid_position": {
+        "row": 15,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P3",
+      "grid_position": {
+        "row": 15,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P4",
+      "grid_position": {
+        "row": 15,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P5",
+      "grid_position": {
+        "row": 15,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P6",
+      "grid_position": {
+        "row": 15,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P7",
+      "grid_position": {
+        "row": 15,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P8",
+      "grid_position": {
+        "row": 15,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P9",
+      "grid_position": {
+        "row": 15,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P10",
+      "grid_position": {
+        "row": 15,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P11",
+      "grid_position": {
+        "row": 15,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P12",
+      "grid_position": {
+        "row": 15,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P13",
+      "grid_position": {
+        "row": 15,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P14",
+      "grid_position": {
+        "row": 15,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P15",
+      "grid_position": {
+        "row": 15,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P16",
+      "grid_position": {
+        "row": 15,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P17",
+      "grid_position": {
+        "row": 15,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P18",
+      "grid_position": {
+        "row": 15,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P19",
+      "grid_position": {
+        "row": 15,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P20",
+      "grid_position": {
+        "row": 15,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P21",
+      "grid_position": {
+        "row": 15,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P22",
+      "grid_position": {
+        "row": 15,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P23",
+      "grid_position": {
+        "row": 15,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P24",
+      "grid_position": {
+        "row": 15,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P25",
+      "grid_position": {
+        "row": 15,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P26",
+      "grid_position": {
+        "row": 15,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P27",
+      "grid_position": {
+        "row": 15,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P28",
+      "grid_position": {
+        "row": 15,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P29",
+      "grid_position": {
+        "row": 15,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P30",
+      "grid_position": {
+        "row": 15,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P31",
+      "grid_position": {
+        "row": 15,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 88
+    },
+    {
+      "patch_id": "P32",
+      "grid_position": {
+        "row": 15,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 57
+    },
+    {
+      "patch_id": "P33",
+      "grid_position": {
+        "row": 15,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 40
+    },
+    {
+      "patch_id": "P34",
+      "grid_position": {
+        "row": 15,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    },
+    {
+      "patch_id": "P35",
+      "grid_position": {
+        "row": 15,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "P36",
+      "grid_position": {
+        "row": 15,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q1",
+      "grid_position": {
+        "row": 16,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q2",
+      "grid_position": {
+        "row": 16,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q3",
+      "grid_position": {
+        "row": 16,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q4",
+      "grid_position": {
+        "row": 16,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q5",
+      "grid_position": {
+        "row": 16,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q6",
+      "grid_position": {
+        "row": 16,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q7",
+      "grid_position": {
+        "row": 16,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q8",
+      "grid_position": {
+        "row": 16,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q9",
+      "grid_position": {
+        "row": 16,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q10",
+      "grid_position": {
+        "row": 16,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q11",
+      "grid_position": {
+        "row": 16,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q12",
+      "grid_position": {
+        "row": 16,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q13",
+      "grid_position": {
+        "row": 16,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q14",
+      "grid_position": {
+        "row": 16,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q15",
+      "grid_position": {
+        "row": 16,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q16",
+      "grid_position": {
+        "row": 16,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q17",
+      "grid_position": {
+        "row": 16,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q18",
+      "grid_position": {
+        "row": 16,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q19",
+      "grid_position": {
+        "row": 16,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q20",
+      "grid_position": {
+        "row": 16,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q21",
+      "grid_position": {
+        "row": 16,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q22",
+      "grid_position": {
+        "row": 16,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q23",
+      "grid_position": {
+        "row": 16,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q24",
+      "grid_position": {
+        "row": 16,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q25",
+      "grid_position": {
+        "row": 16,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q26",
+      "grid_position": {
+        "row": 16,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q27",
+      "grid_position": {
+        "row": 16,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q28",
+      "grid_position": {
+        "row": 16,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q29",
+      "grid_position": {
+        "row": 16,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q30",
+      "grid_position": {
+        "row": 16,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q31",
+      "grid_position": {
+        "row": 16,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 89
+    },
+    {
+      "patch_id": "Q32",
+      "grid_position": {
+        "row": 16,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 56
+    },
+    {
+      "patch_id": "Q33",
+      "grid_position": {
+        "row": 16,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 41
+    },
+    {
+      "patch_id": "Q34",
+      "grid_position": {
+        "row": 16,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "Q35",
+      "grid_position": {
+        "row": 16,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "Q36",
+      "grid_position": {
+        "row": 16,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R1",
+      "grid_position": {
+        "row": 17,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R2",
+      "grid_position": {
+        "row": 17,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R3",
+      "grid_position": {
+        "row": 17,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R4",
+      "grid_position": {
+        "row": 17,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R5",
+      "grid_position": {
+        "row": 17,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R6",
+      "grid_position": {
+        "row": 17,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R7",
+      "grid_position": {
+        "row": 17,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R8",
+      "grid_position": {
+        "row": 17,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R9",
+      "grid_position": {
+        "row": 17,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R10",
+      "grid_position": {
+        "row": 17,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R11",
+      "grid_position": {
+        "row": 17,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R12",
+      "grid_position": {
+        "row": 17,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R13",
+      "grid_position": {
+        "row": 17,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R14",
+      "grid_position": {
+        "row": 17,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R15",
+      "grid_position": {
+        "row": 17,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R16",
+      "grid_position": {
+        "row": 17,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R17",
+      "grid_position": {
+        "row": 17,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R18",
+      "grid_position": {
+        "row": 17,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R19",
+      "grid_position": {
+        "row": 17,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R20",
+      "grid_position": {
+        "row": 17,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R21",
+      "grid_position": {
+        "row": 17,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R22",
+      "grid_position": {
+        "row": 17,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R23",
+      "grid_position": {
+        "row": 17,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R24",
+      "grid_position": {
+        "row": 17,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R25",
+      "grid_position": {
+        "row": 17,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R26",
+      "grid_position": {
+        "row": 17,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R27",
+      "grid_position": {
+        "row": 17,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R28",
+      "grid_position": {
+        "row": 17,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R29",
+      "grid_position": {
+        "row": 17,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R30",
+      "grid_position": {
+        "row": 17,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R31",
+      "grid_position": {
+        "row": 17,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 90
+    },
+    {
+      "patch_id": "R32",
+      "grid_position": {
+        "row": 17,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 55
+    },
+    {
+      "patch_id": "R33",
+      "grid_position": {
+        "row": 17,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 42
+    },
+    {
+      "patch_id": "R34",
+      "grid_position": {
+        "row": 17,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "R35",
+      "grid_position": {
+        "row": 17,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "R36",
+      "grid_position": {
+        "row": 17,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S1",
+      "grid_position": {
+        "row": 18,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S2",
+      "grid_position": {
+        "row": 18,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S3",
+      "grid_position": {
+        "row": 18,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S4",
+      "grid_position": {
+        "row": 18,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S5",
+      "grid_position": {
+        "row": 18,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S6",
+      "grid_position": {
+        "row": 18,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S7",
+      "grid_position": {
+        "row": 18,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S8",
+      "grid_position": {
+        "row": 18,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S9",
+      "grid_position": {
+        "row": 18,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S10",
+      "grid_position": {
+        "row": 18,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S11",
+      "grid_position": {
+        "row": 18,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S12",
+      "grid_position": {
+        "row": 18,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S13",
+      "grid_position": {
+        "row": 18,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S14",
+      "grid_position": {
+        "row": 18,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S15",
+      "grid_position": {
+        "row": 18,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S16",
+      "grid_position": {
+        "row": 18,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S17",
+      "grid_position": {
+        "row": 18,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S18",
+      "grid_position": {
+        "row": 18,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S19",
+      "grid_position": {
+        "row": 18,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S20",
+      "grid_position": {
+        "row": 18,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S21",
+      "grid_position": {
+        "row": 18,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S22",
+      "grid_position": {
+        "row": 18,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S23",
+      "grid_position": {
+        "row": 18,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S24",
+      "grid_position": {
+        "row": 18,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S25",
+      "grid_position": {
+        "row": 18,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S26",
+      "grid_position": {
+        "row": 18,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S27",
+      "grid_position": {
+        "row": 18,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S28",
+      "grid_position": {
+        "row": 18,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S29",
+      "grid_position": {
+        "row": 18,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S30",
+      "grid_position": {
+        "row": 18,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S31",
+      "grid_position": {
+        "row": 18,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 91
+    },
+    {
+      "patch_id": "S32",
+      "grid_position": {
+        "row": 18,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 54
+    },
+    {
+      "patch_id": "S33",
+      "grid_position": {
+        "row": 18,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 43
+    },
+    {
+      "patch_id": "S34",
+      "grid_position": {
+        "row": 18,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "S35",
+      "grid_position": {
+        "row": 18,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "S36",
+      "grid_position": {
+        "row": 18,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T1",
+      "grid_position": {
+        "row": 19,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T2",
+      "grid_position": {
+        "row": 19,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T3",
+      "grid_position": {
+        "row": 19,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T4",
+      "grid_position": {
+        "row": 19,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T5",
+      "grid_position": {
+        "row": 19,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T6",
+      "grid_position": {
+        "row": 19,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T7",
+      "grid_position": {
+        "row": 19,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T8",
+      "grid_position": {
+        "row": 19,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T9",
+      "grid_position": {
+        "row": 19,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T10",
+      "grid_position": {
+        "row": 19,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T11",
+      "grid_position": {
+        "row": 19,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T12",
+      "grid_position": {
+        "row": 19,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T13",
+      "grid_position": {
+        "row": 19,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T14",
+      "grid_position": {
+        "row": 19,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T15",
+      "grid_position": {
+        "row": 19,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T16",
+      "grid_position": {
+        "row": 19,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T17",
+      "grid_position": {
+        "row": 19,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T18",
+      "grid_position": {
+        "row": 19,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T19",
+      "grid_position": {
+        "row": 19,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T20",
+      "grid_position": {
+        "row": 19,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T21",
+      "grid_position": {
+        "row": 19,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T22",
+      "grid_position": {
+        "row": 19,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T23",
+      "grid_position": {
+        "row": 19,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T24",
+      "grid_position": {
+        "row": 19,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T25",
+      "grid_position": {
+        "row": 19,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T26",
+      "grid_position": {
+        "row": 19,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T27",
+      "grid_position": {
+        "row": 19,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T28",
+      "grid_position": {
+        "row": 19,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T29",
+      "grid_position": {
+        "row": 19,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T30",
+      "grid_position": {
+        "row": 19,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T31",
+      "grid_position": {
+        "row": 19,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 92
+    },
+    {
+      "patch_id": "T32",
+      "grid_position": {
+        "row": 19,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 53
+    },
+    {
+      "patch_id": "T33",
+      "grid_position": {
+        "row": 19,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 44
+    },
+    {
+      "patch_id": "T34",
+      "grid_position": {
+        "row": 19,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "T35",
+      "grid_position": {
+        "row": 19,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "T36",
+      "grid_position": {
+        "row": 19,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U1",
+      "grid_position": {
+        "row": 20,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U2",
+      "grid_position": {
+        "row": 20,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U3",
+      "grid_position": {
+        "row": 20,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U4",
+      "grid_position": {
+        "row": 20,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U5",
+      "grid_position": {
+        "row": 20,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U6",
+      "grid_position": {
+        "row": 20,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U7",
+      "grid_position": {
+        "row": 20,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U8",
+      "grid_position": {
+        "row": 20,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U9",
+      "grid_position": {
+        "row": 20,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U10",
+      "grid_position": {
+        "row": 20,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U11",
+      "grid_position": {
+        "row": 20,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U12",
+      "grid_position": {
+        "row": 20,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U13",
+      "grid_position": {
+        "row": 20,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U14",
+      "grid_position": {
+        "row": 20,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U15",
+      "grid_position": {
+        "row": 20,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U16",
+      "grid_position": {
+        "row": 20,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U17",
+      "grid_position": {
+        "row": 20,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U18",
+      "grid_position": {
+        "row": 20,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U19",
+      "grid_position": {
+        "row": 20,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U20",
+      "grid_position": {
+        "row": 20,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U21",
+      "grid_position": {
+        "row": 20,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U22",
+      "grid_position": {
+        "row": 20,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U23",
+      "grid_position": {
+        "row": 20,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U24",
+      "grid_position": {
+        "row": 20,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U25",
+      "grid_position": {
+        "row": 20,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U26",
+      "grid_position": {
+        "row": 20,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U27",
+      "grid_position": {
+        "row": 20,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U28",
+      "grid_position": {
+        "row": 20,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U29",
+      "grid_position": {
+        "row": 20,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U30",
+      "grid_position": {
+        "row": 20,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U31",
+      "grid_position": {
+        "row": 20,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 93
+    },
+    {
+      "patch_id": "U32",
+      "grid_position": {
+        "row": 20,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 52
+    },
+    {
+      "patch_id": "U33",
+      "grid_position": {
+        "row": 20,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 45
+    },
+    {
+      "patch_id": "U34",
+      "grid_position": {
+        "row": 20,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "U35",
+      "grid_position": {
+        "row": 20,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "U36",
+      "grid_position": {
+        "row": 20,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V1",
+      "grid_position": {
+        "row": 21,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V2",
+      "grid_position": {
+        "row": 21,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V3",
+      "grid_position": {
+        "row": 21,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V4",
+      "grid_position": {
+        "row": 21,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V5",
+      "grid_position": {
+        "row": 21,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V6",
+      "grid_position": {
+        "row": 21,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V7",
+      "grid_position": {
+        "row": 21,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V8",
+      "grid_position": {
+        "row": 21,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V9",
+      "grid_position": {
+        "row": 21,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V10",
+      "grid_position": {
+        "row": 21,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V11",
+      "grid_position": {
+        "row": 21,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V12",
+      "grid_position": {
+        "row": 21,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V13",
+      "grid_position": {
+        "row": 21,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V14",
+      "grid_position": {
+        "row": 21,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V15",
+      "grid_position": {
+        "row": 21,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V16",
+      "grid_position": {
+        "row": 21,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V17",
+      "grid_position": {
+        "row": 21,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V18",
+      "grid_position": {
+        "row": 21,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V19",
+      "grid_position": {
+        "row": 21,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V20",
+      "grid_position": {
+        "row": 21,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V21",
+      "grid_position": {
+        "row": 21,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V22",
+      "grid_position": {
+        "row": 21,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V23",
+      "grid_position": {
+        "row": 21,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V24",
+      "grid_position": {
+        "row": 21,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V25",
+      "grid_position": {
+        "row": 21,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V26",
+      "grid_position": {
+        "row": 21,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V27",
+      "grid_position": {
+        "row": 21,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V28",
+      "grid_position": {
+        "row": 21,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V29",
+      "grid_position": {
+        "row": 21,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V30",
+      "grid_position": {
+        "row": 21,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V31",
+      "grid_position": {
+        "row": 21,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 94
+    },
+    {
+      "patch_id": "V32",
+      "grid_position": {
+        "row": 21,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 51
+    },
+    {
+      "patch_id": "V33",
+      "grid_position": {
+        "row": 21,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 46
+    },
+    {
+      "patch_id": "V34",
+      "grid_position": {
+        "row": 21,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "V35",
+      "grid_position": {
+        "row": 21,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "V36",
+      "grid_position": {
+        "row": 21,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W1",
+      "grid_position": {
+        "row": 22,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W2",
+      "grid_position": {
+        "row": 22,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W3",
+      "grid_position": {
+        "row": 22,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W4",
+      "grid_position": {
+        "row": 22,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W5",
+      "grid_position": {
+        "row": 22,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W6",
+      "grid_position": {
+        "row": 22,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W7",
+      "grid_position": {
+        "row": 22,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W8",
+      "grid_position": {
+        "row": 22,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W9",
+      "grid_position": {
+        "row": 22,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W10",
+      "grid_position": {
+        "row": 22,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W11",
+      "grid_position": {
+        "row": 22,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W12",
+      "grid_position": {
+        "row": 22,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W13",
+      "grid_position": {
+        "row": 22,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W14",
+      "grid_position": {
+        "row": 22,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W15",
+      "grid_position": {
+        "row": 22,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W16",
+      "grid_position": {
+        "row": 22,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W17",
+      "grid_position": {
+        "row": 22,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W18",
+      "grid_position": {
+        "row": 22,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W19",
+      "grid_position": {
+        "row": 22,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W20",
+      "grid_position": {
+        "row": 22,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W21",
+      "grid_position": {
+        "row": 22,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W22",
+      "grid_position": {
+        "row": 22,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W23",
+      "grid_position": {
+        "row": 22,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W24",
+      "grid_position": {
+        "row": 22,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W25",
+      "grid_position": {
+        "row": 22,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W26",
+      "grid_position": {
+        "row": 22,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W27",
+      "grid_position": {
+        "row": 22,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W28",
+      "grid_position": {
+        "row": 22,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W29",
+      "grid_position": {
+        "row": 22,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W30",
+      "grid_position": {
+        "row": 22,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W31",
+      "grid_position": {
+        "row": 22,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 96,
+      "notes": "Neutral scale step 96 (darkest, L* ~1.6)."
+    },
+    {
+      "patch_id": "W32",
+      "grid_position": {
+        "row": 22,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 50
+    },
+    {
+      "patch_id": "W33",
+      "grid_position": {
+        "row": 22,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 47
+    },
+    {
+      "patch_id": "W34",
+      "grid_position": {
+        "row": 22,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    },
+    {
+      "patch_id": "W35",
+      "grid_position": {
+        "row": 22,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "W36",
+      "grid_position": {
+        "row": 22,
+        "col": 35
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X1",
+      "grid_position": {
+        "row": 23,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X2",
+      "grid_position": {
+        "row": 23,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X3",
+      "grid_position": {
+        "row": 23,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X4",
+      "grid_position": {
+        "row": 23,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X5",
+      "grid_position": {
+        "row": 23,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X6",
+      "grid_position": {
+        "row": 23,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X7",
+      "grid_position": {
+        "row": 23,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X8",
+      "grid_position": {
+        "row": 23,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X9",
+      "grid_position": {
+        "row": 23,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X10",
+      "grid_position": {
+        "row": 23,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X11",
+      "grid_position": {
+        "row": 23,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X12",
+      "grid_position": {
+        "row": 23,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X13",
+      "grid_position": {
+        "row": 23,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X14",
+      "grid_position": {
+        "row": 23,
+        "col": 13
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X15",
+      "grid_position": {
+        "row": 23,
+        "col": 14
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X16",
+      "grid_position": {
+        "row": 23,
+        "col": 15
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X17",
+      "grid_position": {
+        "row": 23,
+        "col": 16
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X18",
+      "grid_position": {
+        "row": 23,
+        "col": 17
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X19",
+      "grid_position": {
+        "row": 23,
+        "col": 18
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X20",
+      "grid_position": {
+        "row": 23,
+        "col": 19
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X21",
+      "grid_position": {
+        "row": 23,
+        "col": 20
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X22",
+      "grid_position": {
+        "row": 23,
+        "col": 21
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X23",
+      "grid_position": {
+        "row": 23,
+        "col": 22
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X24",
+      "grid_position": {
+        "row": 23,
+        "col": 23
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X25",
+      "grid_position": {
+        "row": 23,
+        "col": 24
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X26",
+      "grid_position": {
+        "row": 23,
+        "col": 25
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X27",
+      "grid_position": {
+        "row": 23,
+        "col": 26
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X28",
+      "grid_position": {
+        "row": 23,
+        "col": 27
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X29",
+      "grid_position": {
+        "row": 23,
+        "col": 28
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X30",
+      "grid_position": {
+        "row": 23,
+        "col": 29
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X31",
+      "grid_position": {
+        "row": 23,
+        "col": 30
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 95
+    },
+    {
+      "patch_id": "X32",
+      "grid_position": {
+        "row": 23,
+        "col": 31
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 49
+    },
+    {
+      "patch_id": "X33",
+      "grid_position": {
+        "row": 23,
+        "col": 32
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 48
+    },
+    {
+      "patch_id": "X34",
+      "grid_position": {
+        "row": 23,
+        "col": 33
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 1,
+      "notes": "Neutral scale step 1 (lightest, L* ~88.0). The scale runs serpentine across columns 31-34: column 31 descends A->X, 32 ascends, 33 descends, 34 ascends, and the four interlock into one continuous 96-step ramp. Membership and order were both derived from the measured reference, and order is re-derived at analysis time so a differently laid-out unit is reported rather than mis-plotted."
+    },
+    {
+      "patch_id": "X35",
+      "grid_position": {
+        "row": 23,
+        "col": 34
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "X36",
+      "grid_position": {
+        "row": 23,
+        "col": 35
+      },
+      "role": "unassigned"
+    }
+  ],
+  "metric_defaults": {
+    "color_accuracy": {
+      "algorithm": "delta_e_2000"
+    },
+    "tonal_response": {
+      "uses_roles": [
+        "achromatic_ramp"
+      ],
+      "notes": "96 neutral steps across columns 31-34, L* ~1.6 to ~88."
+    }
+  },
+  "notes": "Transmissive target: measured in Colorimetric_Transmittance on Fuji Provia Professional film. The applicable FADGI category is Photographic Transparencies, NOT Prints and Photographs -- and FADGI specifies no color accuracy metric for transparencies at all, because film is not scene referred. Delta E against this target's own reference is still a useful measurement and runs from a custom profile, but it is not a FADGI conformance criterion.\nlightness_uniformity is deliberately NOT declared: the only repeated near-white patches are the highlight ends of six adjacent color ramps in rows A-B, clustered in one corner rather than distributed across the chart, which is not a usable areal-coverage uniformity sample.\nNo dimensional reference is printed on this target, so it cannot establish sampling frequency. That is a property of the target, not of any capture made with it.\n\nITS GAMUT EXCEEDS COMMON WORKING SPACES, AND THAT SHOWS UP AS CLIPPING RATHER THAN AS AN ERROR. On the sample capture -- 16-bit, tagged eciRGB v2 -- 127 of the 864 patches have at least one channel held at exactly the encoding floor. They are not underexposed and the placement is not wrong: they are the chart's saturated cyans, magentas and yellows, with ROI means as high as 0.60 and a single channel pinned at zero (33 red, 46 green, 46 blue, 2 both). Their median measured chroma is C*ab 57 against 23 for the other 737.\n\nA truncated channel means the encoded colour is WRONG IN A KNOWN DIRECTION -- chroma understated, hue pulled toward the surviving primaries -- so Delta E against those patches measures the encoding rather than the capture. The engine flags them `gamut_clipped` and names the channel, and the colour metrics say so and include them anyway rather than silently shrinking the patch set.\n\nTHE REMEDY IS THE WORKING SPACE, NOT THE EXPOSURE. Capture this target into a space wide enough to hold it -- ProPhoto RGB rather than eciRGB v2 or Adobe RGB -- or accept that its most saturated patches cannot be judged. This is a property of the chart, which is an ISO 12641-2 ADVANCED target and is built with an extended gamut on purpose; it is not a fault of any particular capture, and it is worth knowing BEFORE shooting rather than after.\n\nONE DEFINITION SERVES EVERY FORMAT AND BOTH EDITIONS THAT HAVE BEEN CHECKED. LaserSoft image one design onto film and cut it to format, so the 4x5 and the 120 are the same chart at two scales, and nothing in this definition depends on scale -- it states no physical size. Checked on a 120 (6x6) unit, serial T1710030, which prints 'ISO 12641-2 Candidate 2017:10' where the 4x5 prints 'advanced target 2019:10': placed automatically by its printed frame, every one of the 864 ROIs inside its patch, worst inset sensitivity 0.0076 against a 0.02 limit. That is why the display name says neither 'Advanced' nor a format. What differs between units -- format, edition, film batch -- is carried by the per-unit CxF, keyed by the serial, which is the only place it can be told apart and the only place it matters.\n\nTHE BARCODE ENCODES THE SERIAL RATHER THAN SPELLING IT. T1910021 carries 1930021 and T1710030 carries 1730030: the product letter becomes a digit, the decade is dropped and twenty is added to the month, the same rule LaserSoft's IT8 charts follow. The reference bank applies the rule forward from each file's serial, so a unit's CxF pairs with its capture without a binding (reference/library.py, lasersoft_barcode).",
+  "fiducial_extent_mm": null,
+  "dimensional_reference": {
+    "available": false,
+    "kind": null,
+    "summary": null,
+    "notes": "This target prints no scale, ruler or dimensioned feature, so nothing in a capture establishes its physical size. Deltachrome deliberately does NOT carry a figure measured from one specimen: the frame is imaged onto film that is then cut to format, and neither the imaging scale across production batches nor the placement of the cut is guaranteed, so a value from one unit would be an assumption about every other. Sampling frequency therefore reports N/A, which is what this declaration means: the resolution requirement still applies to the capture, it simply cannot be verified from this target. Use a target that carries dimensional markers, or measure a specific specimen and pass --fiducial-extent for that unit's captures only."
+  }
+}

@@ -1,0 +1,46 @@
+CGATS.17
+
+ORIGINATOR	"Derived from OpenDICE Profile_Negative4x5.txt (Library of Congress)"
+DESCRIPTOR	"ISA transmissive film target 120 -- manufacturer nominal aim values"
+MANUFACTURER	"Image Science Associates"
+ILLUMINATION_NAME	"D50"
+OBSERVER_ANGLE	"2"
+KEYWORD	"DELTACHROME_REFERENCE_BASIS"
+DELTACHROME_REFERENCE_BASIS	"manufacturer_nominal"
+KEYWORD	"DELTACHROME_NOMINAL_SOURCE"
+DELTACHROME_NOMINAL_SOURCE	"The ISA film wedge, D 0.05 to 2.25, from OpenDICE's Profile_Negative4x5.txt -- the ladder published for this chart's 4x5 sibling. NOT the 120's own published file: OpenDICE's Profile_Negative120.txt (D 0.06 to 1.83) does not fit its own sample capture '120_target.tif', leaving 9.2 L* rms and needing a negative flare term, where the 4x5's ladder fits it at 2.2 L* rms with flare near zero. Every ISA 35mm capture tried, OpenDICE's own included, also fits the 4x5's ladder best, so one wedge serves all three ISA film targets. The two wedges measure the same step for step, so which block is which does not matter."
+KEYWORD	"DELTACHROME_NOMINAL_CAVEAT"
+DELTACHROME_NOMINAL_CAVEAT	"Manufacturer nominal aim values for the model, not a measurement of any individual chart. Two further steps sit between this file and a measurement, and both are choices rather than arithmetic: the published data is DENSITY ONLY, anchored here so the lightest step reads L* 96 -- FADGI's own transparency highlight aim -- because a density ladder carries no lightness of its own; and a* = b* = 0 restates the manufacturer's claim that the scales are spectrally neutral as an aim. Density describes the film; L* describes the appearance of a reproduction, and for a transmissive original the mapping between them IS the tone response being measured. Treat tone response against this file as advisory of a rendering intent, not as conformance. CHOSEN PARTLY BY FIT, which is said rather than hidden: four captures of two formats from two sources agree on this ladder and disagree with the one published for the 120, but only ISA can confirm what the chart prints."
+
+NUMBER_OF_FIELDS	5
+BEGIN_DATA_FORMAT
+SAMPLE_NAME	LAB_L	LAB_A	LAB_B	D
+END_DATA_FORMAT
+
+NUMBER_OF_SETS	24
+BEGIN_DATA
+T1	96.000	0.000	0.000	0.05
+T2	90.141	0.000	0.000	0.12
+T3	84.589	0.000	0.000	0.19
+T4	74.341	0.000	0.000	0.33
+T5	64.516	0.000	0.000	0.48
+T6	50.971	0.000	0.000	0.72
+T7	43.231	0.000	0.000	0.88
+T8	32.145	0.000	0.000	1.15
+T9	22.835	0.000	0.000	1.43
+T10	15.325	0.000	0.000	1.71
+T11	8.130	0.000	0.000	2.05
+T12	5.130	0.000	0.000	2.25
+B1	96.000	0.000	0.000	0.05
+B2	90.141	0.000	0.000	0.12
+B3	84.589	0.000	0.000	0.19
+B4	74.341	0.000	0.000	0.33
+B5	64.516	0.000	0.000	0.48
+B6	50.971	0.000	0.000	0.72
+B7	43.231	0.000	0.000	0.88
+B8	32.145	0.000	0.000	1.15
+B9	22.835	0.000	0.000	1.43
+B10	15.325	0.000	0.000	1.71
+B11	8.130	0.000	0.000	2.05
+B12	5.130	0.000	0.000	2.25
+END_DATA

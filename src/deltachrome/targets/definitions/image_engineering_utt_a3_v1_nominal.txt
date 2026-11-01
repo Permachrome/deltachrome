@@ -1,0 +1,156 @@
+CGATS.17
+
+ORIGINATOR	"Image Engineering -- aim values from the UTT certificate of conformance"
+DESCRIPTOR	"Universal Test Target (UTT) -- manufacturer nominal aim values"
+MANUFACTURER	"Image Engineering"
+ILLUMINATION_NAME	"D50"
+OBSERVER_ANGLE	"2"
+KEYWORD	"DELTACHROME_REFERENCE_BASIS"
+DELTACHROME_REFERENCE_BASIS	"manufacturer_nominal"
+KEYWORD	"DELTACHROME_NOMINAL_SOURCE"
+DELTACHROME_NOMINAL_SOURCE	"The 'Reference Values' column of Image Engineering's certificate-of-conformance workbook for the UTT (UTT_MetaData_A3_LWF.xls), which prints the design aim beside each patch's measured value. Grey steps carry no aim in the workbook's colour table; the four scales aim at L* 95 down to 3 in steps of 5, with a final step at L* 3, and at a* = b* = 0."
+KEYWORD	"DELTACHROME_NOMINAL_CAVEAT"
+DELTACHROME_NOMINAL_CAVEAT	"Design aims for the model, not a measurement of any individual chart -- every value is a whole number, which is what gives it away. Image Engineering measure each UTT and ship the result with the chart; that file supersedes this one. Judged against these aims instead, a Delta E carries the chart's own print tolerance as well as the capture system's error: on the certificate these were taken from, the unit's own measured patches sit up to 5.5 Delta E from its aims. A run on this basis reports ADVISORY and makes no conformance claim."
+
+NUMBER_OF_FIELDS	4
+BEGIN_DATA_FORMAT
+SAMPLE_NAME	LAB_L	LAB_A	LAB_B
+END_DATA_FORMAT
+
+NUMBER_OF_SETS	134
+BEGIN_DATA
+A1	18.00	24.00	-61.00
+A2	82.00	3.00	90.00
+A3	61.00	38.00	74.00
+A4	21.00	35.00	-32.00
+A5	32.00	24.00	32.00
+A6	45.00	-32.00	38.00
+A7	85.00	-2.00	-9.00
+A8	86.00	13.00	7.00
+A9	90.00	-17.00	6.00
+B1	53.00	-45.00	38.00
+B2	49.00	56.00	-14.00
+B3	35.00	12.00	-53.00
+B4	72.00	-25.00	65.00
+B5	64.00	20.00	19.00
+B6	53.00	8.00	-27.00
+B7	85.00	13.00	0.00
+B8	85.00	-11.00	26.00
+B9	85.00	4.00	-6.00
+C1	46.00	64.00	34.00
+C2	48.00	-34.00	-31.00
+C3	48.00	54.00	21.00
+C4	71.00	19.00	80.00
+C5	47.00	-5.00	-25.00
+C6	69.00	-35.00	-1.00
+C7	86.00	-19.00	-1.00
+C8	87.00	10.00	18.00
+C9	85.00	-14.00	-9.00
+D1	85.00	-14.00	-9.00
+D2	87.00	10.00	18.00
+D3	86.00	-19.00	-1.00
+D4	69.00	-35.00	-1.00
+D5	47.00	-5.00	-25.00
+D6	71.00	19.00	80.00
+D7	48.00	54.00	21.00
+D8	48.00	-34.00	-31.00
+D9	46.00	64.00	34.00
+E1	85.00	4.00	-6.00
+E2	85.00	-11.00	26.00
+E3	85.00	13.00	0.00
+E4	53.00	8.00	-27.00
+E5	64.00	20.00	19.00
+E6	72.00	-25.00	65.00
+E7	35.00	12.00	-53.00
+E8	49.00	56.00	-14.00
+E9	53.00	-45.00	38.00
+F1	90.00	-17.00	6.00
+F2	86.00	13.00	7.00
+F3	85.00	-2.00	-9.00
+F4	45.00	-32.00	38.00
+F5	32.00	24.00	32.00
+F6	21.00	35.00	-32.00
+F7	61.00	38.00	74.00
+F8	82.00	3.00	90.00
+F9	18.00	24.00	-61.00
+GS_U_1	95.00	0.00	0.00
+GS_U_2	90.00	0.00	0.00
+GS_U_3	85.00	0.00	0.00
+GS_U_4	80.00	0.00	0.00
+GS_U_5	75.00	0.00	0.00
+GS_U_6	70.00	0.00	0.00
+GS_U_7	65.00	0.00	0.00
+GS_U_8	60.00	0.00	0.00
+GS_U_9	55.00	0.00	0.00
+GS_U_10	50.00	0.00	0.00
+GS_U_11	45.00	0.00	0.00
+GS_U_12	40.00	0.00	0.00
+GS_U_13	35.00	0.00	0.00
+GS_U_14	30.00	0.00	0.00
+GS_U_15	25.00	0.00	0.00
+GS_U_16	20.00	0.00	0.00
+GS_U_17	15.00	0.00	0.00
+GS_U_18	10.00	0.00	0.00
+GS_U_19	5.00	0.00	0.00
+GS_U_20	3.00	0.00	0.00
+GS_D_1	95.00	0.00	0.00
+GS_D_2	90.00	0.00	0.00
+GS_D_3	85.00	0.00	0.00
+GS_D_4	80.00	0.00	0.00
+GS_D_5	75.00	0.00	0.00
+GS_D_6	70.00	0.00	0.00
+GS_D_7	65.00	0.00	0.00
+GS_D_8	60.00	0.00	0.00
+GS_D_9	55.00	0.00	0.00
+GS_D_10	50.00	0.00	0.00
+GS_D_11	45.00	0.00	0.00
+GS_D_12	40.00	0.00	0.00
+GS_D_13	35.00	0.00	0.00
+GS_D_14	30.00	0.00	0.00
+GS_D_15	25.00	0.00	0.00
+GS_D_16	20.00	0.00	0.00
+GS_D_17	15.00	0.00	0.00
+GS_D_18	10.00	0.00	0.00
+GS_D_19	5.00	0.00	0.00
+GS_D_20	3.00	0.00	0.00
+GS_L_1	95.00	0.00	0.00
+GS_L_2	90.00	0.00	0.00
+GS_L_3	85.00	0.00	0.00
+GS_L_4	80.00	0.00	0.00
+GS_L_5	75.00	0.00	0.00
+GS_L_6	70.00	0.00	0.00
+GS_L_7	65.00	0.00	0.00
+GS_L_8	60.00	0.00	0.00
+GS_L_9	55.00	0.00	0.00
+GS_L_10	50.00	0.00	0.00
+GS_L_11	45.00	0.00	0.00
+GS_L_12	40.00	0.00	0.00
+GS_L_13	35.00	0.00	0.00
+GS_L_14	30.00	0.00	0.00
+GS_L_15	25.00	0.00	0.00
+GS_L_16	20.00	0.00	0.00
+GS_L_17	15.00	0.00	0.00
+GS_L_18	10.00	0.00	0.00
+GS_L_19	5.00	0.00	0.00
+GS_L_20	3.00	0.00	0.00
+GS_R_1	95.00	0.00	0.00
+GS_R_2	90.00	0.00	0.00
+GS_R_3	85.00	0.00	0.00
+GS_R_4	80.00	0.00	0.00
+GS_R_5	75.00	0.00	0.00
+GS_R_6	70.00	0.00	0.00
+GS_R_7	65.00	0.00	0.00
+GS_R_8	60.00	0.00	0.00
+GS_R_9	55.00	0.00	0.00
+GS_R_10	50.00	0.00	0.00
+GS_R_11	45.00	0.00	0.00
+GS_R_12	40.00	0.00	0.00
+GS_R_13	35.00	0.00	0.00
+GS_R_14	30.00	0.00	0.00
+GS_R_15	25.00	0.00	0.00
+GS_R_16	20.00	0.00	0.00
+GS_R_17	15.00	0.00	0.00
+GS_R_18	10.00	0.00	0.00
+GS_R_19	5.00	0.00	0.00
+GS_R_20	3.00	0.00	0.00
+END_DATA

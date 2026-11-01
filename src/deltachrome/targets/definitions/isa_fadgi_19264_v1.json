@@ -1,0 +1,2250 @@
+{
+  "$schema_version": 1,
+  "target_id": "isa_fadgi_19264_v1",
+  "display_name": "ISA FADGI – ISO 19264 (early version)",
+  "manufacturer": "Image Science Associates",
+  "target_type": "reflective_color_chart",
+  "physical_size_mm": null,
+  "capabilities": [
+    "color_accuracy",
+    "tonal_response",
+    "white_balance",
+    "reproduction_scale",
+    "geometric_distortion",
+    "sfr",
+    "color_registration"
+  ],
+  "not_capable_of": [
+    "lightness_uniformity",
+    "flat_field"
+  ],
+  "fiducials": {
+    "method": "corner_squares_and_dot",
+    "corner_markers": [
+      {
+        "id": "TL",
+        "relative_position": [
+          -0.13554,
+          -0.17716
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "TR",
+        "relative_position": [
+          1.1263,
+          -0.17689
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "BR",
+        "relative_position": [
+          1.12654,
+          1.02415
+        ],
+        "nearest_patch": null
+      },
+      {
+        "id": "BL",
+        "relative_position": [
+          -0.13807,
+          1.02308
+        ],
+        "nearest_patch": null
+      }
+    ],
+    "notes": "The centres of the three solid black corner SQUARES -- TL, TR and BL -- and, at the bottom right, where a fourth square would be, the round black DOT: the last dot in the right-hand column, level with the bottom-left square and directly below the top-right one. Those four make a rectangle round the chart's corners, larger than the corner modules' and so better conditioned, and every one is a solid shape whose centre a ring can be put on. TAKE CARE AT THE BOTTOM RIGHT: the chart prints 75 such dots on a regular grid, so the one above is a dot pitch away and looks the same; that is beyond what refinement can correct. The relative frame is the corner modules' resolution fields. No finder exists for these marks: this chart is placed by hand, and refines on its declared features."
+  },
+  "regions": [
+    {
+      "region_id": "patches",
+      "kind": "patch_grid",
+      "patch_grid": {
+        "rows": 21,
+        "columns": 14,
+        "row_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "col_labels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N"
+        ],
+        "patch_id_format": "{column_letter}{row_number}",
+        "patch_size_relative": {
+          "width": 0.06434,
+          "height": 0.04329
+        },
+        "patch_spacing_relative": {
+          "horizontal": 0.09006,
+          "vertical": 0.06005
+        },
+        "grid_origin_relative": [
+          -0.1229,
+          -0.16874
+        ],
+        "provisional": false,
+        "coordinate_frame": "Relative to the quadrilateral formed by the four corner modules' white dpi-field centres.",
+        "notes": "TWENTY-ONE ROWS, NOT SIXTEEN. The chart prints row numbers 1 to 16, and the patches sit on one regular lattice of twenty-one row slots of which five are empty -- the grey wedge takes two, the printed rules one, the serial box two. Modelling it as sixteen unevenly spaced rows would need spacing this schema cannot express; modelling it as twenty-one regular ones is what the capture actually shows, to 0.11% of the quad across 168 patches. row_labels are therefore LATTICE indices and are never used: every patch is declared explicitly with its own id, and the empty slots hold no patch.",
+        "measured_from": {
+          "method": "tools/locate_fadgi19264_geometry.py -- module fields by brightness, then a projective fit of the 14 x 21 lattice through every located patch",
+          "unit": "the specimen OpenDICE published its early-version sample from",
+          "capture": "FADGI_19264.tif, 2496 x 3528 px",
+          "patches_located": "168 of 168",
+          "lattice_residual_px": 1.8,
+          "lattice_residual_pct_of_quad": 0.109,
+          "patch_diameter_px": [
+            106.5,
+            108.3
+          ],
+          "notes": "Every patch was found, and the occupancy pattern this capture yields -- eight columns in printed rows 1 to 5, fourteen in row 6, twelve in row 7, ten in rows 8 to 10, fourteen in rows 11 to 14, eight in rows 15 and 16 -- is what the commercial version's own printed grid labels independently confirm, cell for cell."
+        }
+      },
+      "notes": "168 circular patches. Ids are 1 to 168 in reading order over the occupied cells, which is OpenDICE's numbering and what any reference file derived from it uses."
+    },
+    {
+      "region_id": "module_tl",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "straight_edges",
+        "position": "TL",
+        "field_bounds_relative": [
+          -0.08914,
+          -0.08871,
+          0.08917,
+          0.08874
+        ],
+        "straight_edges": [
+          {
+            "id": "h",
+            "orientation": "horizontal",
+            "start": [
+              -0.09085,
+              -0.12455
+            ],
+            "end": [
+              0.09091,
+              -0.11403
+            ]
+          },
+          {
+            "id": "v",
+            "orientation": "vertical",
+            "start": [
+              -0.03842,
+              -0.08746
+            ],
+            "end": [
+              -0.05384,
+              0.03042
+            ]
+          }
+        ],
+        "edges": 2,
+        "measured_note": "The white dpi field, located by brightness on a rectified capture. All five are one printed block: the four corner fields come out the same size to within 2%, and the centre one comes out as their transpose, which is a check the detector was not told to expect."
+      },
+      "notes": "One of five modules, each printing a white 'dots per inch (optical)' visual resolution field with converging line wedges, a dark band whose lower boundary slants about 5 degrees, and a dark block beside it whose side boundary slants by the same amount. THOSE TWO EDGES BELONG TO DIFFERENT FIGURES -- they share no centre, no size and no tilt -- which is why they are declared one at a time as straight_edges rather than as the sides of one rotated shape. The field's own borders are the highest-contrast boundaries in the module and are NOT edges: they are axis-aligned, so they repeat one sub-pixel phase on every row and cannot be oversampled. The four corner fields' centres are the fiducials."
+    },
+    {
+      "region_id": "module_tr",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "straight_edges",
+        "position": "TR",
+        "field_bounds_relative": [
+          0.91092,
+          -0.08856,
+          1.08911,
+          0.08859
+        ],
+        "straight_edges": [
+          {
+            "id": "h",
+            "orientation": "horizontal",
+            "start": [
+              0.91036,
+              -0.124
+            ],
+            "end": [
+              1.08812,
+              -0.11383
+            ]
+          },
+          {
+            "id": "v",
+            "orientation": "vertical",
+            "start": [
+              0.96179,
+              -0.08851
+            ],
+            "end": [
+              0.94593,
+              0.03064
+            ]
+          }
+        ],
+        "edges": 2,
+        "measured_note": "The white dpi field, located by brightness on a rectified capture. All five are one printed block: the four corner fields come out the same size to within 2%, and the centre one comes out as their transpose, which is a check the detector was not told to expect."
+      },
+      "notes": "One of five modules, each printing a white 'dots per inch (optical)' visual resolution field with converging line wedges, a dark band whose lower boundary slants about 5 degrees, and a dark block beside it whose side boundary slants by the same amount. THOSE TWO EDGES BELONG TO DIFFERENT FIGURES -- they share no centre, no size and no tilt -- which is why they are declared one at a time as straight_edges rather than as the sides of one rotated shape. The field's own borders are the highest-contrast boundaries in the module and are NOT edges: they are axis-aligned, so they repeat one sub-pixel phase on every row and cannot be oversampled. The four corner fields' centres are the fiducials."
+    },
+    {
+      "region_id": "module_br",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "straight_edges",
+        "position": "BR",
+        "field_bounds_relative": [
+          0.912,
+          0.91112,
+          1.08804,
+          1.08891
+        ],
+        "straight_edges": [
+          {
+            "id": "h",
+            "orientation": "horizontal",
+            "start": [
+              0.90781,
+              0.87542
+            ],
+            "end": [
+              1.08886,
+              0.88606
+            ]
+          },
+          {
+            "id": "v",
+            "orientation": "vertical",
+            "start": [
+              0.96165,
+              0.9112
+            ],
+            "end": [
+              0.94515,
+              1.0311
+            ]
+          }
+        ],
+        "edges": 2,
+        "measured_note": "The white dpi field, located by brightness on a rectified capture. All five are one printed block: the four corner fields come out the same size to within 2%, and the centre one comes out as their transpose, which is a check the detector was not told to expect."
+      },
+      "notes": "One of five modules, each printing a white 'dots per inch (optical)' visual resolution field with converging line wedges, a dark band whose lower boundary slants about 5 degrees, and a dark block beside it whose side boundary slants by the same amount. THOSE TWO EDGES BELONG TO DIFFERENT FIGURES -- they share no centre, no size and no tilt -- which is why they are declared one at a time as straight_edges rather than as the sides of one rotated shape. The field's own borders are the highest-contrast boundaries in the module and are NOT edges: they are axis-aligned, so they repeat one sub-pixel phase on every row and cannot be oversampled. The four corner fields' centres are the fiducials."
+    },
+    {
+      "region_id": "module_bl",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "straight_edges",
+        "position": "BL",
+        "field_bounds_relative": [
+          -0.08837,
+          0.91117,
+          0.0884,
+          1.08886
+        ],
+        "straight_edges": [
+          {
+            "id": "h",
+            "orientation": "horizontal",
+            "start": [
+              -0.0925,
+              0.8753
+            ],
+            "end": [
+              0.08651,
+              0.8863
+            ]
+          },
+          {
+            "id": "v",
+            "orientation": "vertical",
+            "start": [
+              -0.03899,
+              0.91125
+            ],
+            "end": [
+              -0.05526,
+              1.03108
+            ]
+          }
+        ],
+        "edges": 2,
+        "measured_note": "The white dpi field, located by brightness on a rectified capture. All five are one printed block: the four corner fields come out the same size to within 2%, and the centre one comes out as their transpose, which is a check the detector was not told to expect."
+      },
+      "notes": "One of five modules, each printing a white 'dots per inch (optical)' visual resolution field with converging line wedges, a dark band whose lower boundary slants about 5 degrees, and a dark block beside it whose side boundary slants by the same amount. THOSE TWO EDGES BELONG TO DIFFERENT FIGURES -- they share no centre, no size and no tilt -- which is why they are declared one at a time as straight_edges rather than as the sides of one rotated shape. The field's own borders are the highest-contrast boundaries in the module and are NOT edges: they are axis-aligned, so they repeat one sub-pixel phase on every row and cannot be oversampled. The four corner fields' centres are the fiducials."
+    },
+    {
+      "region_id": "module_center",
+      "kind": "slanted_edge",
+      "geometry": {
+        "feature": "straight_edges",
+        "position": "CENTER",
+        "field_bounds_relative": [
+          0.4088,
+          0.4001,
+          0.67774,
+          0.51856
+        ],
+        "straight_edges": [
+          {
+            "id": "h",
+            "orientation": "horizontal",
+            "start": [
+              0.40984,
+              0.48434
+            ],
+            "end": [
+              0.59006,
+              0.49465
+            ]
+          },
+          {
+            "id": "v",
+            "orientation": "vertical",
+            "start": [
+              0.37006,
+              0.39926
+            ],
+            "end": [
+              0.3549,
+              0.51774
+            ]
+          }
+        ],
+        "edges": 2,
+        "measured_note": "The white dpi field, located by brightness on a rectified capture. All five are one printed block: the four corner fields come out the same size to within 2%, and the centre one comes out as their transpose, which is a check the detector was not told to expect."
+      },
+      "notes": "One of five modules, each printing a white 'dots per inch (optical)' visual resolution field with converging line wedges, a dark band whose lower boundary slants about 5 degrees, and a dark block beside it whose side boundary slants by the same amount. THOSE TWO EDGES BELONG TO DIFFERENT FIGURES -- they share no centre, no size and no tilt -- which is why they are declared one at a time as straight_edges rather than as the sides of one rotated shape. The field's own borders are the highest-contrast boundaries in the module and are NOT edges: they are axis-aligned, so they repeat one sub-pixel phase on every row and cannot be oversampled. The four corner fields' centres are the fiducials."
+    },
+    {
+      "region_id": "ruler_h1_in",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 3.175,
+        "axis": "u",
+        "bounds_relative": [
+          -0.16,
+          0.824,
+          0.25,
+          0.829
+        ],
+        "printed_label": "inches, eighths",
+        "measured_note": "Divisions confirmed by counting: eight between the printed whole-inch marks. THE MILLIMETRE COMB ON THE SAME RULE IS DELIBERATELY NOT DECLARED, and the reason is a finding about this chart rather than a preference. The two combs disagree: 0.74% on the commercial capture (mm 404.19 ppi, inch 401.21) and 1.26% on the early one (mm 301.79, inch 298.02). Both are located cleanly -- no dropped ticks, no gaps in the numbering, fit residuals of 1% to 1.4% of pitch -- and the millimetre comb is internally consistent: thirteen of its fourteen decade markers sit 159.15 px apart with a standard deviation of 0.24, which agrees with its own fine ticks to 0.014%. So neither comb is misread. WHICH ONE IS PHYSICALLY RIGHT CANNOT BE SETTLED FROM THESE CAPTURES: the file header sits 0.3% from the inch comb on the commercial chart and between the two on the early one. The inch comb is declared because it is the closer of the two to the header on the capture where the header discriminates at all. Before re-measuring, note that the fourteenth decade gap on the commercial chart is 143.1 px where every other is 159.2, so one marker sits almost exactly a millimetre out of place. Averaged in, that single gap drags the decade pitch onto the inch comb's value and makes it look as though the majors and the inches agree."
+      },
+      "notes": "One third of the chart's printed inch rule, declared in three segments rather than as one band. Curvature within a comb's span is invisible -- a comb absorbs bowing into its pitch -- so a single band spanning the frame would measure the sampling rate and say nothing about how it varies across the field, which is what geometric distortion is."
+    },
+    {
+      "region_id": "ruler_h2_in",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 3.175,
+        "axis": "u",
+        "bounds_relative": [
+          0.29,
+          0.824,
+          0.71,
+          0.829
+        ],
+        "printed_label": "inches, eighths",
+        "measured_note": "Divisions confirmed by counting: eight between the printed whole-inch marks. THE MILLIMETRE COMB ON THE SAME RULE IS DELIBERATELY NOT DECLARED, and the reason is a finding about this chart rather than a preference. The two combs disagree: 0.74% on the commercial capture (mm 404.19 ppi, inch 401.21) and 1.26% on the early one (mm 301.79, inch 298.02). Both are located cleanly -- no dropped ticks, no gaps in the numbering, fit residuals of 1% to 1.4% of pitch -- and the millimetre comb is internally consistent: thirteen of its fourteen decade markers sit 159.15 px apart with a standard deviation of 0.24, which agrees with its own fine ticks to 0.014%. So neither comb is misread. WHICH ONE IS PHYSICALLY RIGHT CANNOT BE SETTLED FROM THESE CAPTURES: the file header sits 0.3% from the inch comb on the commercial chart and between the two on the early one. The inch comb is declared because it is the closer of the two to the header on the capture where the header discriminates at all. Before re-measuring, note that the fourteenth decade gap on the commercial chart is 143.1 px where every other is 159.2, so one marker sits almost exactly a millimetre out of place. Averaged in, that single gap drags the decade pitch onto the inch comb's value and makes it look as though the majors and the inches agree."
+      },
+      "notes": "One third of the chart's printed inch rule, declared in three segments rather than as one band. Curvature within a comb's span is invisible -- a comb absorbs bowing into its pitch -- so a single band spanning the frame would measure the sampling rate and say nothing about how it varies across the field, which is what geometric distortion is."
+    },
+    {
+      "region_id": "ruler_h3_in",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 3.175,
+        "axis": "u",
+        "bounds_relative": [
+          0.75,
+          0.824,
+          1.16,
+          0.829
+        ],
+        "printed_label": "inches, eighths",
+        "measured_note": "Divisions confirmed by counting: eight between the printed whole-inch marks. THE MILLIMETRE COMB ON THE SAME RULE IS DELIBERATELY NOT DECLARED, and the reason is a finding about this chart rather than a preference. The two combs disagree: 0.74% on the commercial capture (mm 404.19 ppi, inch 401.21) and 1.26% on the early one (mm 301.79, inch 298.02). Both are located cleanly -- no dropped ticks, no gaps in the numbering, fit residuals of 1% to 1.4% of pitch -- and the millimetre comb is internally consistent: thirteen of its fourteen decade markers sit 159.15 px apart with a standard deviation of 0.24, which agrees with its own fine ticks to 0.014%. So neither comb is misread. WHICH ONE IS PHYSICALLY RIGHT CANNOT BE SETTLED FROM THESE CAPTURES: the file header sits 0.3% from the inch comb on the commercial chart and between the two on the early one. The inch comb is declared because it is the closer of the two to the header on the capture where the header discriminates at all. Before re-measuring, note that the fourteenth decade gap on the commercial chart is 143.1 px where every other is 159.2, so one marker sits almost exactly a millimetre out of place. Averaged in, that single gap drags the decade pitch onto the inch comb's value and makes it look as though the majors and the inches agree."
+      },
+      "notes": "One third of the chart's printed inch rule, declared in three segments rather than as one band. Curvature within a comb's span is invisible -- a comb absorbs bowing into its pitch -- so a single band spanning the frame would measure the sampling rate and say nothing about how it varies across the field, which is what geometric distortion is."
+    },
+    {
+      "region_id": "ruler_v1_in",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 3.175,
+        "axis": "v",
+        "bounds_relative": [
+          1.1905,
+          -0.16,
+          1.1955,
+          0.25
+        ],
+        "printed_label": "inches, eighths",
+        "measured_note": "Divisions confirmed by counting: eight between the printed whole-inch marks. THE MILLIMETRE COMB ON THE SAME RULE IS DELIBERATELY NOT DECLARED, and the reason is a finding about this chart rather than a preference. The two combs disagree: 0.74% on the commercial capture (mm 404.19 ppi, inch 401.21) and 1.26% on the early one (mm 301.79, inch 298.02). Both are located cleanly -- no dropped ticks, no gaps in the numbering, fit residuals of 1% to 1.4% of pitch -- and the millimetre comb is internally consistent: thirteen of its fourteen decade markers sit 159.15 px apart with a standard deviation of 0.24, which agrees with its own fine ticks to 0.014%. So neither comb is misread. WHICH ONE IS PHYSICALLY RIGHT CANNOT BE SETTLED FROM THESE CAPTURES: the file header sits 0.3% from the inch comb on the commercial chart and between the two on the early one. The inch comb is declared because it is the closer of the two to the header on the capture where the header discriminates at all. Before re-measuring, note that the fourteenth decade gap on the commercial chart is 143.1 px where every other is 159.2, so one marker sits almost exactly a millimetre out of place. Averaged in, that single gap drags the decade pitch onto the inch comb's value and makes it look as though the majors and the inches agree."
+      },
+      "notes": "One third of the chart's printed inch rule, declared in three segments rather than as one band. Curvature within a comb's span is invisible -- a comb absorbs bowing into its pitch -- so a single band spanning the frame would measure the sampling rate and say nothing about how it varies across the field, which is what geometric distortion is."
+    },
+    {
+      "region_id": "ruler_v2_in",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 3.175,
+        "axis": "v",
+        "bounds_relative": [
+          1.1905,
+          0.29,
+          1.1955,
+          0.71
+        ],
+        "printed_label": "inches, eighths",
+        "measured_note": "Divisions confirmed by counting: eight between the printed whole-inch marks. THE MILLIMETRE COMB ON THE SAME RULE IS DELIBERATELY NOT DECLARED, and the reason is a finding about this chart rather than a preference. The two combs disagree: 0.74% on the commercial capture (mm 404.19 ppi, inch 401.21) and 1.26% on the early one (mm 301.79, inch 298.02). Both are located cleanly -- no dropped ticks, no gaps in the numbering, fit residuals of 1% to 1.4% of pitch -- and the millimetre comb is internally consistent: thirteen of its fourteen decade markers sit 159.15 px apart with a standard deviation of 0.24, which agrees with its own fine ticks to 0.014%. So neither comb is misread. WHICH ONE IS PHYSICALLY RIGHT CANNOT BE SETTLED FROM THESE CAPTURES: the file header sits 0.3% from the inch comb on the commercial chart and between the two on the early one. The inch comb is declared because it is the closer of the two to the header on the capture where the header discriminates at all. Before re-measuring, note that the fourteenth decade gap on the commercial chart is 143.1 px where every other is 159.2, so one marker sits almost exactly a millimetre out of place. Averaged in, that single gap drags the decade pitch onto the inch comb's value and makes it look as though the majors and the inches agree."
+      },
+      "notes": "One third of the chart's printed inch rule, declared in three segments rather than as one band. Curvature within a comb's span is invisible -- a comb absorbs bowing into its pitch -- so a single band spanning the frame would measure the sampling rate and say nothing about how it varies across the field, which is what geometric distortion is."
+    },
+    {
+      "region_id": "ruler_v3_in",
+      "kind": "scale",
+      "geometry": {
+        "unit": "in",
+        "division_mm": 3.175,
+        "axis": "v",
+        "bounds_relative": [
+          1.1905,
+          0.75,
+          1.1955,
+          1.16
+        ],
+        "printed_label": "inches, eighths",
+        "measured_note": "Divisions confirmed by counting: eight between the printed whole-inch marks. THE MILLIMETRE COMB ON THE SAME RULE IS DELIBERATELY NOT DECLARED, and the reason is a finding about this chart rather than a preference. The two combs disagree: 0.74% on the commercial capture (mm 404.19 ppi, inch 401.21) and 1.26% on the early one (mm 301.79, inch 298.02). Both are located cleanly -- no dropped ticks, no gaps in the numbering, fit residuals of 1% to 1.4% of pitch -- and the millimetre comb is internally consistent: thirteen of its fourteen decade markers sit 159.15 px apart with a standard deviation of 0.24, which agrees with its own fine ticks to 0.014%. So neither comb is misread. WHICH ONE IS PHYSICALLY RIGHT CANNOT BE SETTLED FROM THESE CAPTURES: the file header sits 0.3% from the inch comb on the commercial chart and between the two on the early one. The inch comb is declared because it is the closer of the two to the header on the capture where the header discriminates at all. Before re-measuring, note that the fourteenth decade gap on the commercial chart is 143.1 px where every other is 159.2, so one marker sits almost exactly a millimetre out of place. Averaged in, that single gap drags the decade pitch onto the inch comb's value and makes it look as though the majors and the inches agree."
+      },
+      "notes": "One third of the chart's printed inch rule, declared in three segments rather than as one band. Curvature within a comb's span is invisible -- a comb absorbs bowing into its pitch -- so a single band spanning the frame would measure the sampling rate and say nothing about how it varies across the field, which is what geometric distortion is."
+    },
+    {
+      "region_id": "corner_square_tl",
+      "kind": "marker",
+      "geometry": {
+        "feature": "corner_square",
+        "position": "TL",
+        "center": [
+          -0.13554,
+          -0.17716
+        ],
+        "half_size": [
+          0.02106,
+          0.01397
+        ],
+        "tilt_deg": 0.0,
+        "measured_note": "Located by sweeping a threshold from 0.30 to 0.62 of the card's own level and keeping components that are square to within 5% and fill more than 97% of their bounding box -- which a solid square does and the chart's dark colour patches, at fill 0.93 to 0.97, do not. All three hold across fifteen or sixteen thresholds with their centroids moving less than 0.25 px. The half sizes differ between the two axes because the square is square in PIXELS and the frame is not square in relative units; both are stated so the declared box matches the printed one."
+      },
+      "notes": "Solid black square with a white keyline, printed just inside the chart's corner. THERE ARE THREE, NOT FOUR: the bottom-right corner is taken by that corner's resolution module and its printed rules, so the marks form an L. Three points cannot define a quad. They are refinement features, with the eight declared registration dots: the five modules are declared as `straight_edges`, which the feature finder does not locate. All three snap onto the capture to 0.24 to 0.48 px from where they are declared."
+    },
+    {
+      "region_id": "corner_square_tr",
+      "kind": "marker",
+      "geometry": {
+        "feature": "corner_square",
+        "position": "TR",
+        "center": [
+          1.1263,
+          -0.17689
+        ],
+        "half_size": [
+          0.0211,
+          0.014
+        ],
+        "tilt_deg": 0.0,
+        "measured_note": "Located by sweeping a threshold from 0.30 to 0.62 of the card's own level and keeping components that are square to within 5% and fill more than 97% of their bounding box -- which a solid square does and the chart's dark colour patches, at fill 0.93 to 0.97, do not. All three hold across fifteen or sixteen thresholds with their centroids moving less than 0.25 px. The half sizes differ between the two axes because the square is square in PIXELS and the frame is not square in relative units; both are stated so the declared box matches the printed one."
+      },
+      "notes": "Solid black square with a white keyline, printed just inside the chart's corner. THERE ARE THREE, NOT FOUR: the bottom-right corner is taken by that corner's resolution module and its printed rules, so the marks form an L. Three points cannot define a quad. They are refinement features, with the eight declared registration dots: the five modules are declared as `straight_edges`, which the feature finder does not locate. All three snap onto the capture to 0.24 to 0.48 px from where they are declared."
+    },
+    {
+      "region_id": "corner_square_bl",
+      "kind": "marker",
+      "geometry": {
+        "feature": "corner_square",
+        "position": "BL",
+        "center": [
+          -0.13807,
+          1.02308
+        ],
+        "half_size": [
+          0.02094,
+          0.01384
+        ],
+        "tilt_deg": 0.0,
+        "measured_note": "Located by sweeping a threshold from 0.30 to 0.62 of the card's own level and keeping components that are square to within 5% and fill more than 97% of their bounding box -- which a solid square does and the chart's dark colour patches, at fill 0.93 to 0.97, do not. All three hold across fifteen or sixteen thresholds with their centroids moving less than 0.25 px. The half sizes differ between the two axes because the square is square in PIXELS and the frame is not square in relative units; both are stated so the declared box matches the printed one."
+      },
+      "notes": "Solid black square with a white keyline, printed just inside the chart's corner. THERE ARE THREE, NOT FOUR: the bottom-right corner is taken by that corner's resolution module and its printed rules, so the marks form an L. Three points cannot define a quad. They are refinement features, with the eight declared registration dots: the five modules are declared as `straight_edges`, which the feature finder does not locate. All three snap onto the capture to 0.24 to 0.48 px from where they are declared."
+    },
+    {
+      "region_id": "tone_wedge",
+      "kind": "marker",
+      "geometry": {
+        "feature": "continuous_neutral_wedge",
+        "bounds_relative": [
+          -0.146,
+          0.207,
+          1.13,
+          0.276
+        ],
+        "measured_note": "Measured from the same capture the rest of this definition's geometry was."
+      },
+      "notes": "The continuous grey wedge, and on THIS version of the chart it is all there is: where the commercial release prints an eighteen-step keylined ladder with aim lightnesses above its wedge, the early chart prints the wedge alone -- no steps, no labels, no tick marks. So there is nothing here to declare as patches even in principle, which is a sharper version of why the commercial chart's ladder is a marker too. Tone response comes from the sixteen neutral circles on both versions."
+    },
+    {
+      "region_id": "registration_dot_1",
+      "kind": "marker",
+      "geometry": {
+        "feature": "registration_dot",
+        "center": [
+          0.94589,
+          -0.17697
+        ],
+        "half_size": [
+          0.009544,
+          0.009544
+        ],
+        "tilt_deg": 0.0,
+        "printed_diameter_relative": 0.02545,
+        "measured_note": "Centroid averaged over a sweep of nine thresholds from 0.30 to 0.66 of the card's own level, keeping only components that are round to 10% and fill pi/4 of their bounding box to 0.05. Across that sweep the centroids move 0.05 to 0.43 px."
+      },
+      "notes": "One of the small solid dark registration dots the chart prints between its patch columns. THE CHART CARRIES SEVENTY-ODD OF THEM and eight are declared, chosen by farthest-point sampling so they span the chart rather than cluster.\n\nWHY THESE AND NOT THE RESOLUTION FIELDS. Each module's white 'dots per inch' field, whose bounds this definition records, does not serve. On the early chart they snap 21 to 27 px from where they are declared, and on the commercial chart 27 to 30 px -- all four corner modules moving together by about (-2, -29) px, which is the dangerous kind, because a fit absorbs a common-mode shift as pure translation and would move the whole placement while reporting a small residual. Two separate causes, both measured: the fields are 3:2 rectangles and `_refine_square` samples an ISOTROPIC annulus, which on a 3:2 feature straddles the boundary along the short axis; and on the commercial chart the white panel abuts a strip of nearly equal brightness, so the threshold merges them and no threshold position from 0.5 to 0.8 of the way to the feature separates them. The dots have neither problem: they are round, isolated, and sit on the open card.\n\nWHY THE DECLARED BOX IS SMALLER THAN THE DOT. `half_size` is 0.75 of the measured radius, not the radius. The finder samples the feature's own level in an annulus at 0.78 to 1.13 of the declared half-size, so a box drawn ON a disc's edge samples half disc and half card, the two levels come out equal and it declines -- measured, all eight decline at 1.00 and at 0.85 of the radius. Inside the disc they all snap, to within 0.57 px at 0.75 and 0.50 px at 0.65. The dot's true measured diameter is recorded beside this so the definition still says how big the printed feature is.\n\nWHAT THIS BUYS AND WHERE IT STOPS, MEASURED. The five modules are `straight_edges`, which the feature finder does not locate. With eight dots and three corner squares it finds eleven and fits a HOMOGRAPHY. On a correct placement it recovers the corners to 0.25 px, and seeded with 5 px of error it recovers to a median of 0.27 px over twelve runs, worst 0.74.\n\nIT DEGRADES BEYOND ABOUT 10 px OF SEED ERROR, and that is a property of the features' SIZE rather than of the search. The dots are 57 px across on the commercial chart and 42 on the early one, and the finder samples a feature's own level in an annulus scaled to the declared box: displace that box by a third of the dot's radius and the annulus straddles the dot's edge, the two levels come out equal, and the feature declines. Measured at 15 px of seed error the count falls from eleven to between two and nine, and widening the search window does not help -- tried at 20, 40 and 60 px of margin, the counts are the same. Compare the Golden Thread Device Level Target, whose features are 420 to 760 px and which recovers from 20 px.\n\nSO THERE IS A WINDOW WHERE IT APPLIES A WRONG ANSWER. At 15 px of seed error it sometimes fits four features and lands 25 to 49 px out, with a residual of 12 px against the 0.25 of a good fit -- flagged, but not refused, because the correction is still well under `MAX_SHIFT_FRACTION`. Refine a placement on this chart only when it is already close, which for the commercial release it will be: it places on printed pluses that `locate_printed_fiducials.py crosshairs` finds to sub-pixel."
+    },
+    {
+      "region_id": "registration_dot_2",
+      "kind": "marker",
+      "geometry": {
+        "feature": "registration_dot",
+        "center": [
+          -0.13602,
+          -0.05741
+        ],
+        "half_size": [
+          0.009544,
+          0.009544
+        ],
+        "tilt_deg": 0.0,
+        "printed_diameter_relative": 0.02545,
+        "measured_note": "Centroid averaged over a sweep of nine thresholds from 0.30 to 0.66 of the card's own level, keeping only components that are round to 10% and fill pi/4 of their bounding box to 0.05. Across that sweep the centroids move 0.05 to 0.43 px."
+      },
+      "notes": "One of the eight declared registration dots -- see registration_dot_1 for why these are the refinement features on this chart and why the declared box is smaller than the printed dot."
+    },
+    {
+      "region_id": "registration_dot_3",
+      "kind": "marker",
+      "geometry": {
+        "feature": "registration_dot",
+        "center": [
+          0.40492,
+          -0.05729
+        ],
+        "half_size": [
+          0.009544,
+          0.009544
+        ],
+        "tilt_deg": 0.0,
+        "printed_diameter_relative": 0.02545,
+        "measured_note": "Centroid averaged over a sweep of nine thresholds from 0.30 to 0.66 of the card's own level, keeping only components that are round to 10% and fill pi/4 of their bounding box to 0.05. Across that sweep the centroids move 0.05 to 0.43 px."
+      },
+      "notes": "One of the eight declared registration dots -- see registration_dot_1 for why these are the refinement features on this chart and why the declared box is smaller than the printed dot."
+    },
+    {
+      "region_id": "registration_dot_4",
+      "kind": "marker",
+      "geometry": {
+        "feature": "registration_dot",
+        "center": [
+          1.12634,
+          0.42317
+        ],
+        "half_size": [
+          0.009469,
+          0.009469
+        ],
+        "tilt_deg": 0.0,
+        "printed_diameter_relative": 0.02525,
+        "measured_note": "Centroid averaged over a sweep of nine thresholds from 0.30 to 0.66 of the card's own level, keeping only components that are round to 10% and fill pi/4 of their bounding box to 0.05. Across that sweep the centroids move 0.05 to 0.43 px."
+      },
+      "notes": "One of the eight declared registration dots -- see registration_dot_1 for why these are the refinement features on this chart and why the declared box is smaller than the printed dot."
+    },
+    {
+      "region_id": "registration_dot_5",
+      "kind": "marker",
+      "geometry": {
+        "feature": "registration_dot",
+        "center": [
+          0.58481,
+          0.54311
+        ],
+        "half_size": [
+          0.009367,
+          0.009367
+        ],
+        "tilt_deg": 0.0,
+        "printed_diameter_relative": 0.02498,
+        "measured_note": "Centroid averaged over a sweep of nine thresholds from 0.30 to 0.66 of the card's own level, keeping only components that are round to 10% and fill pi/4 of their bounding box to 0.05. Across that sweep the centroids move 0.05 to 0.43 px."
+      },
+      "notes": "One of the eight declared registration dots -- see registration_dot_1 for why these are the refinement features on this chart and why the declared box is smaller than the printed dot."
+    },
+    {
+      "region_id": "registration_dot_6",
+      "kind": "marker",
+      "geometry": {
+        "feature": "registration_dot",
+        "center": [
+          -0.13798,
+          0.90285
+        ],
+        "half_size": [
+          0.009495,
+          0.009495
+        ],
+        "tilt_deg": 0.0,
+        "printed_diameter_relative": 0.02532,
+        "measured_note": "Centroid averaged over a sweep of nine thresholds from 0.30 to 0.66 of the card's own level, keeping only components that are round to 10% and fill pi/4 of their bounding box to 0.05. Across that sweep the centroids move 0.05 to 0.43 px."
+      },
+      "notes": "One of the eight declared registration dots -- see registration_dot_1 for why these are the refinement features on this chart and why the declared box is smaller than the printed dot."
+    },
+    {
+      "region_id": "registration_dot_7",
+      "kind": "marker",
+      "geometry": {
+        "feature": "registration_dot",
+        "center": [
+          0.40377,
+          1.0236
+        ],
+        "half_size": [
+          0.00942,
+          0.00942
+        ],
+        "tilt_deg": 0.0,
+        "printed_diameter_relative": 0.02512,
+        "measured_note": "Centroid averaged over a sweep of nine thresholds from 0.30 to 0.66 of the card's own level, keeping only components that are round to 10% and fill pi/4 of their bounding box to 0.05. Across that sweep the centroids move 0.05 to 0.43 px."
+      },
+      "notes": "One of the eight declared registration dots -- see registration_dot_1 for why these are the refinement features on this chart and why the declared box is smaller than the printed dot."
+    },
+    {
+      "region_id": "registration_dot_8",
+      "kind": "marker",
+      "geometry": {
+        "feature": "registration_dot",
+        "center": [
+          1.12654,
+          1.02415
+        ],
+        "half_size": [
+          0.009442,
+          0.009442
+        ],
+        "tilt_deg": 0.0,
+        "printed_diameter_relative": 0.02518,
+        "measured_note": "Centroid averaged over a sweep of nine thresholds from 0.30 to 0.66 of the card's own level, keeping only components that are round to 10% and fill pi/4 of their bounding box to 0.05. Across that sweep the centroids move 0.05 to 0.43 px."
+      },
+      "notes": "One of the eight declared registration dots -- see registration_dot_1 for why these are the refinement features on this chart and why the declared box is smaller than the printed dot."
+    }
+  ],
+  "patches": [
+    {
+      "patch_id": "1",
+      "grid_position": {
+        "row": 0,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "2",
+      "grid_position": {
+        "row": 0,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "3",
+      "grid_position": {
+        "row": 0,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "4",
+      "grid_position": {
+        "row": 0,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "5",
+      "grid_position": {
+        "row": 0,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "6",
+      "grid_position": {
+        "row": 0,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "7",
+      "grid_position": {
+        "row": 0,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "8",
+      "grid_position": {
+        "row": 0,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "9",
+      "grid_position": {
+        "row": 1,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "10",
+      "grid_position": {
+        "row": 1,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "11",
+      "grid_position": {
+        "row": 1,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "12",
+      "grid_position": {
+        "row": 1,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "13",
+      "grid_position": {
+        "row": 1,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "14",
+      "grid_position": {
+        "row": 1,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "15",
+      "grid_position": {
+        "row": 1,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "16",
+      "grid_position": {
+        "row": 1,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "17",
+      "grid_position": {
+        "row": 2,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "18",
+      "grid_position": {
+        "row": 2,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "19",
+      "grid_position": {
+        "row": 2,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "20",
+      "grid_position": {
+        "row": 2,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "21",
+      "grid_position": {
+        "row": 2,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "22",
+      "grid_position": {
+        "row": 2,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "23",
+      "grid_position": {
+        "row": 2,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "24",
+      "grid_position": {
+        "row": 2,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "25",
+      "grid_position": {
+        "row": 3,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "26",
+      "grid_position": {
+        "row": 3,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "27",
+      "grid_position": {
+        "row": 3,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "28",
+      "grid_position": {
+        "row": 3,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "29",
+      "grid_position": {
+        "row": 3,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "30",
+      "grid_position": {
+        "row": 3,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "31",
+      "grid_position": {
+        "row": 3,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "32",
+      "grid_position": {
+        "row": 3,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "33",
+      "grid_position": {
+        "row": 4,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "34",
+      "grid_position": {
+        "row": 4,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "35",
+      "grid_position": {
+        "row": 4,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "36",
+      "grid_position": {
+        "row": 4,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "37",
+      "grid_position": {
+        "row": 4,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "38",
+      "grid_position": {
+        "row": 4,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "39",
+      "grid_position": {
+        "row": 4,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "40",
+      "grid_position": {
+        "row": 4,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "41",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "42",
+      "grid_position": {
+        "row": 5,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "43",
+      "grid_position": {
+        "row": 5,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "44",
+      "grid_position": {
+        "row": 5,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "45",
+      "grid_position": {
+        "row": 5,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "46",
+      "grid_position": {
+        "row": 5,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "47",
+      "grid_position": {
+        "row": 5,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "48",
+      "grid_position": {
+        "row": 5,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "49",
+      "grid_position": {
+        "row": 5,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "50",
+      "grid_position": {
+        "row": 5,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "51",
+      "grid_position": {
+        "row": 5,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "52",
+      "grid_position": {
+        "row": 5,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "53",
+      "grid_position": {
+        "row": 5,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "54",
+      "grid_position": {
+        "row": 5,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "55",
+      "grid_position": {
+        "row": 8,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "56",
+      "grid_position": {
+        "row": 8,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "57",
+      "grid_position": {
+        "row": 8,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "58",
+      "grid_position": {
+        "row": 8,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "59",
+      "grid_position": {
+        "row": 8,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 1
+    },
+    {
+      "patch_id": "60",
+      "grid_position": {
+        "row": 8,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    },
+    {
+      "patch_id": "61",
+      "grid_position": {
+        "row": 8,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "62",
+      "grid_position": {
+        "row": 8,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "63",
+      "grid_position": {
+        "row": 8,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "64",
+      "grid_position": {
+        "row": 8,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "65",
+      "grid_position": {
+        "row": 8,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "66",
+      "grid_position": {
+        "row": 8,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "67",
+      "grid_position": {
+        "row": 9,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "68",
+      "grid_position": {
+        "row": 9,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "69",
+      "grid_position": {
+        "row": 9,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "70",
+      "grid_position": {
+        "row": 9,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "71",
+      "grid_position": {
+        "row": 9,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "72",
+      "grid_position": {
+        "row": 9,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "73",
+      "grid_position": {
+        "row": 9,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "74",
+      "grid_position": {
+        "row": 9,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "75",
+      "grid_position": {
+        "row": 9,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "76",
+      "grid_position": {
+        "row": 9,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "77",
+      "grid_position": {
+        "row": 10,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "78",
+      "grid_position": {
+        "row": 10,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "79",
+      "grid_position": {
+        "row": 10,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "80",
+      "grid_position": {
+        "row": 10,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "81",
+      "grid_position": {
+        "row": 10,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "82",
+      "grid_position": {
+        "row": 10,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "83",
+      "grid_position": {
+        "row": 10,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "84",
+      "grid_position": {
+        "row": 10,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "85",
+      "grid_position": {
+        "row": 10,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "86",
+      "grid_position": {
+        "row": 10,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "87",
+      "grid_position": {
+        "row": 11,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "88",
+      "grid_position": {
+        "row": 11,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "89",
+      "grid_position": {
+        "row": 11,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "90",
+      "grid_position": {
+        "row": 11,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "91",
+      "grid_position": {
+        "row": 11,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    },
+    {
+      "patch_id": "92",
+      "grid_position": {
+        "row": 11,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 10
+    },
+    {
+      "patch_id": "93",
+      "grid_position": {
+        "row": 11,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "94",
+      "grid_position": {
+        "row": 11,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "95",
+      "grid_position": {
+        "row": 11,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "96",
+      "grid_position": {
+        "row": 11,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "97",
+      "grid_position": {
+        "row": 12,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "98",
+      "grid_position": {
+        "row": 12,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "99",
+      "grid_position": {
+        "row": 12,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "100",
+      "grid_position": {
+        "row": 12,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "101",
+      "grid_position": {
+        "row": 12,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 11
+    },
+    {
+      "patch_id": "102",
+      "grid_position": {
+        "row": 12,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 12
+    },
+    {
+      "patch_id": "103",
+      "grid_position": {
+        "row": 12,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 13
+    },
+    {
+      "patch_id": "104",
+      "grid_position": {
+        "row": 12,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 14
+    },
+    {
+      "patch_id": "105",
+      "grid_position": {
+        "row": 12,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 15
+    },
+    {
+      "patch_id": "106",
+      "grid_position": {
+        "row": 12,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "achromatic_ramp",
+      "ramp_position": 16
+    },
+    {
+      "patch_id": "107",
+      "grid_position": {
+        "row": 12,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "108",
+      "grid_position": {
+        "row": 12,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "109",
+      "grid_position": {
+        "row": 12,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "110",
+      "grid_position": {
+        "row": 12,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "111",
+      "grid_position": {
+        "row": 13,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "112",
+      "grid_position": {
+        "row": 13,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "113",
+      "grid_position": {
+        "row": 13,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "114",
+      "grid_position": {
+        "row": 13,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "115",
+      "grid_position": {
+        "row": 13,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "116",
+      "grid_position": {
+        "row": 13,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "117",
+      "grid_position": {
+        "row": 13,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "118",
+      "grid_position": {
+        "row": 13,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "119",
+      "grid_position": {
+        "row": 13,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "120",
+      "grid_position": {
+        "row": 13,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "121",
+      "grid_position": {
+        "row": 13,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "122",
+      "grid_position": {
+        "row": 13,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "123",
+      "grid_position": {
+        "row": 13,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "124",
+      "grid_position": {
+        "row": 13,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "125",
+      "grid_position": {
+        "row": 14,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "126",
+      "grid_position": {
+        "row": 14,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "127",
+      "grid_position": {
+        "row": 14,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "128",
+      "grid_position": {
+        "row": 14,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "129",
+      "grid_position": {
+        "row": 14,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "130",
+      "grid_position": {
+        "row": 14,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "131",
+      "grid_position": {
+        "row": 14,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "132",
+      "grid_position": {
+        "row": 14,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "133",
+      "grid_position": {
+        "row": 14,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "134",
+      "grid_position": {
+        "row": 14,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "135",
+      "grid_position": {
+        "row": 14,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "136",
+      "grid_position": {
+        "row": 14,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "137",
+      "grid_position": {
+        "row": 14,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "138",
+      "grid_position": {
+        "row": 14,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "139",
+      "grid_position": {
+        "row": 15,
+        "col": 0
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "140",
+      "grid_position": {
+        "row": 15,
+        "col": 1
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "141",
+      "grid_position": {
+        "row": 15,
+        "col": 2
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "142",
+      "grid_position": {
+        "row": 15,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "143",
+      "grid_position": {
+        "row": 15,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "144",
+      "grid_position": {
+        "row": 15,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "145",
+      "grid_position": {
+        "row": 15,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "146",
+      "grid_position": {
+        "row": 15,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "147",
+      "grid_position": {
+        "row": 15,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "148",
+      "grid_position": {
+        "row": 15,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "149",
+      "grid_position": {
+        "row": 15,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "150",
+      "grid_position": {
+        "row": 15,
+        "col": 11
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "151",
+      "grid_position": {
+        "row": 15,
+        "col": 12
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "152",
+      "grid_position": {
+        "row": 15,
+        "col": 13
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "153",
+      "grid_position": {
+        "row": 17,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "154",
+      "grid_position": {
+        "row": 17,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "155",
+      "grid_position": {
+        "row": 17,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "156",
+      "grid_position": {
+        "row": 17,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "157",
+      "grid_position": {
+        "row": 17,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "158",
+      "grid_position": {
+        "row": 17,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "159",
+      "grid_position": {
+        "row": 17,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "160",
+      "grid_position": {
+        "row": 17,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "161",
+      "grid_position": {
+        "row": 20,
+        "col": 3
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "162",
+      "grid_position": {
+        "row": 20,
+        "col": 4
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "163",
+      "grid_position": {
+        "row": 20,
+        "col": 5
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "164",
+      "grid_position": {
+        "row": 20,
+        "col": 6
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "165",
+      "grid_position": {
+        "row": 20,
+        "col": 7
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "166",
+      "grid_position": {
+        "row": 20,
+        "col": 8
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "167",
+      "grid_position": {
+        "row": 20,
+        "col": 9
+      },
+      "region": "patches",
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "168",
+      "grid_position": {
+        "row": 20,
+        "col": 10
+      },
+      "region": "patches",
+      "role": "unassigned"
+    }
+  ],
+  "reference_data": {
+    "source_type": "per_unit_file",
+    "import_format": "cgats",
+    "required": true,
+    "nominal_values": {
+      "file": "isa_fadgi_19264_v1_nominal.txt",
+      "basis": "manufacturer_nominal",
+      "source": "OpenDICE's profile for this version of the chart, converted by tools/generate_opendice_nominal.py. Its sample capture carries no printed serial.",
+      "covers": "All 168 patches, L*a*b*, plus density on the sixteen ramp steps.",
+      "notes": "Batch averages rather than design aims. A run against them reports ADVISORY and makes no conformance claim for the specimen; Image Science Associates sell individually measured units and such a file supersedes this one."
+    },
+    "notes": "A per-unit file is preferred and is used whenever one is supplied. Sample names must be 1 to 168."
+  },
+  "dimensional_reference": {
+    "available": true,
+    "kind": "printed_scale",
+    "location": "one rule across the chart below printed row 14, and one down its right edge",
+    "summary": "Two printed rules, one per axis, each carrying a millimetre comb and an inch comb. The inch comb is what the definition declares, in three segments per axis; see any ruler region's measured_note for why.",
+    "notes": "Because the rules are printed alongside the patches, any specimen can be checked from its own capture rather than against a figure taken from a different unit. What the chart does NOT give is its own physical extent between the fiducials, so --fiducial-extent is still the way to state that for a specimen you have measured."
+  },
+  "metric_defaults": {
+    "tonal_response": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Sixteen steps, D 0.03 to 2.57 -- four more than most charts here carry, and they run down two columns rather than along a row: four in printed row 7, two each in rows 8, 9 and 10, and six across row 11. Ordered by the density OpenDICE states, which is also their reading order, so position and ladder agree."
+    },
+    "white_balance": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Delta E(a*b*) against the reference chroma, L* excluded."
+    }
+  },
+  "notes": "GEOMETRY MEASURED FROM ONE CAPTURE. The chart Don Williams designed for FADGI and ISO 19264: 168 circular patches, a sixteen-step neutral ramp among them, five resolution modules, a Siemens star, a continuous grey wedge and two printed rules. THIS VERSION PRINTS NO STEPPED LADDER: where the commercial release keylines eighteen steps above its wedge and labels each with an aim lightness, the early chart prints the wedge alone. Tone response comes from the sixteen circles on both. SFR and colour-channel registration are read from two slanted edges per module -- the boundaries of a band and of a block beside it -- declared one at a time as straight edges. NOT CLAIMED: Lightness uniformity needs repeated neutrals spread over the chart's area and the reference data has none -- the sixteen neutrals are a ramp, every step different, and the chart's other repeated features are the black registration dots, which are too dark and too small to measure illumination with. THIS IS THE EARLY VERSION: it prints its patch numbers 1 to 168 beside the patches, prints no grid labels and no serial barcode, and its grey wedge is continuous rather than stepped. Its colours are NOT those of the commercial release -- see the reference file's own caveat."
+}

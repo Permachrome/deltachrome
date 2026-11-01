@@ -1,0 +1,1226 @@
+{
+  "$schema_version": 1,
+  "target_id": "avian_dt_ngt_v2",
+  "display_name": "DT Next Generation Target V2",
+  "manufacturer": "Avian Rochester",
+  "target_type": "reflective_color_chart",
+  "physical_size_mm": null,
+  "capabilities": [
+    "color_accuracy",
+    "tonal_response",
+    "white_balance",
+    "lightness_uniformity"
+  ],
+  "not_capable_of": [
+    "sfr",
+    "color_registration",
+    "reproduction_scale",
+    "geometric_distortion",
+    "flat_field"
+  ],
+  "fiducials": {
+    "method": "printed_crosshairs",
+    "corner_markers": [
+      {
+        "id": "TL",
+        "relative_position": [
+          0.0,
+          0.0
+        ],
+        "nearest_patch": "A0"
+      },
+      {
+        "id": "TR",
+        "relative_position": [
+          1.0,
+          0.0
+        ],
+        "nearest_patch": "M0"
+      },
+      {
+        "id": "BR",
+        "relative_position": [
+          1.0,
+          1.0
+        ],
+        "nearest_patch": "M9"
+      },
+      {
+        "id": "BL",
+        "relative_position": [
+          0.0,
+          1.0
+        ],
+        "nearest_patch": "A9"
+      }
+    ],
+    "notes": "Four printed crosshair (+) marks, one diagonally outside each corner of the patch array -- the V2 adds these, which the earlier NGT does not have. Place the target by their centres, in the TARGET's own order: the mark by A0, then M0, M9, A9 clockwise. A crosshair centre is unambiguous in a way a patch corner is not, which is why placement keys on these.",
+    "printed_marks": {
+      "present": true,
+      "kind": "crosshair",
+      "count": 4,
+      "location": "diagonally outside each corner of the patch array",
+      "relative_position_measured": true
+    }
+  },
+  "patch_grid": {
+    "rows": 10,
+    "columns": 13,
+    "row_labels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "col_labels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M"
+    ],
+    "patch_id_format": "{column_letter}{row_number}",
+    "patch_size_relative": {
+      "width": 0.0671,
+      "height": 0.08572
+    },
+    "patch_spacing_relative": {
+      "horizontal": 0.07671,
+      "vertical": 0.09879
+    },
+    "grid_origin_relative": [
+      0.0048,
+      0.00869
+    ],
+    "provisional": false,
+    "coordinate_frame": "Relative to the quadrilateral formed by the four printed crosshair centres, NOT the patch array's bounding box.",
+    "measured_from": {
+      "method": "tools/locate_patch_lattice.py, with the fiducial quad supplied from the four printed crosshairs located separately",
+      "unit": "DT-AR-2019056, from OpenDICE's published sample capture",
+      "capture": "DT-NGT-v2.tif, 4081 x 3265 px",
+      "patches_located": "130 of 130",
+      "lattice_residual_px": 3.65,
+      "lattice_residual_pct_of_quad": 0.099,
+      "patch_diameter_px": [
+        249.8,
+        248.5
+      ],
+      "patch_size_spread_pct": 0.87,
+      "notes": "Every patch was found, and the fit residual is a tenth of a percent of the quad -- circular patches on a matte black mount give a cleaner boundary than the earlier NGT's recessed squares, and it shows. patch_size_relative is the circle's DIAMETER: a square ROI inset to 0.55 of it is comfortably inside the circle, whose inscribed square is 0.707 of the diameter."
+    }
+  },
+  "patches": [
+    {
+      "patch_id": "A0",
+      "grid_position": {
+        "row": 0,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B0",
+      "grid_position": {
+        "row": 0,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C0",
+      "grid_position": {
+        "row": 0,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D0",
+      "grid_position": {
+        "row": 0,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E0",
+      "grid_position": {
+        "row": 0,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F0",
+      "grid_position": {
+        "row": 0,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G0",
+      "grid_position": {
+        "row": 0,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H0",
+      "grid_position": {
+        "row": 0,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I0",
+      "grid_position": {
+        "row": 0,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J0",
+      "grid_position": {
+        "row": 0,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K0",
+      "grid_position": {
+        "row": 0,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L0",
+      "grid_position": {
+        "row": 0,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M0",
+      "grid_position": {
+        "row": 0,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A1",
+      "grid_position": {
+        "row": 1,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B1",
+      "grid_position": {
+        "row": 1,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C1",
+      "grid_position": {
+        "row": 1,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D1",
+      "grid_position": {
+        "row": 1,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E1",
+      "grid_position": {
+        "row": 1,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F1",
+      "grid_position": {
+        "row": 1,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G1",
+      "grid_position": {
+        "row": 1,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H1",
+      "grid_position": {
+        "row": 1,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I1",
+      "grid_position": {
+        "row": 1,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J1",
+      "grid_position": {
+        "row": 1,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K1",
+      "grid_position": {
+        "row": 1,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L1",
+      "grid_position": {
+        "row": 1,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M1",
+      "grid_position": {
+        "row": 1,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A2",
+      "grid_position": {
+        "row": 2,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B2",
+      "grid_position": {
+        "row": 2,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C2",
+      "grid_position": {
+        "row": 2,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D2",
+      "grid_position": {
+        "row": 2,
+        "col": 3
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 11
+    },
+    {
+      "patch_id": "E2",
+      "grid_position": {
+        "row": 2,
+        "col": 4
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 10
+    },
+    {
+      "patch_id": "F2",
+      "grid_position": {
+        "row": 2,
+        "col": 5
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 8
+    },
+    {
+      "patch_id": "G2",
+      "grid_position": {
+        "row": 2,
+        "col": 6
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 6
+    },
+    {
+      "patch_id": "H2",
+      "grid_position": {
+        "row": 2,
+        "col": 7
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 5
+    },
+    {
+      "patch_id": "I2",
+      "grid_position": {
+        "row": 2,
+        "col": 8
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 3
+    },
+    {
+      "patch_id": "J2",
+      "grid_position": {
+        "row": 2,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K2",
+      "grid_position": {
+        "row": 2,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L2",
+      "grid_position": {
+        "row": 2,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M2",
+      "grid_position": {
+        "row": 2,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A3",
+      "grid_position": {
+        "row": 3,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B3",
+      "grid_position": {
+        "row": 3,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C3",
+      "grid_position": {
+        "row": 3,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D3",
+      "grid_position": {
+        "row": 3,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E3",
+      "grid_position": {
+        "row": 3,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F3",
+      "grid_position": {
+        "row": 3,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G3",
+      "grid_position": {
+        "row": 3,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H3",
+      "grid_position": {
+        "row": 3,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I3",
+      "grid_position": {
+        "row": 3,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J3",
+      "grid_position": {
+        "row": 3,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K3",
+      "grid_position": {
+        "row": 3,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L3",
+      "grid_position": {
+        "row": 3,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M3",
+      "grid_position": {
+        "row": 3,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A4",
+      "grid_position": {
+        "row": 4,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B4",
+      "grid_position": {
+        "row": 4,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C4",
+      "grid_position": {
+        "row": 4,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D4",
+      "grid_position": {
+        "row": 4,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E4",
+      "grid_position": {
+        "row": 4,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F4",
+      "grid_position": {
+        "row": 4,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G4",
+      "grid_position": {
+        "row": 4,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H4",
+      "grid_position": {
+        "row": 4,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I4",
+      "grid_position": {
+        "row": 4,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J4",
+      "grid_position": {
+        "row": 4,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K4",
+      "grid_position": {
+        "row": 4,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L4",
+      "grid_position": {
+        "row": 4,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M4",
+      "grid_position": {
+        "row": 4,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A5",
+      "grid_position": {
+        "row": 5,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B5",
+      "grid_position": {
+        "row": 5,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C5",
+      "grid_position": {
+        "row": 5,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D5",
+      "grid_position": {
+        "row": 5,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E5",
+      "grid_position": {
+        "row": 5,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F5",
+      "grid_position": {
+        "row": 5,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G5",
+      "grid_position": {
+        "row": 5,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H5",
+      "grid_position": {
+        "row": 5,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I5",
+      "grid_position": {
+        "row": 5,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J5",
+      "grid_position": {
+        "row": 5,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K5",
+      "grid_position": {
+        "row": 5,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L5",
+      "grid_position": {
+        "row": 5,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M5",
+      "grid_position": {
+        "row": 5,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A6",
+      "grid_position": {
+        "row": 6,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B6",
+      "grid_position": {
+        "row": 6,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C6",
+      "grid_position": {
+        "row": 6,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D6",
+      "grid_position": {
+        "row": 6,
+        "col": 3
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 1
+    },
+    {
+      "patch_id": "E6",
+      "grid_position": {
+        "row": 6,
+        "col": 4
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 2
+    },
+    {
+      "patch_id": "F6",
+      "grid_position": {
+        "row": 6,
+        "col": 5
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 4
+    },
+    {
+      "patch_id": "G6",
+      "grid_position": {
+        "row": 6,
+        "col": 6
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 7
+    },
+    {
+      "patch_id": "H6",
+      "grid_position": {
+        "row": 6,
+        "col": 7
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 9
+    },
+    {
+      "patch_id": "I6",
+      "grid_position": {
+        "row": 6,
+        "col": 8
+      },
+      "role": "achromatic_ramp",
+      "ramp_position": 12
+    },
+    {
+      "patch_id": "J6",
+      "grid_position": {
+        "row": 6,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K6",
+      "grid_position": {
+        "row": 6,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L6",
+      "grid_position": {
+        "row": 6,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M6",
+      "grid_position": {
+        "row": 6,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A7",
+      "grid_position": {
+        "row": 7,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B7",
+      "grid_position": {
+        "row": 7,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C7",
+      "grid_position": {
+        "row": 7,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D7",
+      "grid_position": {
+        "row": 7,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E7",
+      "grid_position": {
+        "row": 7,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F7",
+      "grid_position": {
+        "row": 7,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G7",
+      "grid_position": {
+        "row": 7,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H7",
+      "grid_position": {
+        "row": 7,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I7",
+      "grid_position": {
+        "row": 7,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J7",
+      "grid_position": {
+        "row": 7,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K7",
+      "grid_position": {
+        "row": 7,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L7",
+      "grid_position": {
+        "row": 7,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M7",
+      "grid_position": {
+        "row": 7,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A8",
+      "grid_position": {
+        "row": 8,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B8",
+      "grid_position": {
+        "row": 8,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C8",
+      "grid_position": {
+        "row": 8,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D8",
+      "grid_position": {
+        "row": 8,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E8",
+      "grid_position": {
+        "row": 8,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F8",
+      "grid_position": {
+        "row": 8,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G8",
+      "grid_position": {
+        "row": 8,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H8",
+      "grid_position": {
+        "row": 8,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I8",
+      "grid_position": {
+        "row": 8,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J8",
+      "grid_position": {
+        "row": 8,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K8",
+      "grid_position": {
+        "row": 8,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L8",
+      "grid_position": {
+        "row": 8,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M8",
+      "grid_position": {
+        "row": 8,
+        "col": 12
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "A9",
+      "grid_position": {
+        "row": 9,
+        "col": 0
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "B9",
+      "grid_position": {
+        "row": 9,
+        "col": 1
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "C9",
+      "grid_position": {
+        "row": 9,
+        "col": 2
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "D9",
+      "grid_position": {
+        "row": 9,
+        "col": 3
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "E9",
+      "grid_position": {
+        "row": 9,
+        "col": 4
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "F9",
+      "grid_position": {
+        "row": 9,
+        "col": 5
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "G9",
+      "grid_position": {
+        "row": 9,
+        "col": 6
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "H9",
+      "grid_position": {
+        "row": 9,
+        "col": 7
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "I9",
+      "grid_position": {
+        "row": 9,
+        "col": 8
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "J9",
+      "grid_position": {
+        "row": 9,
+        "col": 9
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "K9",
+      "grid_position": {
+        "row": 9,
+        "col": 10
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "L9",
+      "grid_position": {
+        "row": 9,
+        "col": 11
+      },
+      "role": "unassigned"
+    },
+    {
+      "patch_id": "M9",
+      "grid_position": {
+        "row": 9,
+        "col": 12
+      },
+      "role": "unassigned"
+    }
+  ],
+  "reference_data": {
+    "source_type": "per_unit_file",
+    "import_format": "cgats",
+    "required": true,
+    "nominal_values": {
+      "file": "avian_dt_ngt_v2_nominal.txt",
+      "basis": "manufacturer_nominal",
+      "source": "OpenDICE's profile for this target, converted by tools/generate_opendice_nominal.py. The specimen it was published beside carries serial DT-AR-2019056.",
+      "covers": "All 130 patches, L*a*b*, plus density on the twelve ramp steps.",
+      "notes": "Batch averages rather than design aims -- the values quantize to 0.002, which is a mean of five readings each to two decimals, not a number anyone chose. Closer to any individual chart than an aim would be, and still not a measurement of the chart in front of you. Avian Rochester measure and ship data with each target; that file supersedes this one and a run against it can carry a conformance claim, which a run against this cannot."
+    },
+    "notes": "A per-unit file is preferred and is used whenever one is supplied. This chart prints its own serial, so the pairing is checkable by eye even though the serial is set in type rather than encoded."
+  },
+  "dimensional_reference": {
+    "available": false,
+    "summary": "The chart prints no scale and carries no dimension this project has measured, so sampling frequency cannot be derived from it. Supply --fiducial-extent to state the distance the four placed corners span on your own specimen.",
+    "notes": "The OpenDICE sample's own header says 400 ppi, which would make the patch array 175.5 x 135.3 mm. That is not evidence: it is the capture's claim about itself, and checking a capture's stated sampling rate is what a dimensional reference is FOR. Quoting it back would make the test circular."
+  },
+  "metric_defaults": {
+    "tonal_response": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Twelve steps, printed as two rows of six running in OPPOSITE directions -- row 2 darkest-first from D to I, row 6 lightest-first -- so reading them in position order interleaves the ladder. The order here is by the density OpenDICE states for each step, which is the quantity the ladder is built on. Both charts give the same order, which is the check that it is a property of the design and not of one batch's measurements."
+    },
+    "white_balance": {
+      "uses_patches": [
+        "achromatic_ramp"
+      ],
+      "notes": "Delta E(a*b*) against a neutral aim, L* excluded."
+    },
+    "lightness_uniformity": {
+      "uses_patches": [
+        "achromatic_border"
+      ],
+      "notes": "Resolved at runtime from repeated neutrals in the reference data rather than hand-listed here, because which patches repeat is a fact about the reference file and hand-listing it would freeze one batch's answer into the definition. On the shipped nominal values it resolves to two families: eight near-whites at A0, A4, A9, G0, G9, M0, M4/M5 and M9 -- which sit at the corners, the mid-edges and the centre column, so they genuinely span the chart's area -- and four mid-greys at A5, F9, H0 and M4/M5. The two charts disagree about whether M4 or M5 carries the grey, which is why neither is written down here."
+    }
+  },
+  "notes": "GEOMETRY MEASURED FROM ONE CAPTURE. The same 13 x 10 lattice and the same patch ids A0-M9 as the earlier Avian Rochester NGT, and a different chart for all that: the patches are circular rather than square, four printed crosshairs are added at the corners, and the neutrals are printed lighter -- a mean L* 96.1 against the NGT's 92.4. THE TWO REFERENCE FILES ARE NOT INTERCHANGEABLE. Sharing a lattice is exactly what makes that dangerous: a capture of one placed against the other's definition samples every patch correctly and reports a chart-wide colour error of several Delta E that belongs to neither chart.",
+  "openqualia": {
+    "host": "https://targets.digitaltransitions.com/measurements",
+    "manufacturer": "DT",
+    "target_type": "DTNGT2",
+    "canonical_name": "DT Next Generation Target, Version 2",
+    "notes": "How this model is addressed on an OpenQualia measurement host, so that a serial alone is enough to fetch a unit's own measurement. Both spellings were verified against targets.digitaltransitions.com by a fetch. The host matches values without regard to case or whitespace but not to dashes, and its API spellings can differ from its web addresses, so these are recorded rather than derived."
+  }
+}

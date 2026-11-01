@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Exceptions to the hardened runtime. Empty on purpose: each one weakens the
+  protection notarization asks for, so one is added only when a signed build is
+  shown to need it, with the reason beside it.
+-->
+<plist version="1.0">
+<dict>
+</dict>
+</plist>

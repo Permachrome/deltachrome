@@ -1,0 +1,2467 @@
+{
+ "schema_version": 1,
+ "target_id": "image_engineering_utt_a3_v1",
+ "display_name": "Image Engineering Universal Test Target (UTT), A3",
+ "manufacturer": "Image Engineering",
+ "target_type": "reflective_device_level_target",
+ "physical_size_mm": null,
+ "capabilities": [
+  "color_accuracy",
+  "tonal_response",
+  "white_balance",
+  "lightness_uniformity",
+  "sfr",
+  "color_registration",
+  "reproduction_scale",
+  "geometric_distortion"
+ ],
+ "not_capable_of": [
+  "flat_field"
+ ],
+ "fiducials": {
+  "method": "module_corner_crosshairs",
+  "corner_markers": [
+   {
+    "id": "TL",
+    "relative_position": [
+     0.0,
+     0.0
+    ],
+    "nearest_patch": null
+   },
+   {
+    "id": "TR",
+    "relative_position": [
+     1.0,
+     0.0
+    ],
+    "nearest_patch": null
+   },
+   {
+    "id": "BR",
+    "relative_position": [
+     1.0,
+     1.0
+    ],
+    "nearest_patch": null
+   },
+   {
+    "id": "BL",
+    "relative_position": [
+     0.0,
+     1.0
+    ],
+    "nearest_patch": null
+   }
+  ],
+  "notes": "Place by the four printed registration crosshairs nearest the chart's corners -- on each corner module, the outermost of the six crosses around its panel pair. The chart prints thirty-six of them, four at the corners of every panel, and they are the sharpest features on it: on a 9592x6368 capture each cross is about 48 px across with arms two pixels wide, so a corner can be placed to a pixel or two by eye where the chart's own cut edge cannot.\n\nDo not place by the chart's outer edge or by the black border. The border is a printed rectangle on a sheet that is trimmed to size, so the distance from it to the artwork is a per-unit property, and the edge itself is soft and often lifted.\n\nThe frame these four define is deliberately not centred on the chart: the modules are all printed the same way round rather than mirrored, so the top-left module's outer cross and the bottom-right module's are not symmetric about the artwork. The chart's own centre of symmetry sits at about (0.461, 0.501) in this frame, which is where the colour bars, the grey ramps and the module squares all agree it is."
+ },
+ "regions": [
+  {
+   "region_id": "module_tl",
+   "kind": "slanted_edge",
+   "geometry": {
+    "position": "TL",
+    "center": [
+     0.03368,
+     0.05159
+    ],
+    "half_size": [
+     0.02324,
+     0.03419
+    ],
+    "tilt_deg": 4.8,
+    "edges": 4
+   },
+   "notes": "The tilted dark square on the left (top and bottom rows) or upper (middle row) panel of the module. Four edges: two vertical, two horizontal. Declared from the lattice the nine modules print on rather than from each square's own measurement, because the square is located again in every capture -- the declaration only has to land near enough for that search to start in the right place."
+  },
+  {
+   "region_id": "module_tc",
+   "kind": "slanted_edge",
+   "geometry": {
+    "position": "TC",
+    "center": [
+     0.46127,
+     0.05159
+    ],
+    "half_size": [
+     0.02324,
+     0.03419
+    ],
+    "tilt_deg": 4.8,
+    "edges": 4
+   },
+   "notes": "The tilted dark square on the left (top and bottom rows) or upper (middle row) panel of the module. Four edges: two vertical, two horizontal. Declared from the lattice the nine modules print on rather than from each square's own measurement, because the square is located again in every capture -- the declaration only has to land near enough for that search to start in the right place."
+  },
+  {
+   "region_id": "module_tr",
+   "kind": "slanted_edge",
+   "geometry": {
+    "position": "TR",
+    "center": [
+     0.88846,
+     0.05159
+    ],
+    "half_size": [
+     0.02324,
+     0.03419
+    ],
+    "tilt_deg": 4.8,
+    "edges": 4
+   },
+   "notes": "The tilted dark square on the left (top and bottom rows) or upper (middle row) panel of the module. Four edges: two vertical, two horizontal. Declared from the lattice the nine modules print on rather than from each square's own measurement, because the square is located again in every capture -- the declaration only has to land near enough for that search to start in the right place."
+  },
+  {
+   "region_id": "module_cl",
+   "kind": "slanted_edge",
+   "geometry": {
+    "position": "CL",
+    "center": [
+     0.03368,
+     0.49885
+    ],
+    "half_size": [
+     0.02324,
+     0.03419
+    ],
+    "tilt_deg": 4.8,
+    "edges": 4
+   },
+   "notes": "The tilted dark square on the left (top and bottom rows) or upper (middle row) panel of the module. Four edges: two vertical, two horizontal. Declared from the lattice the nine modules print on rather than from each square's own measurement, because the square is located again in every capture -- the declaration only has to land near enough for that search to start in the right place."
+  },
+  {
+   "region_id": "module_cc",
+   "kind": "slanted_edge",
+   "geometry": {
+    "position": "CENTER",
+    "center": [
+     0.46127,
+     0.49885
+    ],
+    "half_size": [
+     0.02324,
+     0.03419
+    ],
+    "tilt_deg": 4.8,
+    "edges": 4
+   },
+   "notes": "The tilted dark square on the left (top and bottom rows) or upper (middle row) panel of the module. Four edges: two vertical, two horizontal. Declared from the lattice the nine modules print on rather than from each square's own measurement, because the square is located again in every capture -- the declaration only has to land near enough for that search to start in the right place."
+  },
+  {
+   "region_id": "module_cr",
+   "kind": "slanted_edge",
+   "geometry": {
+    "position": "CR",
+    "center": [
+     0.88846,
+     0.49885
+    ],
+    "half_size": [
+     0.02324,
+     0.03419
+    ],
+    "tilt_deg": 4.8,
+    "edges": 4
+   },
+   "notes": "The tilted dark square on the left (top and bottom rows) or upper (middle row) panel of the module. Four edges: two vertical, two horizontal. Declared from the lattice the nine modules print on rather than from each square's own measurement, because the square is located again in every capture -- the declaration only has to land near enough for that search to start in the right place."
+  },
+  {
+   "region_id": "module_bl",
+   "kind": "slanted_edge",
+   "geometry": {
+    "position": "BL",
+    "center": [
+     0.03368,
+     0.95107
+    ],
+    "half_size": [
+     0.02324,
+     0.03419
+    ],
+    "tilt_deg": 4.8,
+    "edges": 4
+   },
+   "notes": "The tilted dark square on the left (top and bottom rows) or upper (middle row) panel of the module. Four edges: two vertical, two horizontal. Declared from the lattice the nine modules print on rather than from each square's own measurement, because the square is located again in every capture -- the declaration only has to land near enough for that search to start in the right place."
+  },
+  {
+   "region_id": "module_bc",
+   "kind": "slanted_edge",
+   "geometry": {
+    "position": "BC",
+    "center": [
+     0.46127,
+     0.95107
+    ],
+    "half_size": [
+     0.02324,
+     0.03419
+    ],
+    "tilt_deg": 4.8,
+    "edges": 4
+   },
+   "notes": "The tilted dark square on the left (top and bottom rows) or upper (middle row) panel of the module. Four edges: two vertical, two horizontal. Declared from the lattice the nine modules print on rather than from each square's own measurement, because the square is located again in every capture -- the declaration only has to land near enough for that search to start in the right place."
+  },
+  {
+   "region_id": "module_br",
+   "kind": "slanted_edge",
+   "geometry": {
+    "position": "BR",
+    "center": [
+     0.88846,
+     0.95107
+    ],
+    "half_size": [
+     0.02324,
+     0.03419
+    ],
+    "tilt_deg": 4.8,
+    "edges": 4
+   },
+   "notes": "The tilted dark square on the left (top and bottom rows) or upper (middle row) panel of the module. Four edges: two vertical, two horizontal. Declared from the lattice the nine modules print on rather than from each square's own measurement, because the square is located again in every capture -- the declaration only has to land near enough for that search to start in the right place."
+  },
+  {
+   "region_id": "color_left",
+   "kind": "patch_grid",
+   "patch_grid": {
+    "rows": 9,
+    "columns": 3,
+    "row_labels": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9"
+    ],
+    "col_labels": [
+     "A",
+     "B",
+     "C"
+    ],
+    "patch_id_format": "{column_letter}{row_number}",
+    "patch_size_relative": {
+     "width": 0.03017,
+     "height": 0.04498
+    },
+    "patch_spacing_relative": {
+     "horizontal": 0.03017,
+     "vertical": 0.04498
+    },
+    "grid_origin_relative": [
+     0.2335,
+     0.2985
+    ],
+    "provisional": false,
+    "coordinate_frame": "Relative to the quad formed by the outer registration crosshair of each of the four corner modules."
+   },
+   "notes": "Columns A-C, rows 1-9. The two bars carry the same 27 colours; the right bar is the left one rotated 180 degrees, so every colour is measured at two field positions."
+  },
+  {
+   "region_id": "color_right",
+   "kind": "patch_grid",
+   "patch_grid": {
+    "rows": 9,
+    "columns": 3,
+    "row_labels": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9"
+    ],
+    "col_labels": [
+     "D",
+     "E",
+     "F"
+    ],
+    "patch_id_format": "{column_letter}{row_number}",
+    "patch_size_relative": {
+     "width": 0.03017,
+     "height": 0.04497
+    },
+    "patch_spacing_relative": {
+     "horizontal": 0.03017,
+     "vertical": 0.04497
+    },
+    "grid_origin_relative": [
+     0.5989,
+     0.2984
+    ],
+    "provisional": false,
+    "coordinate_frame": "Relative to the quad formed by the outer registration crosshair of each of the four corner modules."
+   },
+   "notes": "Columns D-F, rows 1-9. The two bars carry the same 27 colours; the right bar is the left one rotated 180 degrees, so every colour is measured at two field positions."
+  },
+  {
+   "region_id": "ramp_upper",
+   "kind": "patch_grid",
+   "patch_grid": {
+    "rows": 1,
+    "columns": 20,
+    "row_labels": [
+     ""
+    ],
+    "col_labels": [
+     "20",
+     "19",
+     "18",
+     "17",
+     "16",
+     "15",
+     "14",
+     "13",
+     "12",
+     "11",
+     "10",
+     "9",
+     "8",
+     "7",
+     "6",
+     "5",
+     "4",
+     "3",
+     "2",
+     "1"
+    ],
+    "patch_id_format": "GS_U_{col_label}",
+    "patch_size_relative": {
+     "width": 0.02152,
+     "height": 0.0709
+    },
+    "patch_spacing_relative": {
+     "horizontal": 0.02152,
+     "vertical": 0.0
+    },
+    "grid_origin_relative": [
+     0.24714,
+     0.1848
+    ],
+    "provisional": false,
+    "coordinate_frame": "Relative to the quad formed by the outer registration crosshair of each of the four corner modules."
+   },
+   "notes": "The upper horizontal grey scale: 20 steps, nominal L* 95 down to 3. Step 1 is the light end, which sits at the high end of the u axis -- the four ramps are one printed bar in four orientations, arranged with 180-degree rotational symmetry, so two of them run against their axis. Confirmed against this capture: reading them in this order reproduces iQ-Analyzer's own per-step L* to 0.1 in the highlights."
+  },
+  {
+   "region_id": "ramp_lower",
+   "kind": "patch_grid",
+   "patch_grid": {
+    "rows": 1,
+    "columns": 20,
+    "row_labels": [
+     ""
+    ],
+    "col_labels": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20"
+    ],
+    "patch_id_format": "GS_D_{col_label}",
+    "patch_size_relative": {
+     "width": 0.02155,
+     "height": 0.0694
+    },
+    "patch_spacing_relative": {
+     "horizontal": 0.02155,
+     "vertical": 0.0
+    },
+    "grid_origin_relative": [
+     0.24749,
+     0.7478
+    ],
+    "provisional": false,
+    "coordinate_frame": "Relative to the quad formed by the outer registration crosshair of each of the four corner modules."
+   },
+   "notes": "The lower horizontal grey scale: 20 steps, nominal L* 95 down to 3. Step 1 is the light end, which sits at the low end of the u axis -- the four ramps are one printed bar in four orientations, arranged with 180-degree rotational symmetry, so two of them run against their axis. Confirmed against this capture: reading them in this order reproduces iQ-Analyzer's own per-step L* to 0.1 in the highlights."
+  },
+  {
+   "region_id": "ramp_left",
+   "kind": "patch_grid",
+   "patch_grid": {
+    "rows": 20,
+    "columns": 1,
+    "row_labels": [
+     "20",
+     "19",
+     "18",
+     "17",
+     "16",
+     "15",
+     "14",
+     "13",
+     "12",
+     "11",
+     "10",
+     "9",
+     "8",
+     "7",
+     "6",
+     "5",
+     "4",
+     "3",
+     "2",
+     "1"
+    ],
+    "col_labels": [
+     ""
+    ],
+    "patch_id_format": "GS_L_{row_label}",
+    "patch_size_relative": {
+     "width": 0.0472,
+     "height": 0.0316
+    },
+    "patch_spacing_relative": {
+     "horizontal": 0.0,
+     "vertical": 0.0316
+    },
+    "grid_origin_relative": [
+     0.1178,
+     0.18374
+    ],
+    "provisional": false,
+    "coordinate_frame": "Relative to the quad formed by the outer registration crosshair of each of the four corner modules."
+   },
+   "notes": "The left vertical grey scale: 20 steps, nominal L* 95 down to 3. Step 1 is the light end, which sits at the high end of the v axis -- the four ramps are one printed bar in four orientations, arranged with 180-degree rotational symmetry, so two of them run against their axis. Confirmed against this capture: reading them in this order reproduces iQ-Analyzer's own per-step L* to 0.1 in the highlights."
+  },
+  {
+   "region_id": "ramp_right",
+   "kind": "patch_grid",
+   "patch_grid": {
+    "rows": 20,
+    "columns": 1,
+    "row_labels": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20"
+    ],
+    "col_labels": [
+     ""
+    ],
+    "patch_id_format": "GS_R_{row_label}",
+    "patch_size_relative": {
+     "width": 0.0491,
+     "height": 0.03174
+    },
+    "patch_spacing_relative": {
+     "horizontal": 0.0,
+     "vertical": 0.03174
+    },
+    "grid_origin_relative": [
+     0.7572,
+     0.18161
+    ],
+    "provisional": false,
+    "coordinate_frame": "Relative to the quad formed by the outer registration crosshair of each of the four corner modules."
+   },
+   "notes": "The right vertical grey scale: 20 steps, nominal L* 95 down to 3. Step 1 is the light end, which sits at the low end of the v axis -- the four ramps are one printed bar in four orientations, arranged with 180-degree rotational symmetry, so two of them run against their axis. Confirmed against this capture: reading them in this order reproduces iQ-Analyzer's own per-step L* to 0.1 in the highlights."
+  },
+  {
+   "region_id": "checker_field",
+   "kind": "patch_grid",
+   "patch_grid": {
+    "rows": 22,
+    "columns": 40,
+    "row_labels": [
+     "01",
+     "02",
+     "03",
+     "04",
+     "05",
+     "06",
+     "07",
+     "08",
+     "09",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22"
+    ],
+    "col_labels": [
+     "01",
+     "02",
+     "03",
+     "04",
+     "05",
+     "06",
+     "07",
+     "08",
+     "09",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24",
+     "25",
+     "26",
+     "27",
+     "28",
+     "29",
+     "30",
+     "31",
+     "32",
+     "33",
+     "34",
+     "35",
+     "36",
+     "37",
+     "38",
+     "39",
+     "40"
+    ],
+    "patch_id_format": "FIELD_{row_label}_{col_label}",
+    "patch_size_relative": {
+     "width": 0.03058,
+     "height": 0.04497
+    },
+    "patch_spacing_relative": {
+     "horizontal": 0.03058,
+     "vertical": 0.04497
+    },
+    "grid_origin_relative": [
+     -0.08895,
+     0.0058
+    ],
+    "provisional": false,
+    "coordinate_frame": "Relative to the quad formed by the outer registration crosshair of each of the four corner modules."
+   },
+   "notes": "The 10 mm checkerboard that covers the whole sheet, 22 rows by 40 columns. The grid is declared in full so a cell can be addressed by its position, but only the white cells listed under `patches` are sampled: they are the uniformity set. Most of the rest are either grey, or have a ramp, a colour bar, a module or the mounted TE263 strip lying over them. The white cells of this set were chosen against a capture, because the mounted strip and the chart's printed panels cover part of the board and their white is not the board's white."
+  },
+  {
+   "region_id": "ruler_top1_mm",
+   "kind": "scale",
+   "geometry": {
+    "unit": "mm",
+    "division_mm": 1.0,
+    "axis": "u",
+    "bounds_relative": [
+     -0.085,
+     -0.0548,
+     0.265,
+     -0.0518
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_top2_mm",
+   "kind": "scale",
+   "geometry": {
+    "unit": "mm",
+    "division_mm": 1.0,
+    "axis": "u",
+    "bounds_relative": [
+     0.275,
+     -0.0538,
+     0.625,
+     -0.0522
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_top3_mm",
+   "kind": "scale",
+   "geometry": {
+    "unit": "mm",
+    "division_mm": 1.0,
+    "axis": "u",
+    "bounds_relative": [
+     0.635,
+     -0.056,
+     0.985,
+     -0.0524
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_top1_in",
+   "kind": "scale",
+   "geometry": {
+    "unit": "in",
+    "division_mm": 1.5875,
+    "axis": "u",
+    "bounds_relative": [
+     -0.085,
+     -0.0496,
+     0.265,
+     -0.0472
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_top2_in",
+   "kind": "scale",
+   "geometry": {
+    "unit": "in",
+    "division_mm": 1.5875,
+    "axis": "u",
+    "bounds_relative": [
+     0.275,
+     -0.047,
+     0.625,
+     -0.0456
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_top3_in",
+   "kind": "scale",
+   "geometry": {
+    "unit": "in",
+    "division_mm": 1.5875,
+    "axis": "u",
+    "bounds_relative": [
+     0.635,
+     -0.049,
+     0.985,
+     -0.0474
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_left1_mm",
+   "kind": "scale",
+   "geometry": {
+    "unit": "mm",
+    "division_mm": 1.0,
+    "axis": "v",
+    "bounds_relative": [
+     -0.094,
+     -0.085,
+     -0.0908,
+     0.29833
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_left2_mm",
+   "kind": "scale",
+   "geometry": {
+    "unit": "mm",
+    "division_mm": 1.0,
+    "axis": "v",
+    "bounds_relative": [
+     -0.0914,
+     0.30833,
+     -0.0898,
+     0.69167
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_left3_mm",
+   "kind": "scale",
+   "geometry": {
+    "unit": "mm",
+    "division_mm": 1.0,
+    "axis": "v",
+    "bounds_relative": [
+     -0.094,
+     0.70167,
+     -0.0898,
+     1.085
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_left1_in",
+   "kind": "scale",
+   "geometry": {
+    "unit": "in",
+    "division_mm": 1.5875,
+    "axis": "v",
+    "bounds_relative": [
+     -0.0872,
+     -0.085,
+     -0.086,
+     0.29833
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_left2_in",
+   "kind": "scale",
+   "geometry": {
+    "unit": "in",
+    "division_mm": 1.5875,
+    "axis": "v",
+    "bounds_relative": [
+     -0.0868,
+     0.30833,
+     -0.0858,
+     0.69167
+    ]
+   }
+  },
+  {
+   "region_id": "ruler_left3_in",
+   "kind": "scale",
+   "geometry": {
+    "unit": "in",
+    "division_mm": 1.5875,
+    "axis": "v",
+    "bounds_relative": [
+     -0.0854,
+     0.70167,
+     -0.0844,
+     1.085
+    ]
+   }
+  }
+ ],
+ "patches": [
+  {
+   "patch_id": "A1",
+   "grid_position": {
+    "row": 0,
+    "col": 0
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "A2",
+   "grid_position": {
+    "row": 1,
+    "col": 0
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "A3",
+   "grid_position": {
+    "row": 2,
+    "col": 0
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "A4",
+   "grid_position": {
+    "row": 3,
+    "col": 0
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "A5",
+   "grid_position": {
+    "row": 4,
+    "col": 0
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "A6",
+   "grid_position": {
+    "row": 5,
+    "col": 0
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "A7",
+   "grid_position": {
+    "row": 6,
+    "col": 0
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "A8",
+   "grid_position": {
+    "row": 7,
+    "col": 0
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "A9",
+   "grid_position": {
+    "row": 8,
+    "col": 0
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "B1",
+   "grid_position": {
+    "row": 0,
+    "col": 1
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "B2",
+   "grid_position": {
+    "row": 1,
+    "col": 1
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "B3",
+   "grid_position": {
+    "row": 2,
+    "col": 1
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "B4",
+   "grid_position": {
+    "row": 3,
+    "col": 1
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "B5",
+   "grid_position": {
+    "row": 4,
+    "col": 1
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "B6",
+   "grid_position": {
+    "row": 5,
+    "col": 1
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "B7",
+   "grid_position": {
+    "row": 6,
+    "col": 1
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "B8",
+   "grid_position": {
+    "row": 7,
+    "col": 1
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "B9",
+   "grid_position": {
+    "row": 8,
+    "col": 1
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "C1",
+   "grid_position": {
+    "row": 0,
+    "col": 2
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "C2",
+   "grid_position": {
+    "row": 1,
+    "col": 2
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "C3",
+   "grid_position": {
+    "row": 2,
+    "col": 2
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "C4",
+   "grid_position": {
+    "row": 3,
+    "col": 2
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "C5",
+   "grid_position": {
+    "row": 4,
+    "col": 2
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "C6",
+   "grid_position": {
+    "row": 5,
+    "col": 2
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "C7",
+   "grid_position": {
+    "row": 6,
+    "col": 2
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "C8",
+   "grid_position": {
+    "row": 7,
+    "col": 2
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "C9",
+   "grid_position": {
+    "row": 8,
+    "col": 2
+   },
+   "region": "color_left",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "D1",
+   "grid_position": {
+    "row": 0,
+    "col": 0
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "D2",
+   "grid_position": {
+    "row": 1,
+    "col": 0
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "D3",
+   "grid_position": {
+    "row": 2,
+    "col": 0
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "D4",
+   "grid_position": {
+    "row": 3,
+    "col": 0
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "D5",
+   "grid_position": {
+    "row": 4,
+    "col": 0
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "D6",
+   "grid_position": {
+    "row": 5,
+    "col": 0
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "D7",
+   "grid_position": {
+    "row": 6,
+    "col": 0
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "D8",
+   "grid_position": {
+    "row": 7,
+    "col": 0
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "D9",
+   "grid_position": {
+    "row": 8,
+    "col": 0
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "E1",
+   "grid_position": {
+    "row": 0,
+    "col": 1
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "E2",
+   "grid_position": {
+    "row": 1,
+    "col": 1
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "E3",
+   "grid_position": {
+    "row": 2,
+    "col": 1
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "E4",
+   "grid_position": {
+    "row": 3,
+    "col": 1
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "E5",
+   "grid_position": {
+    "row": 4,
+    "col": 1
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "E6",
+   "grid_position": {
+    "row": 5,
+    "col": 1
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "E7",
+   "grid_position": {
+    "row": 6,
+    "col": 1
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "E8",
+   "grid_position": {
+    "row": 7,
+    "col": 1
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "E9",
+   "grid_position": {
+    "row": 8,
+    "col": 1
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "F1",
+   "grid_position": {
+    "row": 0,
+    "col": 2
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "F2",
+   "grid_position": {
+    "row": 1,
+    "col": 2
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "F3",
+   "grid_position": {
+    "row": 2,
+    "col": 2
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "F4",
+   "grid_position": {
+    "row": 3,
+    "col": 2
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "F5",
+   "grid_position": {
+    "row": 4,
+    "col": 2
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "F6",
+   "grid_position": {
+    "row": 5,
+    "col": 2
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "F7",
+   "grid_position": {
+    "row": 6,
+    "col": 2
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "F8",
+   "grid_position": {
+    "row": 7,
+    "col": 2
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "F9",
+   "grid_position": {
+    "row": 8,
+    "col": 2
+   },
+   "region": "color_right",
+   "role": "unassigned"
+  },
+  {
+   "patch_id": "GS_U_20",
+   "grid_position": {
+    "row": 0,
+    "col": 0
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 20
+  },
+  {
+   "patch_id": "GS_U_19",
+   "grid_position": {
+    "row": 0,
+    "col": 1
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 19
+  },
+  {
+   "patch_id": "GS_U_18",
+   "grid_position": {
+    "row": 0,
+    "col": 2
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 18
+  },
+  {
+   "patch_id": "GS_U_17",
+   "grid_position": {
+    "row": 0,
+    "col": 3
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 17
+  },
+  {
+   "patch_id": "GS_U_16",
+   "grid_position": {
+    "row": 0,
+    "col": 4
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 16
+  },
+  {
+   "patch_id": "GS_U_15",
+   "grid_position": {
+    "row": 0,
+    "col": 5
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 15
+  },
+  {
+   "patch_id": "GS_U_14",
+   "grid_position": {
+    "row": 0,
+    "col": 6
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 14
+  },
+  {
+   "patch_id": "GS_U_13",
+   "grid_position": {
+    "row": 0,
+    "col": 7
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 13
+  },
+  {
+   "patch_id": "GS_U_12",
+   "grid_position": {
+    "row": 0,
+    "col": 8
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 12
+  },
+  {
+   "patch_id": "GS_U_11",
+   "grid_position": {
+    "row": 0,
+    "col": 9
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 11
+  },
+  {
+   "patch_id": "GS_U_10",
+   "grid_position": {
+    "row": 0,
+    "col": 10
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 10
+  },
+  {
+   "patch_id": "GS_U_9",
+   "grid_position": {
+    "row": 0,
+    "col": 11
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 9
+  },
+  {
+   "patch_id": "GS_U_8",
+   "grid_position": {
+    "row": 0,
+    "col": 12
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 8
+  },
+  {
+   "patch_id": "GS_U_7",
+   "grid_position": {
+    "row": 0,
+    "col": 13
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 7
+  },
+  {
+   "patch_id": "GS_U_6",
+   "grid_position": {
+    "row": 0,
+    "col": 14
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 6
+  },
+  {
+   "patch_id": "GS_U_5",
+   "grid_position": {
+    "row": 0,
+    "col": 15
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 5
+  },
+  {
+   "patch_id": "GS_U_4",
+   "grid_position": {
+    "row": 0,
+    "col": 16
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 4
+  },
+  {
+   "patch_id": "GS_U_3",
+   "grid_position": {
+    "row": 0,
+    "col": 17
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 3
+  },
+  {
+   "patch_id": "GS_U_2",
+   "grid_position": {
+    "row": 0,
+    "col": 18
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 2
+  },
+  {
+   "patch_id": "GS_U_1",
+   "grid_position": {
+    "row": 0,
+    "col": 19
+   },
+   "region": "ramp_upper",
+   "role": "achromatic_ramp",
+   "ramp_position": 1
+  },
+  {
+   "patch_id": "GS_D_1",
+   "grid_position": {
+    "row": 0,
+    "col": 0
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 1
+  },
+  {
+   "patch_id": "GS_D_2",
+   "grid_position": {
+    "row": 0,
+    "col": 1
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 2
+  },
+  {
+   "patch_id": "GS_D_3",
+   "grid_position": {
+    "row": 0,
+    "col": 2
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 3
+  },
+  {
+   "patch_id": "GS_D_4",
+   "grid_position": {
+    "row": 0,
+    "col": 3
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 4
+  },
+  {
+   "patch_id": "GS_D_5",
+   "grid_position": {
+    "row": 0,
+    "col": 4
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 5
+  },
+  {
+   "patch_id": "GS_D_6",
+   "grid_position": {
+    "row": 0,
+    "col": 5
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 6
+  },
+  {
+   "patch_id": "GS_D_7",
+   "grid_position": {
+    "row": 0,
+    "col": 6
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 7
+  },
+  {
+   "patch_id": "GS_D_8",
+   "grid_position": {
+    "row": 0,
+    "col": 7
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 8
+  },
+  {
+   "patch_id": "GS_D_9",
+   "grid_position": {
+    "row": 0,
+    "col": 8
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 9
+  },
+  {
+   "patch_id": "GS_D_10",
+   "grid_position": {
+    "row": 0,
+    "col": 9
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 10
+  },
+  {
+   "patch_id": "GS_D_11",
+   "grid_position": {
+    "row": 0,
+    "col": 10
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 11
+  },
+  {
+   "patch_id": "GS_D_12",
+   "grid_position": {
+    "row": 0,
+    "col": 11
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 12
+  },
+  {
+   "patch_id": "GS_D_13",
+   "grid_position": {
+    "row": 0,
+    "col": 12
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 13
+  },
+  {
+   "patch_id": "GS_D_14",
+   "grid_position": {
+    "row": 0,
+    "col": 13
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 14
+  },
+  {
+   "patch_id": "GS_D_15",
+   "grid_position": {
+    "row": 0,
+    "col": 14
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 15
+  },
+  {
+   "patch_id": "GS_D_16",
+   "grid_position": {
+    "row": 0,
+    "col": 15
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 16
+  },
+  {
+   "patch_id": "GS_D_17",
+   "grid_position": {
+    "row": 0,
+    "col": 16
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 17
+  },
+  {
+   "patch_id": "GS_D_18",
+   "grid_position": {
+    "row": 0,
+    "col": 17
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 18
+  },
+  {
+   "patch_id": "GS_D_19",
+   "grid_position": {
+    "row": 0,
+    "col": 18
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 19
+  },
+  {
+   "patch_id": "GS_D_20",
+   "grid_position": {
+    "row": 0,
+    "col": 19
+   },
+   "region": "ramp_lower",
+   "role": "achromatic_ramp",
+   "ramp_position": 20
+  },
+  {
+   "patch_id": "GS_L_20",
+   "grid_position": {
+    "row": 0,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 20
+  },
+  {
+   "patch_id": "GS_L_19",
+   "grid_position": {
+    "row": 1,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 19
+  },
+  {
+   "patch_id": "GS_L_18",
+   "grid_position": {
+    "row": 2,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 18
+  },
+  {
+   "patch_id": "GS_L_17",
+   "grid_position": {
+    "row": 3,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 17
+  },
+  {
+   "patch_id": "GS_L_16",
+   "grid_position": {
+    "row": 4,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 16
+  },
+  {
+   "patch_id": "GS_L_15",
+   "grid_position": {
+    "row": 5,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 15
+  },
+  {
+   "patch_id": "GS_L_14",
+   "grid_position": {
+    "row": 6,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 14
+  },
+  {
+   "patch_id": "GS_L_13",
+   "grid_position": {
+    "row": 7,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 13
+  },
+  {
+   "patch_id": "GS_L_12",
+   "grid_position": {
+    "row": 8,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 12
+  },
+  {
+   "patch_id": "GS_L_11",
+   "grid_position": {
+    "row": 9,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 11
+  },
+  {
+   "patch_id": "GS_L_10",
+   "grid_position": {
+    "row": 10,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 10
+  },
+  {
+   "patch_id": "GS_L_9",
+   "grid_position": {
+    "row": 11,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 9
+  },
+  {
+   "patch_id": "GS_L_8",
+   "grid_position": {
+    "row": 12,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 8
+  },
+  {
+   "patch_id": "GS_L_7",
+   "grid_position": {
+    "row": 13,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 7
+  },
+  {
+   "patch_id": "GS_L_6",
+   "grid_position": {
+    "row": 14,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 6
+  },
+  {
+   "patch_id": "GS_L_5",
+   "grid_position": {
+    "row": 15,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 5
+  },
+  {
+   "patch_id": "GS_L_4",
+   "grid_position": {
+    "row": 16,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 4
+  },
+  {
+   "patch_id": "GS_L_3",
+   "grid_position": {
+    "row": 17,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 3
+  },
+  {
+   "patch_id": "GS_L_2",
+   "grid_position": {
+    "row": 18,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 2
+  },
+  {
+   "patch_id": "GS_L_1",
+   "grid_position": {
+    "row": 19,
+    "col": 0
+   },
+   "region": "ramp_left",
+   "role": "achromatic_ramp",
+   "ramp_position": 1
+  },
+  {
+   "patch_id": "GS_R_1",
+   "grid_position": {
+    "row": 0,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 1
+  },
+  {
+   "patch_id": "GS_R_2",
+   "grid_position": {
+    "row": 1,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 2
+  },
+  {
+   "patch_id": "GS_R_3",
+   "grid_position": {
+    "row": 2,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 3
+  },
+  {
+   "patch_id": "GS_R_4",
+   "grid_position": {
+    "row": 3,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 4
+  },
+  {
+   "patch_id": "GS_R_5",
+   "grid_position": {
+    "row": 4,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 5
+  },
+  {
+   "patch_id": "GS_R_6",
+   "grid_position": {
+    "row": 5,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 6
+  },
+  {
+   "patch_id": "GS_R_7",
+   "grid_position": {
+    "row": 6,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 7
+  },
+  {
+   "patch_id": "GS_R_8",
+   "grid_position": {
+    "row": 7,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 8
+  },
+  {
+   "patch_id": "GS_R_9",
+   "grid_position": {
+    "row": 8,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 9
+  },
+  {
+   "patch_id": "GS_R_10",
+   "grid_position": {
+    "row": 9,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 10
+  },
+  {
+   "patch_id": "GS_R_11",
+   "grid_position": {
+    "row": 10,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 11
+  },
+  {
+   "patch_id": "GS_R_12",
+   "grid_position": {
+    "row": 11,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 12
+  },
+  {
+   "patch_id": "GS_R_13",
+   "grid_position": {
+    "row": 12,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 13
+  },
+  {
+   "patch_id": "GS_R_14",
+   "grid_position": {
+    "row": 13,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 14
+  },
+  {
+   "patch_id": "GS_R_15",
+   "grid_position": {
+    "row": 14,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 15
+  },
+  {
+   "patch_id": "GS_R_16",
+   "grid_position": {
+    "row": 15,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 16
+  },
+  {
+   "patch_id": "GS_R_17",
+   "grid_position": {
+    "row": 16,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 17
+  },
+  {
+   "patch_id": "GS_R_18",
+   "grid_position": {
+    "row": 17,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 18
+  },
+  {
+   "patch_id": "GS_R_19",
+   "grid_position": {
+    "row": 18,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 19
+  },
+  {
+   "patch_id": "GS_R_20",
+   "grid_position": {
+    "row": 19,
+    "col": 0
+   },
+   "region": "ramp_right",
+   "role": "achromatic_ramp",
+   "ramp_position": 20
+  },
+  {
+   "patch_id": "FIELD_01_11",
+   "grid_position": {
+    "row": 0,
+    "col": 10
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_02_24",
+   "grid_position": {
+    "row": 1,
+    "col": 23
+   },
+   "region": "checker_field",
+   "role": "achromatic_border",
+   "notes": "Used rather than FIELD_02_22, two cells to its left, where the mounted resolution strip lies over the checkerboard: an ROI there samples the strip's white panel, a different substrate, and at a 0.75 inset reaches its bar patterns. This cell is on the same row, so the set's vertical coverage is unchanged."
+  },
+  {
+   "patch_id": "FIELD_02_28",
+   "grid_position": {
+    "row": 1,
+    "col": 27
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_04_06",
+   "grid_position": {
+    "row": 3,
+    "col": 5
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_04_36",
+   "grid_position": {
+    "row": 3,
+    "col": 35
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_06_06",
+   "grid_position": {
+    "row": 5,
+    "col": 5
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_06_10",
+   "grid_position": {
+    "row": 5,
+    "col": 9
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_06_26",
+   "grid_position": {
+    "row": 5,
+    "col": 25
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_07_35",
+   "grid_position": {
+    "row": 6,
+    "col": 34
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_08_20",
+   "grid_position": {
+    "row": 7,
+    "col": 19
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_10_02",
+   "grid_position": {
+    "row": 9,
+    "col": 1
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_12_10",
+   "grid_position": {
+    "row": 11,
+    "col": 9
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_12_22",
+   "grid_position": {
+    "row": 11,
+    "col": 21
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_12_36",
+   "grid_position": {
+    "row": 11,
+    "col": 35
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_13_27",
+   "grid_position": {
+    "row": 12,
+    "col": 26
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_14_16",
+   "grid_position": {
+    "row": 13,
+    "col": 15
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_16_04",
+   "grid_position": {
+    "row": 15,
+    "col": 3
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_16_20",
+   "grid_position": {
+    "row": 15,
+    "col": 19
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_16_36",
+   "grid_position": {
+    "row": 15,
+    "col": 35
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_17_27",
+   "grid_position": {
+    "row": 16,
+    "col": 26
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_19_05",
+   "grid_position": {
+    "row": 18,
+    "col": 4
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_19_21",
+   "grid_position": {
+    "row": 18,
+    "col": 20
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_19_27",
+   "grid_position": {
+    "row": 18,
+    "col": 26
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_21_11",
+   "grid_position": {
+    "row": 20,
+    "col": 10
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  },
+  {
+   "patch_id": "FIELD_21_37",
+   "grid_position": {
+    "row": 20,
+    "col": 36
+   },
+   "region": "checker_field",
+   "role": "achromatic_border"
+  }
+ ],
+ "reference_data": {
+   "opendice_names": [
+     ["A1", "A1"],
+     ["A2", "A2"],
+     ["A3", "A3"],
+     ["A4", "A4"],
+     ["A5", "A5"],
+     ["A6", "A6"],
+     ["A7", "A7"],
+     ["A8", "A8"],
+     ["A9", "A9"],
+     ["B1", "B1"],
+     ["B2", "B2"],
+     ["B3", "B3"],
+     ["B4", "B4"],
+     ["B5", "B5"],
+     ["B6", "B6"],
+     ["B7", "B7"],
+     ["B8", "B8"],
+     ["B9", "B9"],
+     ["C1", "C1"],
+     ["C2", "C2"],
+     ["C3", "C3"],
+     ["C4", "C4"],
+     ["C5", "C5"],
+     ["C6", "C6"],
+     ["C7", "C7"],
+     ["C8", "C8"],
+     ["C9", "C9"],
+     ["D1", "D1"],
+     ["D2", "D2"],
+     ["D3", "D3"],
+     ["D4", "D4"],
+     ["D5", "D5"],
+     ["D6", "D6"],
+     ["D7", "D7"],
+     ["D8", "D8"],
+     ["D9", "D9"],
+     ["E1", "E1"],
+     ["E2", "E2"],
+     ["E3", "E3"],
+     ["E4", "E4"],
+     ["E5", "E5"],
+     ["E6", "E6"],
+     ["E7", "E7"],
+     ["E8", "E8"],
+     ["E9", "E9"],
+     ["F1", "F1"],
+     ["F2", "F2"],
+     ["F3", "F3"],
+     ["F4", "F4"],
+     ["F5", "F5"],
+     ["F6", "F6"],
+     ["F7", "F7"],
+     ["F8", "F8"],
+     ["F9", "F9"],
+     ["L1", "GS_L_1"],
+     ["L2", "GS_L_2"],
+     ["L3", "GS_L_3"],
+     ["L4", "GS_L_4"],
+     ["L5", "GS_L_5"],
+     ["L6", "GS_L_6"],
+     ["L7", "GS_L_7"],
+     ["L8", "GS_L_8"],
+     ["L9", "GS_L_9"],
+     ["L10", "GS_L_10"],
+     ["L11", "GS_L_11"],
+     ["L12", "GS_L_12"],
+     ["L13", "GS_L_13"],
+     ["L14", "GS_L_14"],
+     ["L15", "GS_L_15"],
+     ["L16", "GS_L_16"],
+     ["L17", "GS_L_17"],
+     ["L18", "GS_L_18"],
+     ["L19", "GS_L_19"],
+     ["L20", "GS_L_20"],
+     ["U1", "GS_U_1"],
+     ["U2", "GS_U_2"],
+     ["U3", "GS_U_3"],
+     ["U4", "GS_U_4"],
+     ["U5", "GS_U_5"],
+     ["U6", "GS_U_6"],
+     ["U7", "GS_U_7"],
+     ["U8", "GS_U_8"],
+     ["U9", "GS_U_9"],
+     ["U10", "GS_U_10"],
+     ["U11", "GS_U_11"],
+     ["U12", "GS_U_12"],
+     ["U13", "GS_U_13"],
+     ["U14", "GS_U_14"],
+     ["U15", "GS_U_15"],
+     ["U16", "GS_U_16"],
+     ["U17", "GS_U_17"],
+     ["U18", "GS_U_18"],
+     ["U19", "GS_U_19"],
+     ["U20", "GS_U_20"],
+     ["R1", "GS_R_1"],
+     ["R2", "GS_R_2"],
+     ["R3", "GS_R_3"],
+     ["R4", "GS_R_4"],
+     ["R5", "GS_R_5"],
+     ["R6", "GS_R_6"],
+     ["R7", "GS_R_7"],
+     ["R8", "GS_R_8"],
+     ["R9", "GS_R_9"],
+     ["R10", "GS_R_10"],
+     ["R11", "GS_R_11"],
+     ["R12", "GS_R_12"],
+     ["R13", "GS_R_13"],
+     ["R14", "GS_R_14"],
+     ["R15", "GS_R_15"],
+     ["R16", "GS_R_16"],
+     ["R17", "GS_R_17"],
+     ["R18", "GS_R_18"],
+     ["R19", "GS_R_19"],
+     ["R20", "GS_R_20"],
+     ["B1", "GS_D_1"],
+     ["B2", "GS_D_2"],
+     ["B3", "GS_D_3"],
+     ["B4", "GS_D_4"],
+     ["B5", "GS_D_5"],
+     ["B6", "GS_D_6"],
+     ["B7", "GS_D_7"],
+     ["B8", "GS_D_8"],
+     ["B9", "GS_D_9"],
+     ["B10", "GS_D_10"],
+     ["B11", "GS_D_11"],
+     ["B12", "GS_D_12"],
+     ["B13", "GS_D_13"],
+     ["B14", "GS_D_14"],
+     ["B15", "GS_D_15"],
+     ["B16", "GS_D_16"],
+     ["B17", "GS_D_17"],
+     ["B18", "GS_D_18"],
+     ["B19", "GS_D_19"],
+     ["B20", "GS_D_20"]
+   ],
+   "opendice_names_notes": "OpenDICE's UTT profile lists the 54 colour patches, then the left, upper, right and bottom grey scales as L1-L20, U1-U20, R1-R20 and B1-B20. Its bottom scale reuses the names B1-B9 of the colour patches, so its rows are matched by position, checked against these names.",
+  "source_type": "per_unit_file",
+  "import_format": "cgats",
+  "required": true,
+  "nominal_values": {
+   "file": "image_engineering_utt_a3_v1_nominal.txt",
+   "basis": "manufacturer_nominal",
+   "source": "The 'Reference Values' column of Image Engineering's own certificate-of-conformance workbook for the UTT (UTT_MetaData_*.xls), which prints the design aim beside each patch's measured value.",
+   "covers": "All 54 colour patches and all 80 grey steps. The 25 uniformity samples on the checkerboard have no values and need none.",
+   "notes": "Design aims for the model, not a measurement of any individual chart, and visibly so: every grey step aims at a round L* and the colour patches at whole-number L*a*b*. The chart ships with a measured per-unit certificate and that file always wins. Judged against these instead, a Delta E carries the chart's own print tolerance as well as the capture system's error -- on the certificate in hand the measured values sit up to 5.5 Delta E from the aims -- so a run on nominal values reports ADVISORY and makes no conformance claim."
+  },
+  "notes": "Image Engineering measure each UTT and ship the result in an Excel workbook rather than a CGATS file. Convert it, keeping the SAMPLE_NAMEs used here: A1-C9 and D1-F9 for the two colour bars, and GS_U_n / GS_D_n / GS_L_n / GS_R_n for the upper, lower, left and right grey scales. Those are the workbook's own names for the four ramps ('upper hirozontal grey scale' is spelled that way in the file)."
+ },
+ "dimensional_reference": {
+  "available": true,
+  "summary": "A millimetre and a sixteenth-inch rule along the top edge and the left edge, sharing a baseline: metric ticks on one side of the line, imperial on the other. Each is declared in three consecutive segments, so the twelve scale regions are six independent readings of the sampling rate in each unit at six places."
+ },
+ "metric_defaults": {
+   "color_accuracy": {
+     "uses_regions": ["color_left", "color_right"],
+     "notes": "FADGI's color accuracy is the average deviation of all color patches measured. The four grey scales are judged by tone response and white balance and are not color patches: they are 80 of the chart's 134 reference values, and counting them would make the figure mostly a grey-scale score. OpenDICE and Image Engineering's iQ-Analyzer both judge the 54 patches of the two color bars only, and so does this."
+   },
+  "tonal_response": {
+   "uses_roles": [
+    "achromatic_ramp"
+   ],
+   "notes": "All four grey scales, 80 steps. iQ-Analyzer judges each ramp separately and reports four verdicts; against a per-patch aggregation such as max the two are the same number."
+  },
+  "lightness_uniformity": {
+   "uses_patches": [
+    "achromatic_border"
+   ],
+   "sample_point_count": 25,
+   "sample_distribution": "White squares of the chart's own 10 mm checkerboard, one taken from each cell of a five-by-five division of the sheet, so the samples reach the corners and the edges as well as the centre.",
+   "notes": "THE CHART PRINTS NO VALUES FOR THESE SQUARES, and uniformity needs none: it is the spread of a set of nominally identical patches about their own mean. Squares were chosen for being white, unobstructed and flat -- every one reads within 4 code values of its own mean on the capture this was measured from, so a square carrying a scratch, a printed label or the edge of another feature is excluded.\n\nThis is the same field the chart's own shading metric uses. It is NOT the same statistic: ISO 19264 and Metamorfoze state shading as MaxDeltaWhite and MaxDeltaGray, the largest L* difference across the field, where this engine reports a coefficient of variation. Both describe the same spread and neither converts to the other."
+  },
+  "sfr": {
+   "notes": "Nine modules, four edges each: 36 slanted edges at nine field positions. Every square is tilted about 4.8 degrees, squarely inside the range ISO 12233 contemplates, and the square is dark grey on a light grey panel rather than black on white -- so the edge is analysable without either plateau being near the encoding limit."
+  },
+  "geometric_distortion": {
+   "notes": "READ THIS BEFORE COMPARING WITH A VENDOR REPORT. The chart's own distortion reference is the 10 mm checkerboard covering the whole sheet, and that is what iQ-Analyzer's MaxDistortion measures: a grid across the full two-dimensional field, corners against centre. This engine reads printed rules, and the UTT prints them along only two edges, so what it reports here is the variation in scale along the top and left rules and between those two directions.\n\nThat is a real measurement and a narrower one. It will find an anamorphic scale error and bowing along either rule; it cannot see a distortion that leaves both rules alone. Expect a smaller number than a checkerboard-based tool reports on the same capture -- 0.16% against iQ-Analyzer's 1.56% on the capture this was measured from -- and do not read the two as disagreeing."
+  },
+  "noise": {
+   "notes": "The grey steps are the flat neutrals. Note that the Metamorfoze UTT specifications state noise as a standard deviation, which is what this engine measures, while ISO 19264 states VisualNoise -- a spatially filtered, CIELAB-weighted quantity from ISO 15739 that is a different measurement, not a different threshold."
+  }
+ },
+ "notes": "The Universal Test Target: one sheet carrying colour, tone, resolution, registration, uniformity and a dimensional reference, designed by Image Engineering with the Koninklijke Bibliotheek for the Metamorfoze programme and since used as the standard chart for ISO 19264-1.\n\nLayout, from the middle out: two colour bars of 27 patches; four 20-step grey scales forming a square ring around them; nine modules, each a tilted grey square for slanted-edge analysis beside a panel of resolution wedges; and a 10 mm checkerboard behind all of it, reaching the sheet's edges. Millimetre and inch rules run along the top and left edges.\n\nGEOMETRY WAS MEASURED, NOT SUPPLIED. Image Engineering ship a layout file with iQ-Analyzer (UTT_A3.chart) and it is not readable here, so every region below was located by tools/locate_utt_geometry.py against a real capture -- a 9592x6368 JP2 of an A3 unit at 397.7 ppi -- and cross-checked three ways: the four grey ramps come out the same length to 0.5%, the colour patches come out square, and the four printed rules agree on the sampling rate to 0.02 ppi and land on the figure iQ-Analyzer reported for the same file. Reading the ramps with this geometry reproduces that report's per-step L* to 0.1 in the highlights.\n\nNOT MODELLED. The resolution wedges beside each module are read visually, not computed, so they carry no geometry here. The TE263 Scan Reference strip along the bottom is a separate chart mounted on the sheet -- its edge cuts across a checker square -- so its position is a per-unit property and none of its features are declared. The checkerboard is declared only as the lattice the uniformity samples are addressed in; using it as the distortion grid it was printed to be needs a metric that reads a grid rather than a rule."
+}
